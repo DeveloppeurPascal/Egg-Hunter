@@ -16,7 +16,6 @@ uses
   cEcranCreditsDuJeu in 'cEcranCreditsDuJeu.pas' {cadEcranCreditsDuJeu: TFrame},
   uVersionDuProgramme in 'uVersionDuProgramme.pas',
   cEcranChargerPartieExistante in 'cEcranChargerPartieExistante.pas' {cadEcranChargerPartieExistante: TFrame},
-  uMusicLoop in 'uMusicLoop.pas' {MusicLoop: TDataModule},
   uMusic in 'uMusic.pas',
   uBruitages in 'uBruitages.pas',
   cEcranOptionsDuJeu in 'cEcranOptionsDuJeu.pas' {cadEcranOptionsDuJeu: TFrame},
@@ -25,7 +24,8 @@ uses
   cTrackbar in 'cTrackbar.pas' {cadTrackBar: TFrame},
   cJoypad in 'cJoypad.pas' {cadJoypad: TFrame},
   cadBoutonOption in 'cadBoutonOption.pas' {cBoutonOption: TFrame},
-  Olf.RTL.Params in '..\lib-externes\librairies\Olf.RTL.Params.pas';
+  Olf.RTL.Params in '..\lib-externes\librairies\Olf.RTL.Params.pas',
+  Gamolf.FMX.MusicLoop in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas';
 
 {$R *.res}
 begin
@@ -33,6 +33,5 @@ begin
   Application.FormFactor.Orientations := [TFormOrientation.Landscape, TFormOrientation.InvertedLandscape];
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TDMMap, DMMap);
-  Application.CreateForm(TMusicLoop, MusicLoop);
   Application.Run;
 end.

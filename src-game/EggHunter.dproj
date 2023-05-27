@@ -428,8 +428,8 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Build>2</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=Gamolf / Olf Software;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.2;InternalName=;LegalCopyright=2021 Patrick Prémartin / Gamolf / Olf Software;LegalTrademarks=;OriginalFilename=;ProgramID=fr.gamolf.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>3</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Gamolf / Olf Software;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.3;InternalName=;LegalCopyright=2021 Patrick Prémartin / Gamolf / Olf Software;LegalTrademarks=;OriginalFilename=;ProgramID=fr.gamolf.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
         <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
@@ -573,11 +573,6 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="uMusicLoop.pas">
-            <Form>MusicLoop</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
         <DCCReference Include="uMusic.pas"/>
         <DCCReference Include="uBruitages.pas"/>
         <DCCReference Include="cEcranOptionsDuJeu.pas">
@@ -607,6 +602,7 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="..\lib-externes\librairies\Olf.RTL.Params.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

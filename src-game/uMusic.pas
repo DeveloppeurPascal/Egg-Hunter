@@ -2,7 +2,8 @@ unit uMusic;
 
 interface
 
-uses uMusicLoop;
+uses
+  Gamolf.FMX.MusicLoop;
 
 type
   TMusiques = class
@@ -17,8 +18,8 @@ type
 implementation
 
 uses
-
-  System.SysUtils, System.IOUtils, fmx.forms;
+  System.SysUtils,
+  System.IOUtils;
 
 { TMusiques }
 
@@ -28,15 +29,14 @@ var
 begin
   if not assigned(fAmbiance) then
   begin
-    fAmbiance := tmusicloop.Create(nil);
+    fAmbiance := tmusicloop.Create;
 {$IF defined(ANDROID)}
     // deploy in .\assets\internal\
     NomFichier := tpath.GetDocumentsPath;
 {$ELSEIF defined(MSWINDOWS)}
     // deploy in ;\
 {$IFDEF DEBUG}
-    NomFichier :=
-      '..\..\..\assets\PLRAudios_com';
+    NomFichier := '..\..\..\assets\PLRAudios_com';
 {$ELSE}
     NomFichier := extractfilepath(paramstr(0));
 {$ENDIF}
@@ -53,7 +53,7 @@ begin
 {$ENDIF}
     NomFichier := tpath.combine(NomFichier, 'DreamCatcher.mp3');
     fAmbiance.Load(NomFichier);
-// TODO :     fambiance.Volume := tconfig.MusiqueDAmbianceVolume;
+    // TODO :     fambiance.Volume := tconfig.MusiqueDAmbianceVolume;
   end;
   result := fAmbiance;
 end;
@@ -64,7 +64,6 @@ TMusiques.fAmbiance := nil;
 
 finalization
 
-if assigned(TMusiques.fAmbiance) then
-  TMusiques.fAmbiance.Free;
+TMusiques.fAmbiance.Free;
 
 end.

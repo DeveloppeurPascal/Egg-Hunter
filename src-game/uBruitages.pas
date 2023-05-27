@@ -12,8 +12,13 @@ procedure CouperLesBruitages;
 
 implementation
 
-uses system.IOutils, system.SysUtils, uMusicLoop, system.Threading, classes,
-  system.Generics.Collections, fmx.forms, uConfig;
+uses
+  system.IOutils,
+  system.SysUtils,
+  system.Threading,
+  system.Generics.Collections,
+  uConfig,
+  Gamolf.FMX.MusicLoop;
 
 type
   TBruitage = class(tmusicloop)
@@ -32,7 +37,7 @@ var
 
 function AjouteSon(TypeBruitage: TTypeBruitage): TBruitage;
 begin
-  result := TBruitage.Create(nil);
+  result := TBruitage.Create;
   try
     result.TypeBruitage := TypeBruitage;
     ListeDeSons.Add(result);
