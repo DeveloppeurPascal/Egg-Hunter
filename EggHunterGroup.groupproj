@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9D638D06-C97A-4A55-9575-25B5D3C7C261}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="src-game\EggHunter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="src-level-editor\EggHunterLevelEditor.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="EggHunter">
+        <MSBuild Projects="src-game\EggHunter.dproj"/>
+    </Target>
+    <Target Name="EggHunter:Clean">
+        <MSBuild Projects="src-game\EggHunter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EggHunter:Make">
+        <MSBuild Projects="src-game\EggHunter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EggHunterLevelEditor">
+        <MSBuild Projects="src-level-editor\EggHunterLevelEditor.dproj"/>
+    </Target>
+    <Target Name="EggHunterLevelEditor:Clean">
+        <MSBuild Projects="src-level-editor\EggHunterLevelEditor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EggHunterLevelEditor:Make">
+        <MSBuild Projects="src-level-editor\EggHunterLevelEditor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="EggHunter;EggHunterLevelEditor"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="EggHunter:Clean;EggHunterLevelEditor:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="EggHunter:Make;EggHunterLevelEditor:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
