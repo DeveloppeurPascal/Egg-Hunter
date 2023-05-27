@@ -3,10 +3,22 @@ unit fEcranDuJeu;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  uPartieEnCours, templateDialogBox, FMX.Layouts, cJoypad, cadBoutonOption;
+  FMX.Types,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Graphics,
+  FMX.Dialogs,
+  FMX.Objects,
+  uPartieEnCours,
+  templateDialogBox,
+  FMX.Layouts,
+  cJoypad,
+  cadBoutonOption;
 
 type
   TfrmEcranDuJeu = class(TForm)
@@ -15,7 +27,6 @@ type
     timerCyceDeJeu: TTimer;
     txtNbCanards: TText;
     txtNbOeufs: TText;
-    txtVersionDuProgramme: TText;
     zoneHeader: TLayout;
     ZoneFooter: TLayout;
     JoypadDeDroite: TcadJoypad;
@@ -64,8 +75,14 @@ implementation
 
 {$R *.fmx}
 
-uses uDMMap, cInventaireCouveuse, cInventaireJoueur, uVersionDuProgramme,
-  uMusic, uBruitages, uConfig, uParam;
+uses
+  uDMMap,
+  cInventaireCouveuse,
+  cInventaireJoueur,
+  uMusic,
+  uBruitages,
+  uConfig,
+  uParam;
 
 procedure TfrmEcranDuJeu.btnEffetsSonoresOnOffClick(Sender: TObject);
 begin
@@ -170,8 +187,6 @@ begin
   txtNbCanards.Text := '';
   fNbOeufs := -1;
   txtNbOeufs.Text := '';
-  txtVersionDuProgramme.Text := 'Version : ' + cversion.ToString + '-' +
-    cversiondate.ToString;
 
   // Choix du niveau à charger
 {$IF Defined(DEBUG) and Defined(MSWINDOWS)}
