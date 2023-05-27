@@ -175,7 +175,7 @@ begin
 
   // Choix du niveau à charger
 {$IF Defined(DEBUG) and Defined(MSWINDOWS)}
-  NiveauACharger := 'ajeter';
+  NiveauACharger := 'Niveau00';
 {$ELSE}
   NiveauACharger := 'Niveau00';
 {$ENDIF}
