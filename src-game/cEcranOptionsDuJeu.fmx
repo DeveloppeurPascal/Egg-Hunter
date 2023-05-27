@@ -1,0 +1,115 @@
+inherited cadEcranOptionsDuJeu: TcadEcranOptionsDuJeu
+  inherited Dialog: TcadBoiteDeDialogue_370x370
+    inherited Contenu: TVertScrollBox
+      Viewport.Width = 310.000000000000000000
+      Viewport.Height = 310.000000000000000000
+      object paramMusique: TLayout
+        Align = Top
+        Size.Width = 310.000000000000000000
+        Size.Height = 80.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object txtMusique: TText
+          Align = Top
+          Margins.Left = 50.000000000000000000
+          Position.X = 50.000000000000000000
+          Size.Width = 260.000000000000000000
+          Size.Height = 36.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Musique d'#39'ambiance'
+          TextSettings.FontColor = claBisque
+          TextSettings.HorzAlign = Leading
+          inline cbMusique: TcadCheckbox
+            Align = Left
+            Margins.Left = -50.000000000000000000
+            Position.X = -50.000000000000000000
+            Size.Width = 38.000000000000000000
+            Size.Height = 36.000000000000000000
+            Size.PlatformDefault = False
+            OnClick = cbMusiqueClick
+          end
+        end
+        inline tbVolumeMusique: TcadTrackBar
+          Align = Top
+          Margins.Top = 5.000000000000000000
+          Position.Y = 41.000000000000000000
+          Size.Width = 310.000000000000000000
+          Size.Height = 18.000000000000000000
+          Size.PlatformDefault = False
+          OnClick = tbVolumeMusiqueClick
+          inherited rectBackground: TRectangle
+            Size.Width = 310.000000000000000000
+          end
+        end
+      end
+      object paramBruitages: TLayout
+        Align = Top
+        Position.Y = 80.000000000000000000
+        Size.Width = 310.000000000000000000
+        Size.Height = 80.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object txtBruitages: TText
+          Align = Top
+          Margins.Left = 50.000000000000000000
+          Position.X = 50.000000000000000000
+          Size.Width = 260.000000000000000000
+          Size.Height = 36.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Bruitages'
+          TextSettings.FontColor = claBisque
+          TextSettings.HorzAlign = Leading
+          inline cbBruitages: TcadCheckbox
+            Align = Left
+            Margins.Left = -50.000000000000000000
+            Position.X = -50.000000000000000000
+            Size.Width = 38.000000000000000000
+            Size.Height = 36.000000000000000000
+            Size.PlatformDefault = False
+            OnClick = cbBruitagesClick
+          end
+        end
+        inline tbVolumeBruitages: TcadTrackBar
+          Align = Top
+          Margins.Top = 5.000000000000000000
+          Position.Y = 41.000000000000000000
+          Size.Width = 310.000000000000000000
+          Size.Height = 18.000000000000000000
+          Size.PlatformDefault = False
+          OnClick = tbVolumeBruitagesClick
+          inherited rectBackground: TRectangle
+            Size.Width = 310.000000000000000000
+          end
+        end
+      end
+      object paramControlesTactiles: TLayout
+        Align = Top
+        Position.Y = 160.000000000000000000
+        Size.Width = 310.000000000000000000
+        Size.Height = 80.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object txtControlesTactiles: TText
+          Align = Top
+          Margins.Left = 50.000000000000000000
+          Position.X = 50.000000000000000000
+          Size.Width = 260.000000000000000000
+          Size.Height = 36.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Afficher le joypad'
+          TextSettings.FontColor = claBisque
+          TextSettings.HorzAlign = Leading
+          inline cbControlesTactiles: TcadCheckbox
+            Align = Left
+            Margins.Left = -50.000000000000000000
+            Position.X = -50.000000000000000000
+            Size.Width = 38.000000000000000000
+            Size.Height = 36.000000000000000000
+            Size.PlatformDefault = False
+            OnClick = cbControlesTactilesClick
+          end
+        end
+      end
+    end
+  end
+end

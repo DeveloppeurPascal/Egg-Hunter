@@ -1,0 +1,157 @@
+object cadTrackBar: TcadTrackBar
+  Size.Width = 320.000000000000000000
+  Size.Height = 18.000000000000000000
+  Size.PlatformDefault = False
+  OnMouseDown = FrameMouseDown
+  OnResize = FrameResize
+  object rectBackground: TRectangle
+    Align = Client
+    Fill.Color = claDimgray
+    Locked = True
+    HitTest = False
+    Size.Width = 320.000000000000000000
+    Size.Height = 18.000000000000000000
+    Size.PlatformDefault = False
+    object rectTrack: TRectangle
+      Align = Left
+      Fill.Bitmap.WrapMode = Tile
+      Fill.Kind = Bitmap
+      Locked = True
+      HitTest = False
+      Size.Width = 50.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object imgTrackBar: TImageList
+    Source = <
+      item
+        MultiResBitmap = <
+          item
+            Width = 18
+            Height = 18
+            PNG = {
+              89504E470D0A1A0A0000000D494844520000001200000012080600000056CE8E
+              57000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              002F49444154384F636460603006628A011394A618805C2405615206A8E6A251
+              8308835183088351830883C16610030300D83700705FA340530000000049454E
+              44AE426082}
+            FileName = 
+              'C:\Users\olfso\Documents\Embarcadero\Studio\Projets\EggHunter\as' +
+              'sets\kenney.nl\UI Adventure Pack\PNG\barBack_horizontalMid.png'
+          end>
+        Name = 'barBack_horizontalMid'
+      end
+      item
+        MultiResBitmap = <
+          item
+            Width = 18
+            Height = 18
+            PNG = {
+              89504E470D0A1A0A0000000D494844520000001200000012080600000056CE8E
+              57000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              003449444154384F633C1B2BF49F810A80094A530C187F351A0D2E178D1A4418
+              30BEC8121F8D35FC6010C6DAA0CB6B83AD3C626000000DE40C569ED1F7DC0000
+              000049454E44AE426082}
+            FileName = 
+              'C:\Users\olfso\Documents\Embarcadero\Studio\Projets\EggHunter\as' +
+              'sets\kenney.nl\UI Adventure Pack\PNG\barRed_horizontalMid.png'
+          end>
+        Name = 'barRed_horizontalMid'
+      end
+      item
+        MultiResBitmap = <
+          item
+            Width = 18
+            Height = 18
+            PNG = {
+              89504E470D0A1A0A0000000D494844520000001200000012080600000056CE8E
+              57000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              003349444154384F633CBB84E13F0315001394A61830FEBFE931B85C346A1061
+              C0F8FFCC204B47A3061106832FAF0DB6F288810100E0800E08C01B3E48000000
+              0049454E44AE426082}
+            FileName = 
+              'C:\Users\olfso\Documents\Embarcadero\Studio\Projets\EggHunter\as' +
+              'sets\kenney.nl\UI Adventure Pack\PNG\barYellow_horizontalMid.png'
+          end>
+        Name = 'barYellow_horizontalMid'
+      end
+      item
+        MultiResBitmap = <
+          item
+            Width = 18
+            Height = 18
+            PNG = {
+              89504E470D0A1A0A0000000D494844520000001200000012080600000056CE8E
+              57000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              003449444154384F6394ECDCF19F810A80094A530C184D777D1E5C2E1A358830
+              60945BFE7034D6F08341186B832EAF0DB6F2888101008C360D390054CD820000
+              000049454E44AE426082}
+            FileName = 
+              'C:\Users\olfso\Documents\Embarcadero\Studio\Projets\EggHunter\as' +
+              'sets\kenney.nl\UI Adventure Pack\PNG\barBlue_horizontalBlue.png'
+          end>
+        Name = 'barBlue_horizontalBlue'
+      end
+      item
+        MultiResBitmap = <
+          item
+            Width = 18
+            Height = 18
+            PNG = {
+              89504E470D0A1A0A0000000D494844520000001200000012080600000056CE8E
+              57000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              003449444154384F638CDF68F59F810A80094A530C183B1E240C2E178D1A4418
+              30169FF51E8D35FC6010C6DAA0CB6B83AD3C6260000054BE0CCA42A35FAB0000
+              000049454E44AE426082}
+            FileName = 
+              'C:\Users\olfso\Documents\Embarcadero\Studio\Projets\EggHunter\as' +
+              'sets\kenney.nl\UI Adventure Pack\PNG\barGreen_horizontalMid.png'
+          end>
+        Name = 'barGreen_horizontalMid'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'barBlue_horizontalBlue'
+            SourceRect.Right = 18.000000000000000000
+            SourceRect.Bottom = 18.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'barGreen_horizontalMid'
+            SourceRect.Right = 18.000000000000000000
+            SourceRect.Bottom = 18.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'barRed_horizontalMid'
+            SourceRect.Right = 18.000000000000000000
+            SourceRect.Bottom = 18.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'barYellow_horizontalMid'
+            SourceRect.Right = 18.000000000000000000
+            SourceRect.Bottom = 18.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'barBack_horizontalMid'
+            SourceRect.Right = 18.000000000000000000
+            SourceRect.Bottom = 18.000000000000000000
+          end>
+      end>
+    Left = 144
+    Top = 104
+  end
+end
