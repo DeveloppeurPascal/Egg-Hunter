@@ -34,7 +34,7 @@ type
 implementation
 
 uses
-  system.sysutils, system.IOUtils, uParam;
+  system.sysutils, system.IOUtils, uParam, FMX.Platform;
 
 const
   CBruitagesOnOff = 'BruitagesOnOff';
@@ -60,12 +60,17 @@ end;
 class function TConfig.getInterfaceTactileOnOff: boolean;
 var
   ValeurParDefaut: boolean;
+  DeviceService: IFMXDeviceService;
 begin
-  // TODO : gérer les valeurs par rapport aux infos des services de plateforme
+  if TPlatformServices.Current.SupportsPlatformService(IFMXDeviceService,
+    DeviceService) then
+    ValeurParDefaut := tdevicefeature.HasTouchScreen
+      in DeviceService.GetFeatures
+  else
 {$IF Defined(iOS) or Defined(ANDROID)}
-  ValeurParDefaut := true;
+    ValeurParDefaut := true;
 {$ELSE}
-  ValeurParDefaut := false;
+    ValeurParDefaut := false;
 {$ENDIF}
   result := tParams.getValue(CInterfaceTactileOnOff, ValeurParDefaut);
 end;
