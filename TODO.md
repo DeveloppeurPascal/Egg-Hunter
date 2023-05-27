@@ -1,10 +1,5 @@
 # TODO List
 
-* importer les icones dans le programme du jeu
-
-* créer l'icone de l'éditeur de niveau
-* importer les icones dans l'éditeur de niveaux du jeu
-
 ## Editeur de niveaux
 
 * traiter les TODO dans les fichiers sources
@@ -16,7 +11,7 @@
 * Ajouter animation lors des opérations longues (load, save, fill)
 * Gérer déplacement de la carte avec le mouse wheel si ça passe avec la Magic Mouse d’Apple 
 * gérer niveau de zoom
-* gérer BitmapScale de l'image à l'écran
+* gérer BitmapScale de l'image à l'écran => affichage ok, mais zone de clic mal calculée
 * ajouter des raccourcis clavier pour les boutons de la toolbar et la sélection / déselection des sprites
 
 * Ajouter Ctrl+Z pour UNDO
@@ -39,7 +34,7 @@
 
 * stocker le nom de la map dans ses paramètres
 
-* Gérer un affichage « infini » en plus de l’affichage « carte » qui permettrait de ne pas voir les bords du terrain. => ajouter le bouton de passage de l'un à l'autre
+* Gérer un affichage «infini» en plus de l’affichage «carte» qui permettrait de ne pas voir les bords du terrain. => ajouter le bouton de passage de l'un à l'autre
 * Indiquer si la map est valide (joueur, couveuse et canard positionnés)
 * Afficher les coordonnées du viewport
  
@@ -80,7 +75,6 @@
 * gérer déplacements du joueur "en train"
 * gérer collision joueur / ovni
 * gérer collision joueur / bateau, train, passage, ...
-* ajouter des éléments d'interface pour les déplacements depuis une tablette (iOS / Android)
 
 * ajouter mode démo pour l'écran d'accueil (suppression du joueur, viewport centré sur un canard, refresh de l'écran en automatique)
 
@@ -89,60 +83,56 @@
 * dans liste des parties existantes, permettre la suppression d'archives
 * dans liste des parties existantes, permettre le renommage ("Date - heure", n'étant pas hyper user friendly)
 
-
-* ajouter des éléments de contrôle tactiles pour smartphones/tablettes
-
-* pouvoir modifier les touches utilisées pour les déplacements dans les options du jeu
+* pouvoir modifier les touches utilisées pour les déplacements dans les options du jeu (WASD au lieu des flèches)
 * publication du jeu pour Android
 * publication du jeu pour iOS
 * publication du jeu pour Linux
-* ajouter un mode démo (pour l'écran d'accueil)
+* soumettre le jeu à Microsoft Store pour Windows
+* mettre à jour le jeu sur itch.io pour Windows
+* mettre à jour le jeu sur itch.io pour Android
+* mettre à jour le jeu sur itch.io pour macOS
+
 * ajouter une fenêtre d'explications sur le fonctionnement du jeu au démarrage d'une partie
 * modifier la map utilisée comme écran d'accueil et la fenêtre principale pour afficher le titre en entier (ou pouvoir l'animer un peu)
 
-* ajouter le nom du jeu sur l'écran d'accueil
-* une fois le transfert des oeufs effectués entre le joueur et la couveuse, afficher l'inventaire de la couveuse ou une animation ou autre chose
-* changer format d'affichage des nombres d'oeufs et de canard en cours de partie (mettre le texte en forme et en images)
+* ajouter le nom du jeu sur l'écran d'accueil (fonte graphique plutôt que sous forme d'élement de la map utilisée en démo)
+
+* une fois le transfert des oeufs effectués entre le joueur et la couveuse, afficher l'inventaire de la couveuse ou une animation ou autre chose (genre un nombre d'oeufs sous forme d'infobulle)
+
 * sur inventaire couveuse, masquer la valeur du temps restant ou mettre un pourcentage => adapter la progress bar et gérer plusieurs types d'affichage
-* sur la fenêtre de livraison d'oeufs à la couveuse, afficher la PG du nombre d'oeufs de la couveuse et celle du joueur. Faire une animation de l'une vers l'autre si on effectue le livraison d'oeufs.
-* affichage des infos de version sur l'accueil + les retirer de l'écran de jeu
+* sur la fenêtre de livraison d'oeufs à la couveuse, afficher le nombre d'oeufs de la couveuse et celui du joueur. Faire une animation de l'une vers l'autre si on effectue le livraison d'oeufs.
 
 * sous Windows, vérifier calcul coordonnées de clic lorsqu'on change le % d'affichage dans les options d'accessibilité
 
-* vérifier si l'appareil a un écran tactile pour prérenseigner l'affichage des contrôles tactiles lors du premier lancement du jeu
 * dans les options pouvoir choisir si le joypad est à gauche, à droite ou des deux côtés (par défaut les deux)
 * dans les options, pouvoir choisir si le joypad est découpé en deux (gauche droite / haut bas)
 * gérer la position du joypad en fonction des clics du joueur sur le terrain pour éviter d'avoir à paramétrer sa position (ou pouvoir le déplacer par drag and drop depuis son centre)
+
 * changer le son associé au ramassage des oeufs
 
-## PROCHAINES ETAPES :
-- Correction : fonctionnement normal d'une nouvelle partie quand on en lance plusieurs d'affilée (bloque écran ou plus d'affichage)
-- Correction : chargement d'une partie précédente non pris en compte correctement lors de l'affichage (repositionner les éléments sur la grille lors de leur chargement)
+* bogue : zone de clic déconne lorsque BitmapScale <> 1 (exemple sur Mac en 4K, décalage d'une demi-case)
 
-Effet collatéral incompréhensible : un bogue au lancement ou au chargmeent d'une partie lorsqu'on en avait déjà lancé une juste avant. Probablement une suppression d'informations qui n'aurait pas dû se faire ou des données non initialisées au bon endroit. A Vérifier au niveau des Z-Index en initialisation des cellules de la map lors de son chargement (manque peut-être le renseignement du SpriteID). Mettre aussi en dur le Z-Index des éléments (oeuf, canard, couveuse) lors de leur suppression (Destroy).
-
-- ajout d'un bouton "PAUSE" dans l'écran du jeu pour le mettre en pause
-- ajout d'un logo sur l'écran du jeu pour accéder aux options sans sortir
-- modification progress bar pour modifier l'affichage de la valeur : valeur brute, pourcentage, valeur brute + maxi, ne rien afficher
-- modification fenêtre d'infos de la couveuse pour éliminer mettre la durée en pourcentage et changer la couleur (passage du rouge au vert)
-- Correction : si la valeur de la progress bar est à 0, ne rien mettre, actuellement les extrémités apparaissent quand même
-- Correction : si la valeur de la progress bar est au max, remplir réellement la totalité de la zone, actuellement il y a toujours un peu de marge
+* modification progress bar pour modifier l'affichage de la valeur : valeur brute, pourcentage, valeur brute + maxi, ne rien afficher
+* modification fenêtre d'infos de la couveuse pour mettre la durée en pourcentage et changer la couleur (passage du rouge au vert)
+* Correction : si la valeur de la progress bar est à 0, ne rien mettre, actuellement les extrémités apparaissent quand même
+* Correction : si la valeur de la progress bar est au max, remplir réellement la totalité de la zone, actuellement il y a toujours un peu de marge
 => probablement un trunc() au lieu d'un round()
-- Traiter d'autres TODO en attente
-- Publier une nouvelle version pour PC et Mac sur itch.io
 
-- extension : gérer la musique d'ambiance en fonction de la zone dans laquelle se trouve le joueur
+* extension : gérer la musique d'ambiance en fonction de la zone dans laquelle se trouve le joueur
 
-- revoir fonctionnement du onSaveState de l'écran de jeu (selon le type d'action l'entrainant, faire un backup ou rien, surtout si le onClose a déjà été appelé)
+* revoir fonctionnement du onSaveState de l'écran de jeu (selon le type d'action l'entrainant, faire un backup ou rien, surtout si le onClose a déjà été appellé)
+
+* affichage nb oeufs et nb canards : tenter un texte en blanc et ajouter un visuel sur chaque
+* affichage nb oeufs et nb canards : recalculer la largeur de la zone d'affichage
 
 ## TODO autres
 * faire quelques captures d'écran pour mettre à jour la fiche sur itch.io
 
 * bogue : sur progress bar, le jaune apparaît en vert
 
-* bogue Mac : passage en full screen inopérant sur la seconde fenêtre (mais passe sur la première)
-
 * bogue : affichage KO sur smartphone Ulefone U7
+
+* bogue : fuite mémoire en fermeture de partie les listes d'oeufs, couveuses et canards ne sont pas libérées
 
 ## TODO extensions du jeu
 * gérer un niveau d'expérience permettant d'augmenter le niveau de certains éléments du jeu (place dans l'ovni, sur le joueur, les couveuses, ...)
