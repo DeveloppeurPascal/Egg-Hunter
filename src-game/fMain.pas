@@ -20,7 +20,9 @@ uses
   FMX.Objects,
   cBoiteDeDialogue_370x370,
   templateDialogBox,
-  uDMMap, FMX.Effects;
+  uDMMap,
+  fEcranDuJeu,
+  FMX.Effects;
 
 type
   TfrmMain = class(TForm)
@@ -53,6 +55,7 @@ type
     FBoiteDeDialogue: TtplDialogBox;
     DemoMap: TDMMap;
     FNomDeFichierDePartieACharger: string;
+    fEcranDuJeu: TfrmEcranDuJeu;
     procedure RefreshBackground;
     procedure SetBoiteDeDialogue(const Value: TtplDialogBox);
     procedure ChargePartieExistante(NomDuFichier: string);
@@ -73,7 +76,6 @@ implementation
 {$R *.fmx}
 
 uses
-  fEcranDuJeu,
   cEcranCreditsDuJeu,
   cEcranChargerPartieExistante,
   uMusic,
@@ -100,25 +102,22 @@ begin
 end;
 
 procedure TfrmMain.btnLancerUnePartieClick(Sender: TObject);
-var
-  f: TfrmEcranDuJeu;
 begin
-  f := TfrmEcranDuJeu.Create(self);
+  if assigned(fEcranDuJeu) then
+    fEcranDuJeu.Free;
+
+  fEcranDuJeu := TfrmEcranDuJeu.Create(self);
 
   // Chargement de la partie en attente de lancement
   if not FNomDeFichierDePartieACharger.isempty then
   begin
-    f.PartieEnCours.LoadFromFile(FNomDeFichierDePartieACharger);
+    fEcranDuJeu.PartieEnCours.LoadFromFile(FNomDeFichierDePartieACharger);
     dmmap.RefreshSceneBuffer;
     NomDeFichierDePartieACharger := '';
   end;
 
   // Affichage de l'écran du jeu
-{$IF Defined(IOS) or Defined(ANDROID)}
-  f.Show;
-{$ELSE}
-  f.ShowModal;
-{$ENDIF}
+  fEcranDuJeu.Show;
 end;
 
 procedure TfrmMain.btnReglagesClick(Sender: TObject);
@@ -155,6 +154,8 @@ end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+  fEcranDuJeu := nil;
+
   txtVersionDuProgramme.Text := 'Version : ' + cversion.ToString + '-' +
     cversiondate.ToString;
 
@@ -285,6 +286,9 @@ initialization
 // globalusemetal:=true;
 // METAL is slower than without METAL
 // https://quality.embarcadero.com/browse/RSP-41315
+{$ENDIF}
+{$IFDEF DEBUG}
+  ReportMemoryLeaksOnShutdown := true;
 {$ENDIF}
 
 end.

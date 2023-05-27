@@ -166,14 +166,16 @@ begin
 end;
 
 procedure TfrmEcranDuJeu.FormClose(Sender: TObject; var Action: TCloseAction);
+var
+  i: integer;
 begin
   if assigned(PartieEnCours) then
     PartieEnCours.SaveToFile;
-  tthread.ForceQueue(nil,
-    procedure
-    begin
-      Self.Free;
-    end);
+
+  // Il va être masqué. On désactive tout ce qui continuerait à agir dessus.
+  for i := 0 to ComponentCount - 1 do
+    if (Components[i] is TTimer) then
+      (Components[i] as TTimer).Enabled := false;
 end;
 
 procedure TfrmEcranDuJeu.FormCreate(Sender: TObject);
@@ -226,7 +228,7 @@ begin
 end;
 
 procedure TfrmEcranDuJeu.FormKeyDown(Sender: TObject; var Key: Word;
-var KeyChar: Char; Shift: TShiftState);
+  var KeyChar: Char; Shift: TShiftState);
 begin
   if assigned(FBoiteDeDialogueActive) then
   begin
@@ -283,6 +285,7 @@ begin
   // TODO : conditionner SaveState en fonction de l'état du programme
   // if assigned(PartieEnCours) then
   // PartieEnCours.SaveToFile;
+  btnPauseDuJeuClick(Sender);
 end;
 
 procedure TfrmEcranDuJeu.FormShow(Sender: TObject);
@@ -294,7 +297,7 @@ begin
 end;
 
 procedure TfrmEcranDuJeu.imgSceneMouseDown(Sender: TObject;
-Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+  Button: TMouseButton; Shift: TShiftState; X, Y: Single);
 begin
   ClicSurCarte(X, Y);
 end;
