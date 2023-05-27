@@ -53,30 +53,6 @@ object frmEcranDuJeu: TfrmEcranDuJeu
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      object txtNbCanards: TText
-        Align = Left
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Position.X = 5.000000000000000000
-        Position.Y = 5.000000000000000000
-        Size.Width = 200.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
-      end
-      object txtNbOeufs: TText
-        Align = Left
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Position.X = 215.000000000000000000
-        Position.Y = 5.000000000000000000
-        Size.Width = 200.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
-      end
       inline btnEffetsSonoresOnOff: TcBoutonOption
         Align = Right
         Margins.Left = 5.000000000000000000
@@ -189,6 +165,62 @@ object frmEcranDuJeu: TfrmEcranDuJeu
             3ABD308CF7D050809D1704E1D743B3324C06D8E5973D7C3EDF8BD9FEB187B757
             A4973D9E787865E5783CA6CEE7B3699400AC8019B0FF05D8ACDBB33D93B3DE00
             00000049454E44AE426082}
+        end
+      end
+      object ZoneNbCanards: TLayout
+        Align = Left
+        Padding.Left = 5.000000000000000000
+        Padding.Top = 5.000000000000000000
+        Padding.Right = 5.000000000000000000
+        Padding.Bottom = 5.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 65.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object BackgroundNbCanards: TRectangle
+          Align = Contents
+          Fill.Color = claBlack
+          Opacity = 0.400000005960464400
+          Size.Width = 50.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          XRadius = 10.000000000000000000
+          YRadius = 10.000000000000000000
+        end
+      end
+      object ZoneNbOeufs: TLayout
+        Align = Left
+        Padding.Left = 5.000000000000000000
+        Padding.Top = 5.000000000000000000
+        Padding.Right = 5.000000000000000000
+        Padding.Bottom = 5.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object BackgroundNbOeufs: TRectangle
+          Align = Contents
+          Fill.Color = claBlack
+          Opacity = 0.400000005960464400
+          Size.Width = 50.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          XRadius = 10.000000000000000000
+          YRadius = 10.000000000000000000
         end
       end
     end

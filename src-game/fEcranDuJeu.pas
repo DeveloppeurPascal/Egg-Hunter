@@ -18,15 +18,14 @@ uses
   templateDialogBox,
   FMX.Layouts,
   cJoypad,
-  cadBoutonOption;
+  cadBoutonOption,
+  Olf.FMX.TextImageFrame;
 
 type
   TfrmEcranDuJeu = class(TForm)
     imgScene: TImage;
     timerRefreshScene: TTimer;
     timerCyceDeJeu: TTimer;
-    txtNbCanards: TText;
-    txtNbOeufs: TText;
     zoneHeader: TLayout;
     ZoneFooter: TLayout;
     JoypadDeDroite: TcadJoypad;
@@ -34,6 +33,10 @@ type
     btnPauseDuJeu: TcBoutonOption;
     btnMusiqueOnOff: TcBoutonOption;
     JoypadDeGauche: TcadJoypad;
+    ZoneNbCanards: TLayout;
+    ZoneNbOeufs: TLayout;
+    BackgroundNbOeufs: TRectangle;
+    BackgroundNbCanards: TRectangle;
     procedure FormCreate(Sender: TObject);
     procedure timerRefreshSceneTimer(Sender: TObject);
     procedure imgSceneResize(Sender: TObject);
@@ -56,7 +59,9 @@ type
   private
     FBoiteDeDialogueActive: TtplDialogBox;
     fNbCanards: integer;
+    NbCanards: TOlfFMXTextImageFrame;
     fNbOeufs: integer;
+    NbOeufs: TOlfFMXTextImageFrame;
     procedure SetBoiteDeDialogueActive(const Value: TtplDialogBox);
     { Déclarations privées }
     procedure VersLaGauche;
@@ -64,6 +69,8 @@ type
     procedure VersLeHaut;
     procedure VersLeBas;
     procedure ClicSurCarte(X, Y: Single);
+    function GetNumberNameForAdobeStock47191065Font
+      (Sender: TOlfFMXTextImageFrame; AChar: Char): integer;
   public
     { Déclarations publiques }
     PartieEnCours: TPartieEnCours;
@@ -82,7 +89,8 @@ uses
   uMusic,
   uBruitages,
   uConfig,
-  Olf.RTL.Params;
+  Olf.RTL.Params,
+  udmAdobeStock_47191065orange_gris;
 
 procedure TfrmEcranDuJeu.btnEffetsSonoresOnOffClick(Sender: TObject);
 begin
@@ -186,13 +194,27 @@ begin
 
   // Initialisation des textes à l'écran
   fNbCanards := -1;
-  txtNbCanards.Text := '';
+  NbCanards := TOlfFMXTextImageFrame.Create(Self);
+  NbCanards.Parent := ZoneNbCanards;
+  NbCanards.Align := talignlayout.Right;
+  NbCanards.Font := dmAdobeStock_47191065orange_gris.ImageList;
+  NbCanards.LetterSpacing := 5;
+  NbCanards.OnGetImageIndexOfUnknowChar :=
+    GetNumberNameForAdobeStock47191065Font;
+  // TODO : ajouter un texte ou un visuel dans la zone permettant de voir que c'est le nombre de canards
+
   fNbOeufs := -1;
-  txtNbOeufs.Text := '';
+  NbOeufs := TOlfFMXTextImageFrame.Create(Self);
+  NbOeufs.Parent := ZoneNbOeufs;
+  NbOeufs.Align := talignlayout.Right;
+  NbOeufs.Font := dmAdobeStock_47191065orange_gris.ImageList;
+  NbOeufs.LetterSpacing := 5;
+  NbOeufs.OnGetImageIndexOfUnknowChar := GetNumberNameForAdobeStock47191065Font;
+  // TODO : ajouter un texte ou un visuel dans la zone permettant de voir que c'est le nombre d'oeufs
 
   // Choix du niveau à charger
 {$IF Defined(DEBUG) and Defined(MSWINDOWS)}
-  NiveauACharger := 'Niveau00';
+  NiveauACharger := 'Niveau00'; // or other level name for debugging or tests
 {$ELSE}
   NiveauACharger := 'Niveau00';
 {$ENDIF}
@@ -296,6 +318,22 @@ begin
     timerCyceDeJeu.Enabled := true;
 end;
 
+function TfrmEcranDuJeu.GetNumberNameForAdobeStock47191065Font
+  (Sender: TOlfFMXTextImageFrame; AChar: Char): integer;
+begin
+  // orange_0	0
+  // orange_1	1
+  // orange_2	2
+  // orange_3	3
+  // orange_4	4
+  // orange_5	5
+  // orange_6	6
+  // orange_7	7
+  // orange_8	8
+  // orange_9	9
+  result := ord(AChar) - ord('0');
+end;
+
 procedure TfrmEcranDuJeu.imgSceneMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Single);
 begin
@@ -329,13 +367,23 @@ begin
   if (fNbCanards <> PartieEnCours.NbCanardsSurLaMap) then
   begin
     fNbCanards := PartieEnCours.NbCanardsSurLaMap;
-    txtNbCanards.Text := 'Canards :' + fNbCanards.ToString;
+    NbCanards.Text := fNbCanards.ToString;
+    if ZoneNbCanards.Width + ZoneNbCanards.padding.Left +
+      ZoneNbCanards.padding.Right < NbCanards.Width then
+      ZoneNbCanards.Width := NbCanards.Width + ZoneNbCanards.padding.Left +
+        ZoneNbCanards.padding.Right;
+    // TODO : ajouter la taille de l'élément indiquant que c'est sur les canards
   end;
   // TODO : Transformer fNbOeufs en propriété pour adapter l'affichage automatiquement
   if (fNbOeufs <> PartieEnCours.NbOeufsSurLaMap) then
   begin
     fNbOeufs := PartieEnCours.NbOeufsSurLaMap;
-    txtNbOeufs.Text := 'Oeufs à ramasser : ' + fNbOeufs.ToString;
+    NbOeufs.Text := fNbOeufs.ToString;
+    if ZoneNbOeufs.Width + ZoneNbOeufs.padding.Left + ZoneNbOeufs.padding.Right
+      < NbOeufs.Width then
+      ZoneNbOeufs.Width := NbOeufs.Width + ZoneNbOeufs.padding.Left +
+        ZoneNbOeufs.padding.Right;
+    // TODO : ajouter la taille de l'élément indiquant que c'est sur les oeufs
   end;
 end;
 
