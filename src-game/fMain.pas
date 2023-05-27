@@ -3,11 +3,24 @@ unit fMain;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Layouts, cBoutonMenu,
-  FMX.Objects, cBoiteDeDialogue_370x370, templateDialogBox, uDMMap;
+  FMX.Types,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Graphics,
+  FMX.Dialogs,
+  FMX.Controls.Presentation,
+  FMX.StdCtrls,
+  FMX.Layouts,
+  cBoutonMenu,
+  FMX.Objects,
+  cBoiteDeDialogue_370x370,
+  templateDialogBox,
+  uDMMap, FMX.Effects;
 
 type
   TfrmMain = class(TForm)
@@ -20,6 +33,10 @@ type
     imgBackground: TImage;
     Text1: TText;
     TimerLancePartieReprise: TTimer;
+    ZoneFooter: TLayout;
+    txtVersionDuProgramme: TText;
+    ZIndexMenu: TLayout;
+    GlowEffect1: TGlowEffect;
     procedure FormKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
     procedure btnFermerClick(Sender: TObject);
@@ -40,7 +57,8 @@ type
     procedure SetBoiteDeDialogue(const Value: TtplDialogBox);
     procedure ChargePartieExistante(NomDuFichier: string);
     procedure SetNomDeFichierDePartieACharger(const Value: string);
-    property     NomDeFichierDePartieACharger: string read FNomDeFichierDePartieACharger write SetNomDeFichierDePartieACharger;
+    property NomDeFichierDePartieACharger: string
+      read FNomDeFichierDePartieACharger write SetNomDeFichierDePartieACharger;
   public
     { Déclarations publiques }
     property BoiteDeDialogue: TtplDialogBox read FBoiteDeDialogue
@@ -54,8 +72,14 @@ implementation
 
 {$R *.fmx}
 
-uses fEcranDuJeu, cEcranCreditsDuJeu, cEcranChargerPartieExistante, uMusic,
-  cEcranOptionsDuJeu, uConfig;
+uses
+  fEcranDuJeu,
+  cEcranCreditsDuJeu,
+  cEcranChargerPartieExistante,
+  uMusic,
+  cEcranOptionsDuJeu,
+  uConfig,
+  uVersionDuProgramme;
 
 procedure TfrmMain.btnCreditsDuJeuClick(Sender: TObject);
 var
@@ -131,6 +155,9 @@ end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+  txtVersionDuProgramme.Text := 'Version : ' + cversion.ToString + '-' +
+    cversiondate.ToString;
+
   NomDeFichierDePartieACharger := '';
   FBoiteDeDialogue := nil;
 {$IF Defined(IOS) or Defined(ANDROID)}
@@ -240,21 +267,24 @@ end;
 procedure TfrmMain.SetNomDeFichierDePartieACharger(const Value: string);
 begin
   FNomDeFichierDePartieACharger := Value;
-  TimerLancePartieReprise.Enabled:=not value.IsEmpty;
+  TimerLancePartieReprise.Enabled := not Value.isempty;
 end;
 
 procedure TfrmMain.TimerLancePartieRepriseTimer(Sender: TObject);
 begin
-  if not FNomDeFichierDePartieACharger.isempty then begin
+  if not FNomDeFichierDePartieACharger.isempty then
+  begin
     btnLancerUnePartieClick(btnLancerUnePartie);
-    TimerLancePartieReprise.Enabled:=false;
+    TimerLancePartieReprise.Enabled := false;
   end;
 end;
 
 initialization
+
 {$IF Defined(MACOS)}
 // globalusemetal:=true;
 // METAL is slower than without METAL
 // https://quality.embarcadero.com/browse/RSP-41315
 {$ENDIF}
+
 end.
