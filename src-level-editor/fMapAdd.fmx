@@ -1,0 +1,145 @@
+object frmMapAdd: TfrmMapAdd
+  Left = 0
+  Top = 0
+  Caption = 'Egg Hunter - Level Editor - Create map'
+  ClientHeight = 629
+  ClientWidth = 859
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  FullScreen = True
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Center
+    Size.Width = 320.000000000000000000
+    Size.Height = 287.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Layout2: TLayout
+      Align = Top
+      Size.Width = 320.000000000000000000
+      Size.Height = 217.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object lblLevelFileName: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 310.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.VertAlign = Leading
+        Text = 'Nom du fichier du niveau'
+        TabOrder = 0
+        object edtLevelFileName: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Bottom
+          TabOrder = 4
+          Position.Y = 18.000000000000000000
+          Size.Width = 310.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object lblLevelHeight: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 105.000000000000000000
+        Size.Width = 310.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.VertAlign = Leading
+        Text = 'Hauteur du niveau'
+        TabOrder = 2
+        object edtLevelHeight: TSpinBox
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Bottom
+          TabOrder = 4
+          Cursor = crIBeam
+          DecimalDigits = 0
+          RepeatClick = True
+          Position.Y = 18.000000000000000000
+          Size.Width = 310.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object lblLevelWidth: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 55.000000000000000000
+        Size.Width = 310.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.VertAlign = Leading
+        Text = 'Largeur du niveau'
+        TabOrder = 1
+        object edtLevelWidth: TSpinBox
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Bottom
+          TabOrder = 4
+          Cursor = crIBeam
+          Position.Y = 18.000000000000000000
+          Size.Width = 310.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      inline btnEditerLeNiveau: TcadBoutonMenu
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 155.000000000000000000
+        Size.Width = 310.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = btnEditerLeNiveauClick
+        inherited Background: TRectangle
+          Size.Width = 310.000000000000000000
+          inherited Text: TText
+            Size.Width = 310.000000000000000000
+            Text = 'Editer le niveau'
+          end
+        end
+      end
+    end
+    inline btnRetourAuMenu: TcadBoutonMenu
+      Align = Top
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 222.000000000000000000
+      Size.Width = 310.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnRetourAuMenuClick
+      inherited Background: TRectangle
+        Size.Width = 310.000000000000000000
+        inherited Text: TText
+          Size.Width = 310.000000000000000000
+          Text = 'Retour au menu'
+        end
+      end
+    end
+  end
+end

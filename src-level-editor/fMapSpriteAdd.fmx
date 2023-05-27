@@ -1,0 +1,117 @@
+object frmMapSpriteAdd: TfrmMapSpriteAdd
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  BorderStyle = Single
+  Caption = 'Egg Hunter - Level Editor - Add sprite to map'
+  ClientHeight = 508
+  ClientWidth = 814
+  Position = MainFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  DesignerMasterStyle = 0
+  object cbListeSpriteSheetsDisponibles: TComboBox
+    Align = Top
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 5.000000000000000000
+    Size.Width = 804.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    OnChange = cbListeSpriteSheetsDisponiblesChange
+  end
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Size.Width = 804.000000000000000000
+    Size.Height = 406.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    OnResize = VertScrollBox1Resize
+    Viewport.Width = 804.000000000000000000
+    Viewport.Height = 406.000000000000000000
+    object zoneSpritesDisponibles: TFlowLayout
+      Align = Top
+      Size.Width = 804.000000000000000000
+      Size.Height = 105.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Justify = Left
+      JustifyLastLine = Left
+      FlowDirection = LeftToRight
+    end
+  end
+  object GridPanelLayout1: TGridPanelLayout
+    Align = Bottom
+    Position.Y = 448.000000000000000000
+    Size.Width = 814.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    ColumnCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = btnAjoutSpritesSelectionnes
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = btnFermer
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    inline btnAjoutSpritesSelectionnes: TcadBoutonMenu
+      Align = Center
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnAjoutSpritesSelectionnesClick
+      inherited Background: TRectangle
+        inherited Text: TText
+          Text = 'Ajouter les sprites s'#233'lectionn'#233's'
+        end
+      end
+    end
+    inline btnFermer: TcadBoutonMenu
+      Align = Center
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnFermerClick
+      inherited Background: TRectangle
+        inherited Text: TText
+          Text = 'Fermer sans ajouter'
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,15 @@
+object cadSpriteButton: TcadSpriteButton
+  Size.Width = 64.000000000000000000
+  Size.Height = 64.000000000000000000
+  Size.PlatformDefault = False
+  object SpriteImage: TRectangle
+    Align = Client
+    Fill.Bitmap.WrapMode = TileStretch
+    Fill.Kind = Bitmap
+    Locked = True
+    HitTest = False
+    Size.Width = 64.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+  end
+end

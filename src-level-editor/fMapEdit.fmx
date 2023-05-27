@@ -1,0 +1,372 @@
+object frmMapEdit: TfrmMapEdit
+  Left = 0
+  Top = 0
+  Caption = 'Egg Hunter - Level Editor - Edit map'
+  ClientHeight = 748
+  ClientWidth = 1088
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  FullScreen = True
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnKeyDown = FormKeyDown
+  DesignerMasterStyle = 0
+  object zoneToolBar: TLayout
+    Align = Top
+    Size.Width = 1088.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    inline btnSave: TcadToolButtons
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnSaveClick
+    end
+    inline btnQuitter: TcadToolButtons
+      Align = Right
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 1033.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnQuitterClick
+    end
+    inline btnRemplissage: TcadToolButtons
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 485.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnRemplissageClick
+    end
+    inline btnAjoutSprite: TcadToolButtons
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 425.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnAjoutSpriteClick
+    end
+    inline btnZoomReduire: TcadToolButtons
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 365.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnZoomReduireClick
+    end
+    inline btnZoomAgrandir: TcadToolButtons
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 305.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnZoomAgrandirClick
+    end
+    inline btnDeplacementVersLeBas: TcadToolButtons
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 245.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnDeplacementVersLeBasClick
+    end
+    inline btnDeplacementVersLeHaut: TcadToolButtons
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 185.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnDeplacementVersLeHautClick
+    end
+    inline btnDeplacementVersLaDroite: TcadToolButtons
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 125.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnDeplacementVersLaDroiteClick
+    end
+    inline btnDeplacementVersLaGauche: TcadToolButtons
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 65.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnDeplacementVersLaGaucheClick
+    end
+    inline btnUndo: TcadToolButtons
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 545.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnUndoClick
+    end
+    inline btnRedo: TcadToolButtons
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 605.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = btnRedoClick
+    end
+  end
+  object zonePalette: TLayout
+    Align = Right
+    Position.X = 877.000000000000000000
+    Position.Y = 60.000000000000000000
+    Size.Width = 211.000000000000000000
+    Size.Height = 688.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object zoneSpritesDeLaMap: TVertScrollBox
+      Align = Client
+      Size.Width = 211.000000000000000000
+      Size.Height = 368.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnResize = zoneSpritesDeLaMapResize
+      Viewport.Width = 211.000000000000000000
+      Viewport.Height = 368.000000000000000000
+      object zoneSpritesDeLaMapContent: TFlowLayout
+        Align = Top
+        Size.Width = 211.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Justify = Left
+        JustifyLastLine = Left
+        FlowDirection = LeftToRight
+      end
+    end
+    object zoneProprietes: TLayout
+      Align = Bottom
+      Position.Y = 368.000000000000000000
+      Size.Width = 211.000000000000000000
+      Size.Height = 320.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object lblSpriteSource: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 65.000000000000000000
+        Size.Width = 201.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.VertAlign = Leading
+        Text = 'Spritesheet d'#39'origine (ID)'
+        TabOrder = 1
+        object lblSpriteSourceValue: TLabel
+          Align = Bottom
+          Position.Y = 33.000000000000000000
+          Size.Width = 201.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Trailing
+          Text = 'lblSpriteSourceValue'
+          TabOrder = 4
+        end
+      end
+      object lblSpriteType: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 245.000000000000000000
+        Size.Width = 201.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.VertAlign = Leading
+        Text = 'Type d'#39#233'l'#233'ment'
+        TabOrder = 3
+        object cbSpriteType: TComboBox
+          Align = Bottom
+          Position.Y = 28.000000000000000000
+          Size.Width = 201.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          OnChange = cbSpriteTypeChange
+        end
+      end
+      object lblSpriteBloquant: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 185.000000000000000000
+        Size.Width = 201.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.VertAlign = Leading
+        Text = 'D'#233'clenche collision'
+        TabOrder = 4
+        object swSpriteBloquant: TSwitch
+          Align = Bottom
+          IsChecked = False
+          Position.Y = 23.000000000000000000
+          Size.Width = 201.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          OnSwitch = swSpriteBloquantSwitch
+        end
+      end
+      object lblSpriteZIndex: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 125.000000000000000000
+        Size.Width = 201.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.VertAlign = Leading
+        Text = 'Z-Index'
+        TabOrder = 2
+        object edtSpriteZIndex: TSpinBox
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Bottom
+          TabOrder = 4
+          Cursor = crIBeam
+          DecimalDigits = 0
+          Max = 10.000000000000000000
+          Position.Y = 28.000000000000000000
+          Size.Width = 201.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          OnChangeTracking = edtSpriteZIndexChangeTracking
+        end
+      end
+      object lblSpriteID: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 201.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.VertAlign = Leading
+        Text = 'ID Sprite'
+        TabOrder = 0
+        object lblSpriteIDValue: TLabel
+          Align = Bottom
+          Position.Y = 33.000000000000000000
+          Size.Width = 201.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Trailing
+          Text = 'lblSpriteSourceValue'
+          TabOrder = 4
+        end
+      end
+    end
+  end
+  object PaletteSplitter: TSplitter
+    Align = Right
+    Cursor = crHSplit
+    MinSize = 20.000000000000000000
+    Position.X = 861.000000000000000000
+    Position.Y = 60.000000000000000000
+    Size.Width = 16.000000000000000000
+    Size.Height = 688.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object imgScene: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = Client
+    Size.Width = 861.000000000000000000
+    Size.Height = 688.000000000000000000
+    Size.PlatformDefault = False
+    WrapMode = Original
+    OnMouseDown = imgSceneMouseDown
+    OnMouseMove = imgSceneMouseMove
+    OnResize = imgSceneResize
+  end
+  object timerRefreshScene: TTimer
+    Interval = 16
+    OnTimer = timerRefreshSceneTimer
+    Left = 616
+    Top = 104
+  end
+end

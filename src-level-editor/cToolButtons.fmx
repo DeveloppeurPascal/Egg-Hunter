@@ -1,0 +1,28 @@
+object cadToolButtons: TcadToolButtons
+  Size.Width = 50.000000000000000000
+  Size.Height = 50.000000000000000000
+  Size.PlatformDefault = False
+  object Background: TRectangle
+    Align = Client
+    Locked = True
+    HitTest = False
+    Padding.Left = 10.000000000000000000
+    Padding.Top = 10.000000000000000000
+    Padding.Right = 10.000000000000000000
+    Padding.Bottom = 10.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    XRadius = 10.000000000000000000
+    YRadius = 10.000000000000000000
+    object SVG: TPath
+      Align = Client
+      Locked = True
+      HitTest = False
+      Size.Width = 30.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Fit
+    end
+  end
+end
