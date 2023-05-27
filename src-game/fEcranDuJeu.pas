@@ -82,7 +82,7 @@ uses
   uMusic,
   uBruitages,
   uConfig,
-  uParam;
+  Olf.RTL.Params;
 
 procedure TfrmEcranDuJeu.btnEffetsSonoresOnOffClick(Sender: TObject);
 begin

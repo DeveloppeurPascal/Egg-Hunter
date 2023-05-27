@@ -1,5 +1,4 @@
 program EggHunter;
-
 uses
   System.StartUpCopy,
   FMX.Forms,
@@ -22,14 +21,13 @@ uses
   uBruitages in 'uBruitages.pas',
   cEcranOptionsDuJeu in 'cEcranOptionsDuJeu.pas' {cadEcranOptionsDuJeu: TFrame},
   cCheckbox in 'cCheckbox.pas' {cadCheckbox: TFrame},
-  uParam in 'uParam.pas',
   uConfig in 'uConfig.pas',
   cTrackbar in 'cTrackbar.pas' {cadTrackBar: TFrame},
   cJoypad in 'cJoypad.pas' {cadJoypad: TFrame},
-  cadBoutonOption in 'cadBoutonOption.pas' {cBoutonOption: TFrame};
+  cadBoutonOption in 'cadBoutonOption.pas' {cBoutonOption: TFrame},
+  Olf.RTL.Params in '..\lib-externes\librairies\Olf.RTL.Params.pas';
 
 {$R *.res}
-
 begin
   Application.Initialize;
   Application.FormFactor.Orientations := [TFormOrientation.Landscape, TFormOrientation.InvertedLandscape];

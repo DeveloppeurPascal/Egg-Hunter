@@ -3,11 +3,24 @@ unit cEcranOptionsDuJeu;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  templateDialogBox, FMX.Ani, cBoiteDeDialogue_370x370, FMX.Objects, cCheckbox,
-  FMX.Layouts, cTrackbar;
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Dialogs,
+  FMX.StdCtrls,
+  templateDialogBox,
+  FMX.Ani,
+  cBoiteDeDialogue_370x370,
+  FMX.Objects,
+  cCheckbox,
+  FMX.Layouts,
+  cTrackbar;
 
 type
   TcadEcranOptionsDuJeu = class(TtplDialogBox)
@@ -42,7 +55,11 @@ implementation
 
 {$R *.fmx}
 
-uses uConfig, uBruitages, uMusic, uParam;
+uses
+  uConfig,
+  uBruitages,
+  uMusic,
+  Olf.RTL.Params;
 
 procedure TcadEcranOptionsDuJeu.cbBruitagesClick(Sender: TObject);
 begin

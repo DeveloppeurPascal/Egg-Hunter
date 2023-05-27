@@ -34,7 +34,10 @@ type
 implementation
 
 uses
-  system.sysutils, system.IOUtils, uParam, FMX.Platform;
+  system.sysutils,
+  system.IOUtils,
+  FMX.Platform,
+  Olf.RTL.Params;
 
 const
   CBruitagesOnOff = 'BruitagesOnOff';
