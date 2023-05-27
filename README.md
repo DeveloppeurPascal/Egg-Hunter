@@ -22,7 +22,8 @@ To download this project you better should use "git" command but you also can do
 
 This project depends on :
 
-* [DeveloppeurPascal/librairies](https://github.com/DeveloppeurPascal/librairies.git) must be in subfolder ./lib-externes/librairies
+* [DeveloppeurPascal/librairies](https://github.com/DeveloppeurPascal/librairies) must be in subfolder ./lib-externes/librairies
+* [DeveloppeurPascal/Delphi-Game-Engine](https://github.com/DeveloppeurPascal/Delphi-Game-Engine) must be in subfolder ./lib-externes/Delphi-Game-Engine
 
 ## How to ask a new feature, report a bug or a security issue ?
 

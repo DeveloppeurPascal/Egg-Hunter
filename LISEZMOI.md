@@ -22,7 +22,8 @@ Pour télécharger ce projet il est recommandé de passer par "git" mais vous po
 
 Ce dépôt de code dépend des dépôts suivants :
 
-* [DeveloppeurPascal/librairies](https://github.com/DeveloppeurPascal/librairies.git) doit se trouver dans le sous-dossier ./lib-externes/librairies
+* [DeveloppeurPascal/librairies](https://github.com/DeveloppeurPascal/librairies) doit se trouver dans le sous-dossier ./lib-externes/librairies
+* [DeveloppeurPascal/Delphi-Game-Engine](https://github.com/DeveloppeurPascal/Delphi-Game-Engine) doit se trouver dans le sous-dossier ./lib-externes/Delphi-Game-Engine
 
 ## Comment demander une nouvelle fonctionnalité, signaler un bogue ou une faille de sécurité ?
 
