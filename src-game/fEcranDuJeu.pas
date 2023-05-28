@@ -19,8 +19,7 @@ uses
   FMX.Layouts,
   cJoypad,
   cadBoutonOption,
-  Olf.FMX.TextImageFrame,
-  Gamolf.RTL.Joystick;
+  Olf.FMX.TextImageFrame;
 
 type
   TfrmEcranDuJeu = class(TForm)
@@ -50,10 +49,6 @@ type
       Shift: TShiftState; X, Y: Single);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormSaveState(Sender: TObject);
-    procedure cadJoypad1btnVersLaDroiteClick(Sender: TObject);
-    procedure cadJoypad1btnVersLaGaucheClick(Sender: TObject);
-    procedure cadJoypad1btnVersLeBasClick(Sender: TObject);
-    procedure cadJoypad1btnVersLeHautClick(Sender: TObject);
     procedure btnMusiqueOnOffClick(Sender: TObject);
     procedure btnEffetsSonoresOnOffClick(Sender: TObject);
     procedure btnPauseDuJeuClick(Sender: TObject);
@@ -74,7 +69,7 @@ type
       (Sender: TOlfFMXTextImageFrame; AChar: Char): integer;
     procedure SetNbCanardsOnMap(const Value: integer);
     procedure SetNbOeufsOnMap(const Value: integer);
-    procedure MoveWithDPadangle(gc: IGamolfJoystickService; dpad: Word);
+    procedure MoveWithDPadangle(dpad: Word);
   public
     PartieEnCours: TPartieEnCours;
     property BoiteDeDialogueActive: TtplDialogBox read FBoiteDeDialogueActive
@@ -97,7 +92,8 @@ uses
   uConfig,
   Olf.RTL.Params,
   udmAdobeStock_47191065orange_noir,
-  FMX.Platform;
+  FMX.Platform,
+  Gamolf.RTL.Joystick;
 
 procedure TfrmEcranDuJeu.btnEffetsSonoresOnOffClick(Sender: TObject);
 begin
@@ -126,26 +122,6 @@ end;
 procedure TfrmEcranDuJeu.btnPauseDuJeuClick(Sender: TObject);
 begin
   close;
-end;
-
-procedure TfrmEcranDuJeu.cadJoypad1btnVersLaDroiteClick(Sender: TObject);
-begin
-  VersLaDroite;
-end;
-
-procedure TfrmEcranDuJeu.cadJoypad1btnVersLaGaucheClick(Sender: TObject);
-begin
-  VersLaGauche;
-end;
-
-procedure TfrmEcranDuJeu.cadJoypad1btnVersLeBasClick(Sender: TObject);
-begin
-  VersLeBas;
-end;
-
-procedure TfrmEcranDuJeu.cadJoypad1btnVersLeHautClick(Sender: TObject);
-begin
-  VersLeHaut;
 end;
 
 procedure TfrmEcranDuJeu.ClicSurCarte(X, Y: Single);
@@ -361,16 +337,15 @@ begin
     PartieEnCours.CentreLaSceneSurLejoueur;
 end;
 
-procedure TfrmEcranDuJeu.MoveWithDPadangle(gc: IGamolfJoystickService;
-  dpad: Word);
+procedure TfrmEcranDuJeu.MoveWithDPadangle(dpad: Word);
 begin
-  if gc.isDPad(dpad, tjoystickdpad.top) then
+  if dpad = ord(tjoystickdpad.top) then
     VersLeHaut
-  else if gc.isDPad(dpad, tjoystickdpad.Right) then
+  else if dpad = ord(tjoystickdpad.Right) then
     VersLaDroite
-  else if gc.isDPad(dpad, tjoystickdpad.bottom) then
+  else if dpad = ord(tjoystickdpad.bottom) then
     VersLeBas
-  else if gc.isDPad(dpad, tjoystickdpad.Left) then
+  else if dpad = ord(tjoystickdpad.Left) then
     VersLaGauche;
 end;
 
@@ -423,25 +398,27 @@ begin
 
           // DPAD / POV
           if GameController.hasDPad(JoystickID) then
-            MoveWithDPadangle(GameController, JoystickInfo.dpad);
+            MoveWithDPadangle(JoystickInfo.dpad);
 
           // Left Joystick (axes X,Y)
           if (X = PartieEnCours.JoueurCol) and (Y = PartieEnCours.JoueurLig)
           then
-            MoveWithDPadangle(GameController,
-              GameController.getDPadFromXY(JoystickInfo.Axes[0],
+            MoveWithDPadangle(GameController.getDPadFromXY(JoystickInfo.Axes[0],
               JoystickInfo.Axes[1]));
 
           // Right Joystick
           if (X = PartieEnCours.JoueurCol) and (Y = PartieEnCours.JoueurLig)
           then
-            MoveWithDPadangle(GameController,
-              GameController.getDPadFromXY(JoystickInfo.Axes[2],
+            MoveWithDPadangle(GameController.getDPadFromXY(JoystickInfo.Axes[2],
               JoystickInfo.Axes[3]));
         end);
 
     // onScreen Joypad
-    // TODO : change joypad movements
+    if TConfig.InterfaceTactileOnOff then
+    begin
+      MoveWithDPadangle(JoypadDeGauche.dpad);
+      MoveWithDPadangle(JoypadDeDroite.dpad);
+    end;
 
     // Keyboard move (arrows)
     // TODO : change actual key management
