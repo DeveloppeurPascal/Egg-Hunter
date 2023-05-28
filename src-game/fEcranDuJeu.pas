@@ -53,12 +53,15 @@ type
     procedure btnEffetsSonoresOnOffClick(Sender: TObject);
     procedure btnPauseDuJeuClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
+      Shift: TShiftState);
   private
     FBoiteDeDialogueActive: TtplDialogBox;
     NbCanardsText: TOlfFMXTextImageFrame;
     NbOeufsText: TOlfFMXTextImageFrame;
     FNbOeufsOnMap: integer;
     FNbCanardsOnMap: integer;
+    FKeyDPad: Word;
     procedure SetBoiteDeDialogueActive(const Value: TtplDialogBox);
     procedure VersLaGauche;
     procedure VersLaDroite;
@@ -70,6 +73,7 @@ type
     procedure SetNbCanardsOnMap(const Value: integer);
     procedure SetNbOeufsOnMap(const Value: integer);
     procedure MoveWithDPadangle(dpad: Word);
+    procedure SetKeyDPad(const Value: Word);
   public
     PartieEnCours: TPartieEnCours;
     property BoiteDeDialogueActive: TtplDialogBox read FBoiteDeDialogueActive
@@ -77,6 +81,7 @@ type
     property NbCanardsOnMap: integer read FNbCanardsOnMap
       write SetNbCanardsOnMap;
     property NbOeufsOnMap: integer read FNbOeufsOnMap write SetNbOeufsOnMap;
+    property KeyDPad: Word read FKeyDPad write SetKeyDPad;
   end;
 
 implementation
@@ -176,6 +181,8 @@ var
 begin
   FBoiteDeDialogueActive := nil;
 
+  KeyDPad := ord(TJoystickDPad.center);
+
   // Initialisation des textes à l'écran
   FNbCanardsOnMap := -1;
   NbCanardsText := TOlfFMXTextImageFrame.Create(Self);
@@ -262,26 +269,37 @@ begin
     begin
       Key := 0;
       KeyChar := #0;
-      VersLaGauche;
+      KeyDPad := ord(TJoystickDPad.Left);
     end
     else if Key = vkright then
     begin
       Key := 0;
       KeyChar := #0;
-      VersLaDroite;
+      KeyDPad := ord(TJoystickDPad.Right);
     end
     else if Key = vkup then
     begin
       Key := 0;
       KeyChar := #0;
-      VersLeHaut;
+      KeyDPad := ord(TJoystickDPad.top);
     end
     else if Key = vkdown then
     begin
       Key := 0;
       KeyChar := #0;
-      VersLeBas;
+      KeyDPad := ord(TJoystickDPad.bottom);
     end;
+  end;
+end;
+
+procedure TfrmEcranDuJeu.FormKeyUp(Sender: TObject; var Key: Word;
+  var KeyChar: Char; Shift: TShiftState);
+begin
+  if Key in [vkup, vkright, vkdown, vkLeft] then
+  begin
+    KeyDPad := ord(TJoystickDPad.center);
+    Key := 0;
+    KeyChar := #0;
   end;
 end;
 
@@ -340,19 +358,24 @@ end;
 
 procedure TfrmEcranDuJeu.MoveWithDPadangle(dpad: Word);
 begin
-  if dpad = ord(tjoystickdpad.top) then
+  if dpad = ord(TJoystickDPad.top) then
     VersLeHaut
-  else if dpad = ord(tjoystickdpad.Right) then
+  else if dpad = ord(TJoystickDPad.Right) then
     VersLaDroite
-  else if dpad = ord(tjoystickdpad.bottom) then
+  else if dpad = ord(TJoystickDPad.bottom) then
     VersLeBas
-  else if dpad = ord(tjoystickdpad.Left) then
+  else if dpad = ord(TJoystickDPad.Left) then
     VersLaGauche;
 end;
 
 procedure TfrmEcranDuJeu.SetBoiteDeDialogueActive(const Value: TtplDialogBox);
 begin
   FBoiteDeDialogueActive := Value;
+end;
+
+procedure TfrmEcranDuJeu.SetKeyDPad(const Value: Word);
+begin
+  FKeyDPad := Value;
 end;
 
 procedure TfrmEcranDuJeu.SetNbCanardsOnMap(const Value: integer);
@@ -382,7 +405,7 @@ begin
   // Player life or UI movements
   if assigned(FBoiteDeDialogueActive) then
   begin
-    // TODO : change focus control with arrow keyrs or controller movements
+    // TODO : change focus control with arrow keys or controller movements
   end
   else
   begin
@@ -422,7 +445,7 @@ begin
     end;
 
     // Keyboard move (arrows)
-    // TODO : change actual key management
+    MoveWithDPadangle(KeyDPad);
   end;
 
   // Other elements life
