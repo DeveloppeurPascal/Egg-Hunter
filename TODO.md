@@ -4,6 +4,7 @@
 
 * traiter les TODO dans les fichiers sources
 
+
 * traduire les textes de l'éditeur de niveau
 * ajouter les autres sprite sheets provenant de David Gervais
 * mettre les sprite sheets de départ sur un serveur et pouvoir les rapatrier sans les avoir encodées dans le programme
