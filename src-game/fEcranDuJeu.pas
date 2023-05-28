@@ -27,7 +27,6 @@ type
     timerRefreshScene: TTimer;
     timerCyceDeJeu: TTimer;
     zoneHeader: TLayout;
-    ZoneFooter: TLayout;
     JoypadDeDroite: TcadJoypad;
     btnEffetsSonoresOnOff: TcBoutonOption;
     btnPauseDuJeu: TcBoutonOption;
@@ -90,7 +89,7 @@ uses
   uBruitages,
   uConfig,
   Olf.RTL.Params,
-  udmAdobeStock_47191065orange_gris;
+  udmAdobeStock_47191065orange_noir;
 
 procedure TfrmEcranDuJeu.btnEffetsSonoresOnOffClick(Sender: TObject);
 begin
@@ -197,7 +196,7 @@ begin
   NbCanards := TOlfFMXTextImageFrame.Create(Self);
   NbCanards.Parent := ZoneNbCanards;
   NbCanards.Align := talignlayout.Right;
-  NbCanards.Font := dmAdobeStock_47191065orange_gris.ImageList;
+  NbCanards.Font := dmAdobeStock_47191065orange_noir.ImageList;
   NbCanards.LetterSpacing := 5;
   NbCanards.OnGetImageIndexOfUnknowChar :=
     GetNumberNameForAdobeStock47191065Font;
@@ -207,7 +206,7 @@ begin
   NbOeufs := TOlfFMXTextImageFrame.Create(Self);
   NbOeufs.Parent := ZoneNbOeufs;
   NbOeufs.Align := talignlayout.Right;
-  NbOeufs.Font := dmAdobeStock_47191065orange_gris.ImageList;
+  NbOeufs.Font := dmAdobeStock_47191065orange_noir.ImageList;
   NbOeufs.LetterSpacing := 5;
   NbOeufs.OnGetImageIndexOfUnknowChar := GetNumberNameForAdobeStock47191065Font;
   // TODO : ajouter un texte ou un visuel dans la zone permettant de voir que c'est le nombre d'oeufs

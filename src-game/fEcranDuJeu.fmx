@@ -28,19 +28,6 @@ object frmEcranDuJeu: TfrmEcranDuJeu
     WrapMode = Stretch
     OnMouseDown = imgSceneMouseDown
     OnResize = imgSceneResize
-    object ZoneFooter: TLayout
-      Align = Bottom
-      Margins.Left = 10.000000000000000000
-      Margins.Top = 10.000000000000000000
-      Margins.Right = 10.000000000000000000
-      Margins.Bottom = 10.000000000000000000
-      Position.X = 10.000000000000000000
-      Position.Y = 420.000000000000000000
-      Size.Width = 620.000000000000000000
-      Size.Height = 50.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-    end
     object zoneHeader: TLayout
       Align = Top
       Margins.Left = 10.000000000000000000
@@ -50,19 +37,19 @@ object frmEcranDuJeu: TfrmEcranDuJeu
       Position.X = 10.000000000000000000
       Position.Y = 10.000000000000000000
       Size.Width = 620.000000000000000000
-      Size.Height = 50.000000000000000000
+      Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 1
+      TabOrder = 0
       inline btnEffetsSonoresOnOff: TcBoutonOption
         Align = Right
         Margins.Left = 5.000000000000000000
         Margins.Top = 1.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 1.000000000000000000
-        Position.X = 509.000000000000000000
+        Position.X = 469.000000000000000000
         Position.Y = 1.000000000000000000
-        Size.Width = 48.000000000000000000
-        Size.Height = 48.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 68.000000000000000000
         Size.PlatformDefault = False
         OnClick = btnEffetsSonoresOnOffClick
         inherited btnImage: TRectangle
@@ -93,6 +80,8 @@ object frmEcranDuJeu: TfrmEcranDuJeu
             56803653BCFCC4E3F1F8C60B9C372EB88B168BE527EF8378E183BBFCB287C7E3
             797BB65FECF1F68AF4B2C78B8857560E8743EC743A3D4D25C0159CC1FD0FA0CD
             FDC94F2782730000000049454E44AE426082}
+          Size.Width = 68.000000000000000000
+          Size.Height = 68.000000000000000000
         end
       end
       inline btnPauseDuJeu: TcBoutonOption
@@ -101,10 +90,10 @@ object frmEcranDuJeu: TfrmEcranDuJeu
         Margins.Top = 1.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 1.000000000000000000
-        Position.X = 567.000000000000000000
+        Position.X = 547.000000000000000000
         Position.Y = 1.000000000000000000
-        Size.Width = 48.000000000000000000
-        Size.Height = 48.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 68.000000000000000000
         Size.PlatformDefault = False
         OnClick = btnPauseDuJeuClick
         inherited btnImage: TRectangle
@@ -125,6 +114,8 @@ object frmEcranDuJeu: TfrmEcranDuJeu
             99D5E556E3C09D288AF2B955822C5EC07DBAEC6159D6796F7FECE1F60ABDEC71
             247065A56DDBA0EFFBDD38015C813370FF0178167654760BF581000000004945
             4E44AE426082}
+          Size.Width = 68.000000000000000000
+          Size.Height = 68.000000000000000000
         end
       end
       inline btnMusiqueOnOff: TcBoutonOption
@@ -133,10 +124,10 @@ object frmEcranDuJeu: TfrmEcranDuJeu
         Margins.Top = 1.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 1.000000000000000000
-        Position.X = 451.000000000000000000
+        Position.X = 391.000000000000000000
         Position.Y = 1.000000000000000000
-        Size.Width = 48.000000000000000000
-        Size.Height = 48.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 68.000000000000000000
         Size.PlatformDefault = False
         OnClick = btnMusiqueOnOffClick
         inherited btnImage: TRectangle
@@ -165,6 +156,8 @@ object frmEcranDuJeu: TfrmEcranDuJeu
             3ABD308CF7D050809D1704E1D743B3324C06D8E5973D7C3EDF8BD9FEB187B757
             A4973D9E787865E5783CA6CEE7B3699400AC8019B0FF05D8ACDBB33D93B3DE00
             00000049454E44AE426082}
+          Size.Width = 68.000000000000000000
+          Size.Height = 68.000000000000000000
         end
       end
       object ZoneNbCanards: TLayout
@@ -180,15 +173,15 @@ object frmEcranDuJeu: TfrmEcranDuJeu
         Position.X = 65.000000000000000000
         Position.Y = 5.000000000000000000
         Size.Width = 50.000000000000000000
-        Size.Height = 40.000000000000000000
+        Size.Height = 60.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         object BackgroundNbCanards: TRectangle
           Align = Contents
-          Fill.Color = claBlack
+          Fill.Color = claWhite
           Opacity = 0.400000005960464400
           Size.Width = 50.000000000000000000
-          Size.Height = 40.000000000000000000
+          Size.Height = 60.000000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
           XRadius = 10.000000000000000000
@@ -208,15 +201,15 @@ object frmEcranDuJeu: TfrmEcranDuJeu
         Position.X = 5.000000000000000000
         Position.Y = 5.000000000000000000
         Size.Width = 50.000000000000000000
-        Size.Height = 40.000000000000000000
+        Size.Height = 60.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object BackgroundNbOeufs: TRectangle
           Align = Contents
-          Fill.Color = claBlack
+          Fill.Color = claWhite
           Opacity = 0.400000005960464400
           Size.Width = 50.000000000000000000
-          Size.Height = 40.000000000000000000
+          Size.Height = 60.000000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
           XRadius = 10.000000000000000000

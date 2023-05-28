@@ -27,7 +27,7 @@ uses
   Olf.RTL.Params in '..\lib-externes\librairies\Olf.RTL.Params.pas',
   Gamolf.FMX.MusicLoop in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas',
   Olf.FMX.TextImageFrame in '..\lib-externes\librairies\Olf.FMX.TextImageFrame.pas' {OlfFMXTextImageFrame: TFrame},
-  udmAdobeStock_47191065orange_gris in '..\assets\AdobeStock\udmAdobeStock_47191065orange_gris.pas' {dmAdobeStock_47191065orange_gris: TDataModule};
+  udmAdobeStock_47191065orange_noir in '..\assets\AdobeStock\udmAdobeStock_47191065orange_noir.pas' {dmAdobeStock_47191065orange_noir: TDataModule};
 
 {$R *.res}
 begin
@@ -35,6 +35,6 @@ begin
   Application.FormFactor.Orientations := [TFormOrientation.Landscape, TFormOrientation.InvertedLandscape];
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TDMMap, DMMap);
-  Application.CreateForm(TdmAdobeStock_47191065orange_gris, dmAdobeStock_47191065orange_gris);
+  Application.CreateForm(TdmAdobeStock_47191065orange_noir, dmAdobeStock_47191065orange_noir);
   Application.Run;
 end.

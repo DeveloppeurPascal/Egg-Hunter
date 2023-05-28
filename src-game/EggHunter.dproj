@@ -5,7 +5,7 @@
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">OSXARM64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>169107</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>EggHunter.dpr</MainSource>
@@ -608,8 +608,8 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\assets\AdobeStock\udmAdobeStock_47191065orange_gris.pas">
-            <Form>dmAdobeStock_47191065orange_gris</Form>
+        <DCCReference Include="..\assets\AdobeStock\udmAdobeStock_47191065orange_noir.pas">
+            <Form>dmAdobeStock_47191065orange_noir</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
