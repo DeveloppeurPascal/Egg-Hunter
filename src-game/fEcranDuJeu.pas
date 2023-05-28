@@ -19,7 +19,8 @@ uses
   FMX.Layouts,
   cJoypad,
   cadBoutonOption,
-  Olf.FMX.TextImageFrame;
+  Olf.FMX.TextImageFrame,
+  Gamolf.RTL.Joystick;
 
 type
   TfrmEcranDuJeu = class(TForm)
@@ -73,6 +74,7 @@ type
       (Sender: TOlfFMXTextImageFrame; AChar: Char): integer;
     procedure SetNbCanardsOnMap(const Value: integer);
     procedure SetNbOeufsOnMap(const Value: integer);
+    procedure MoveWithDPadangle(gc: IGamolfJoystickService; dpad: Word);
   public
     PartieEnCours: TPartieEnCours;
     property BoiteDeDialogueActive: TtplDialogBox read FBoiteDeDialogueActive
@@ -94,7 +96,8 @@ uses
   uBruitages,
   uConfig,
   Olf.RTL.Params,
-  udmAdobeStock_47191065orange_noir;
+  udmAdobeStock_47191065orange_noir,
+  FMX.Platform;
 
 procedure TfrmEcranDuJeu.btnEffetsSonoresOnOffClick(Sender: TObject);
 begin
@@ -358,6 +361,19 @@ begin
     PartieEnCours.CentreLaSceneSurLejoueur;
 end;
 
+procedure TfrmEcranDuJeu.MoveWithDPadangle(gc: IGamolfJoystickService;
+  dpad: Word);
+begin
+  if gc.isDPad(dpad, tjoystickdpad.top) then
+    VersLeHaut
+  else if gc.isDPad(dpad, tjoystickdpad.Right) then
+    VersLaDroite
+  else if gc.isDPad(dpad, tjoystickdpad.bottom) then
+    VersLeBas
+  else if gc.isDPad(dpad, tjoystickdpad.Left) then
+    VersLaGauche;
+end;
+
 procedure TfrmEcranDuJeu.SetBoiteDeDialogueActive(const Value: TtplDialogBox);
 begin
   FBoiteDeDialogueActive := Value;
@@ -383,7 +399,55 @@ begin
 end;
 
 procedure TfrmEcranDuJeu.timerCyceDeJeuTimer(Sender: TObject);
+var
+  GameController: IGamolfJoystickService;
+  GCInfos: TJoystickInfo;
 begin
+  // Player life or UI movements
+  if assigned(FBoiteDeDialogueActive) then
+  begin
+    // TODO : change focus control with arrow keyrs or controller movements
+  end
+  else
+  begin
+    // Game Controllers
+    if TPlatformServices.Current.SupportsPlatformService(IGamolfJoystickService,
+      GameController) then
+      GameController.ForEachConnectedDevice(GCInfos,
+        procedure(JoystickID: TJoystickID; var JoystickInfo: TJoystickInfo)
+        var
+          X, Y: integer;
+        begin
+          X := PartieEnCours.JoueurCol;
+          Y := PartieEnCours.JoueurLig;
+
+          // DPAD / POV
+          if GameController.hasDPad(JoystickID) then
+            MoveWithDPadangle(GameController, JoystickInfo.dpad);
+
+          // Left Joystick (axes X,Y)
+          if (X = PartieEnCours.JoueurCol) and (Y = PartieEnCours.JoueurLig)
+          then
+            MoveWithDPadangle(GameController,
+              GameController.getDPadFromXY(JoystickInfo.Axes[0],
+              JoystickInfo.Axes[1]));
+
+          // Right Joystick
+          if (X = PartieEnCours.JoueurCol) and (Y = PartieEnCours.JoueurLig)
+          then
+            MoveWithDPadangle(GameController,
+              GameController.getDPadFromXY(JoystickInfo.Axes[2],
+              JoystickInfo.Axes[3]));
+        end);
+
+    // onScreen Joypad
+    // TODO : change joypad movements
+
+    // Keyboard move (arrows)
+    // TODO : change actual key management
+  end;
+
+  // Other elements life
   PartieEnCours.Execute;
 
   if (NbCanardsOnMap <> PartieEnCours.NbCanardsSurLaMap) then

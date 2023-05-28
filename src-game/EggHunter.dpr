@@ -28,7 +28,13 @@ uses
   Gamolf.FMX.MusicLoop in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas',
   Olf.FMX.TextImageFrame in '..\lib-externes\librairies\Olf.FMX.TextImageFrame.pas' {OlfFMXTextImageFrame: TFrame},
   udmAdobeStock_47191065orange_noir in '..\assets\AdobeStock\udmAdobeStock_47191065orange_noir.pas' {dmAdobeStock_47191065orange_noir: TDataModule},
-  udmAdobeStock_460990606 in '..\assets\AdobeStock\udmAdobeStock_460990606.pas' {dmAdobeStock_460990606: TDataModule};
+  udmAdobeStock_460990606 in '..\assets\AdobeStock\udmAdobeStock_460990606.pas' {dmAdobeStock_460990606: TDataModule},
+  Gamolf.FMX.Joystick in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.Joystick.pas',
+  Gamolf.RTL.Joystick.DirectInput.Win in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.DirectInput.Win.pas',
+  Gamolf.RTL.Joystick.Mac in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.Mac.pas',
+  Gamolf.RTL.Joystick in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.pas',
+  iOSapi.GameController in '..\lib-externes\Delphi-Game-Engine\src\iOSapi.GameController.pas',
+  Macapi.GameController in '..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas';
 
 {$R *.res}
 begin
