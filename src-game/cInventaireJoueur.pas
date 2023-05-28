@@ -7,7 +7,7 @@ uses
   System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   templateDialogBox, cBoiteDeDialogue_370x370, FMX.Objects, uPartieEnCours,
-  fEcranDuJeu, cLabeledProgressBar, cBoutonMenu;
+  fEcranDuJeu, cLabeledProgressBar, cBoutonMenu, FMX.Ani;
 
 type
   TcadInventaireJoueur = class(TtplDialogBox)
