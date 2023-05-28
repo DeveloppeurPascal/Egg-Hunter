@@ -80,7 +80,6 @@ end;
 procedure TtplDialogBox.Close;
 begin
   JouerBruitage(TTypeBruitage.DialogBoxClose);
-  // TODO : ne faire le son que s'il est activé dans les options du jeu
 
   if (owner is TfrmMain) then
     (owner as TfrmMain).BoiteDeDialogue := nil
@@ -116,7 +115,6 @@ begin
       // TODO : éventuellement retailler la hauteur de la boite de dialogue selon son contenu
     end);
   JouerBruitage(TTypeBruitage.DialogBoxOpen);
-  // TODO : ne faire le son que s'il est activé dans les options du jeu
 end;
 
 destructor TtplDialogBox.Destroy;
