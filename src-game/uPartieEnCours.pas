@@ -533,8 +533,8 @@ begin
 
   // Initialise les informations d'inventaire du joueur
   FNbOeufsSurJoueur := 0;
-  FNbOeufsSurJoueurMaxi := 100; // TODO : à basculer en constante
-  // TODO : à gérer en fonction du niveau du joueur
+  FNbOeufsSurJoueurMaxi := 100;
+  // TODO : à basculer en constante dépendant du niveau du joueur
 
   // Charger la liste des canards de la partie depuis la liste des canards de la map
   FOeufs.Clear;
@@ -594,7 +594,8 @@ begin
     FNbOeufsSurJoueur := 0;
   if not((VersionNum >= 0) and (sizeof(FNbOeufsSurJoueurMaxi) = AStream.
     read(FNbOeufsSurJoueurMaxi, sizeof(FNbOeufsSurJoueurMaxi)))) then
-    FNbOeufsSurJoueurMaxi := 100; // TODO : à basculer en constante
+    FNbOeufsSurJoueurMaxi := 100;
+  // TODO : à basculer en constante dépendante du niveau du joueur
   Canards.LoadFromStream(AStream);
   Oeufs.LoadFromStream(AStream);
   Couveuses.LoadFromStream(AStream);
@@ -976,7 +977,6 @@ begin
   // TODO : faire une animation ou autre pour effacer le canard en beauté
 
   JouerBruitage(TTypeBruitage.CanardMort);
-  // TODO : ne faire le son que s'il est activé dans les options du jeu
 
   // Supprime le canard de la liste des canards (avant le tour suivant)
   tthread.ForceQueue(nil,
@@ -1024,7 +1024,6 @@ begin
       FLig].Zindex[CZIndexOeufs], FPartieEnCours));
 
     JouerBruitage(TTypeBruitage.OeufPonte);
-    // TODO : ne faire le son que s'il est activé dans les options du jeu
   end;
 end;
 
@@ -1074,8 +1073,8 @@ begin
   FPartieEnCours := APartieEnCours;
   FDureeAvantEclosion := 0;
   FNbOeufsEnGestation := 0;
-  FNbOeufsEnGestationMax := 100; // TODO : à transformer en constante
-  // TODO : à gérer en fonction du niveau de la couveuse
+  FNbOeufsEnGestationMax := 100;
+  // TODO : à transformer en constante et gérer selon le niveau de la couveuse
   FHeurePrecedente := Compteur.ElapsedMilliseconds;
 end;
 
@@ -1088,7 +1087,7 @@ begin
   if (FCol < 0) or (FCol >= dmmap.LevelMapcolCount) or (FLig < 0) and
     (FLig >= dmmap.LevelMapRowCount) then
     raise exception.Create('Matrix out of map');
-  // TODO : "matrix" => "couveuse"
+  // TODO : "matrix" => "couveuse"         (traduction)
 
   // en affichage du mode sphère, on peut déborder sur les rebords de la map
   if (dmmap.DisplayType = TMapDisplayType.sphere) then
@@ -1253,12 +1252,11 @@ begin
     FPartieEnCours.Canards.Add(TCanard.Create(FCol, FLig + 1,
       dmmap.LevelMap[FCol, FLig + 1].Zindex[CZIndexCanards], FPartieEnCours));
     JouerBruitage(TTypeBruitage.OeufEclosion);
-    // TODO : ne faire le son que s'il est activé dans les options du jeu
 
     if (NbOeufsEnGestation > 0) then
       DureeAvantEclosion := CTempsDeGestation;
   end;
-  // TODO : gére affichage barre de progression si boite de dialogue des infos de la couveuse affichée
+  // TODO : gérer affichage barre de progression si boite de dialogue des infos de la couveuse affichée
 end;
 
 procedure TCouveuse.SetLig(const Value: integer);
@@ -1494,7 +1492,6 @@ begin
     if (oeuf.Col = ACol) and (oeuf.Lig = ALig) then
     begin
       JouerBruitage(TTypeBruitage.OeufRamassage);
-      // TODO : ne faire le son que s'il est activé dans les options du jeu
       Remove(oeuf);
       break;
     end;
