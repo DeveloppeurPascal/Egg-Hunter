@@ -49,8 +49,7 @@ begin
   if tfile.Exists(FichierDesCredits) then
     Text1.Text := tfile.ReadAllText(FichierDesCredits, tencoding.UTF8)
   else
-    Text1.Text :=
-      'Egg Hunter (c) 2021 Patrick Prémartin / Olf Software / Gamolf';
+    Text1.Text := 'Egg Hunter (c) 2021-2023 Patrick Prémartin';
 {$IFDEF LINUX}
   Text1.Height := 800;
 {$ELSE}
