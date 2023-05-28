@@ -36,6 +36,8 @@ type
     ZoneNbOeufs: TLayout;
     BackgroundNbOeufs: TRectangle;
     BackgroundNbCanards: TRectangle;
+    NbOeufsPicto: TPath;
+    NbCanardsPicto: TPath;
     procedure FormCreate(Sender: TObject);
     procedure timerRefreshSceneTimer(Sender: TObject);
     procedure imgSceneResize(Sender: TObject);
@@ -57,12 +59,11 @@ type
     procedure FormShow(Sender: TObject);
   private
     FBoiteDeDialogueActive: TtplDialogBox;
-    fNbCanards: integer;
-    NbCanards: TOlfFMXTextImageFrame;
-    fNbOeufs: integer;
-    NbOeufs: TOlfFMXTextImageFrame;
+    NbCanardsText: TOlfFMXTextImageFrame;
+    NbOeufsText: TOlfFMXTextImageFrame;
+    FNbOeufsOnMap: integer;
+    FNbCanardsOnMap: integer;
     procedure SetBoiteDeDialogueActive(const Value: TtplDialogBox);
-    { Déclarations privées }
     procedure VersLaGauche;
     procedure VersLaDroite;
     procedure VersLeHaut;
@@ -70,11 +71,15 @@ type
     procedure ClicSurCarte(X, Y: Single);
     function GetNumberNameForAdobeStock47191065Font
       (Sender: TOlfFMXTextImageFrame; AChar: Char): integer;
+    procedure SetNbCanardsOnMap(const Value: integer);
+    procedure SetNbOeufsOnMap(const Value: integer);
   public
-    { Déclarations publiques }
     PartieEnCours: TPartieEnCours;
     property BoiteDeDialogueActive: TtplDialogBox read FBoiteDeDialogueActive
       write SetBoiteDeDialogueActive;
+    property NbCanardsOnMap: integer read FNbCanardsOnMap
+      write SetNbCanardsOnMap;
+    property NbOeufsOnMap: integer read FNbOeufsOnMap write SetNbOeufsOnMap;
   end;
 
 implementation
@@ -192,24 +197,23 @@ begin
   FBoiteDeDialogueActive := nil;
 
   // Initialisation des textes à l'écran
-  fNbCanards := -1;
-  NbCanards := TOlfFMXTextImageFrame.Create(Self);
-  NbCanards.Parent := ZoneNbCanards;
-  NbCanards.Align := talignlayout.Right;
-  NbCanards.Font := dmAdobeStock_47191065orange_noir.ImageList;
-  NbCanards.LetterSpacing := 5;
-  NbCanards.OnGetImageIndexOfUnknowChar :=
+  FNbCanardsOnMap := -1;
+  NbCanardsText := TOlfFMXTextImageFrame.Create(Self);
+  NbCanardsText.Parent := ZoneNbCanards;
+  NbCanardsText.Align := talignlayout.Right;
+  NbCanardsText.Font := dmAdobeStock_47191065orange_noir.ImageList;
+  NbCanardsText.LetterSpacing := 5;
+  NbCanardsText.OnGetImageIndexOfUnknowChar :=
     GetNumberNameForAdobeStock47191065Font;
-  // TODO : ajouter un texte ou un visuel dans la zone permettant de voir que c'est le nombre de canards
 
-  fNbOeufs := -1;
-  NbOeufs := TOlfFMXTextImageFrame.Create(Self);
-  NbOeufs.Parent := ZoneNbOeufs;
-  NbOeufs.Align := talignlayout.Right;
-  NbOeufs.Font := dmAdobeStock_47191065orange_noir.ImageList;
-  NbOeufs.LetterSpacing := 5;
-  NbOeufs.OnGetImageIndexOfUnknowChar := GetNumberNameForAdobeStock47191065Font;
-  // TODO : ajouter un texte ou un visuel dans la zone permettant de voir que c'est le nombre d'oeufs
+  FNbOeufsOnMap := -1;
+  NbOeufsText := TOlfFMXTextImageFrame.Create(Self);
+  NbOeufsText.Parent := ZoneNbOeufs;
+  NbOeufsText.Align := talignlayout.Right;
+  NbOeufsText.Font := dmAdobeStock_47191065orange_noir.ImageList;
+  NbOeufsText.LetterSpacing := 5;
+  NbOeufsText.OnGetImageIndexOfUnknowChar :=
+    GetNumberNameForAdobeStock47191065Font;
 
   // Choix du niveau à charger
 {$IF Defined(DEBUG) and Defined(MSWINDOWS)}
@@ -359,31 +363,34 @@ begin
   FBoiteDeDialogueActive := Value;
 end;
 
+procedure TfrmEcranDuJeu.SetNbCanardsOnMap(const Value: integer);
+begin
+  FNbCanardsOnMap := Value;
+  NbCanardsText.Text := FNbCanardsOnMap.ToString;
+  ZoneNbCanards.Width := ZoneNbCanards.padding.Left +
+    NbCanardsPicto.margins.Left + NbCanardsPicto.Width +
+    NbCanardsPicto.margins.Right + NbCanardsText.Width +
+    ZoneNbCanards.padding.Right;
+end;
+
+procedure TfrmEcranDuJeu.SetNbOeufsOnMap(const Value: integer);
+begin
+  FNbOeufsOnMap := Value;
+  NbOeufsText.Text := FNbOeufsOnMap.ToString;
+  ZoneNbOeufs.Width := ZoneNbOeufs.padding.Left + NbOeufsPicto.margins.Left +
+    NbOeufsPicto.Width + NbOeufsPicto.margins.Right + NbOeufsText.Width +
+    ZoneNbOeufs.padding.Right;
+end;
+
 procedure TfrmEcranDuJeu.timerCyceDeJeuTimer(Sender: TObject);
 begin
   PartieEnCours.Execute;
-  // TODO : Transformer fNbCanards en propriété pour adapter l'affichage automatiquement
-  if (fNbCanards <> PartieEnCours.NbCanardsSurLaMap) then
-  begin
-    fNbCanards := PartieEnCours.NbCanardsSurLaMap;
-    NbCanards.Text := fNbCanards.ToString;
-    if ZoneNbCanards.Width + ZoneNbCanards.padding.Left +
-      ZoneNbCanards.padding.Right < NbCanards.Width then
-      ZoneNbCanards.Width := NbCanards.Width + ZoneNbCanards.padding.Left +
-        ZoneNbCanards.padding.Right;
-    // TODO : ajouter la taille de l'élément indiquant que c'est sur les canards
-  end;
-  // TODO : Transformer fNbOeufs en propriété pour adapter l'affichage automatiquement
-  if (fNbOeufs <> PartieEnCours.NbOeufsSurLaMap) then
-  begin
-    fNbOeufs := PartieEnCours.NbOeufsSurLaMap;
-    NbOeufs.Text := fNbOeufs.ToString;
-    if ZoneNbOeufs.Width + ZoneNbOeufs.padding.Left + ZoneNbOeufs.padding.Right
-      < NbOeufs.Width then
-      ZoneNbOeufs.Width := NbOeufs.Width + ZoneNbOeufs.padding.Left +
-        ZoneNbOeufs.padding.Right;
-    // TODO : ajouter la taille de l'élément indiquant que c'est sur les oeufs
-  end;
+
+  if (NbCanardsOnMap <> PartieEnCours.NbCanardsSurLaMap) then
+    NbCanardsOnMap := PartieEnCours.NbCanardsSurLaMap;
+
+  if (NbOeufsOnMap <> PartieEnCours.NbOeufsSurLaMap) then
+    NbOeufsOnMap := PartieEnCours.NbOeufsSurLaMap;
 end;
 
 procedure TfrmEcranDuJeu.timerRefreshSceneTimer(Sender: TObject);

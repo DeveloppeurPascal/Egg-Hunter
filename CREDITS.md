@@ -10,10 +10,11 @@ Les éléments graphiques du jeu proviennent de :
 * lembergvector (Adobe Stock, https://stock.adobe.com/fr/contributor/205886516/lembergvector)
 * Taras Livyy (Adobe Stock, https://stock.adobe.com/fr/contributor/200924553/taras-livyy)
 
-Les icones sont issues de la collection Material Design Icons (https://materialdesignicons.com) et sont sous copyright de :
-* Google
-* Austin Andrews (https://twitter.com/Templarian)
-* Michael Irigoyen (https://twitter.com/mririgo)
+Les icones sont issues de la collection Pictogrammers (https://pictogrammers.com) et sont sous copyright de :
+* Google (https://pictogrammers.com/contributor/google/)
+* Austin Andrews (https://pictogrammers.com/contributor/Templarian/)
+* Michael Irigoyen (https://pictogrammers.com/contributor/mririgoyen/)
+* Mickael Richin (https://pictogrammers.com/contributor/MrGrigri/)
 
 Musique d'ambiance de Virginia Culp.
 Les bruitages proviennent de la librairie Sound Matter éditée par The Game Creators.
