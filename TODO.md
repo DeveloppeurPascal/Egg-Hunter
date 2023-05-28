@@ -65,6 +65,8 @@
 
 * sous Windows, vérifier calcul coordonnées de clic lorsqu'on change le % d'affichage dans les options d'accessibilité
 
+* ajouter un bouton "about" pour afficher des infos sur l'éditeur de niveaux
+
 ## Jeu vidéo
 
 * traiter les TODO dans les fichiers sources
@@ -85,6 +87,7 @@
 * dans liste des parties existantes, permettre le renommage ("Date - heure", n'étant pas hyper user friendly)
 
 * pouvoir modifier les touches utilisées pour les déplacements dans les options du jeu (WASD au lieu des flèches)
+
 * publication du jeu pour Android
 * publication du jeu pour iOS
 * publication du jeu pour Linux
@@ -94,16 +97,11 @@
 * mettre à jour le jeu sur itch.io pour macOS
 
 * ajouter une fenêtre d'explications sur le fonctionnement du jeu au démarrage d'une partie
-* modifier la map utilisée comme écran d'accueil et la fenêtre principale pour afficher le titre en entier (ou pouvoir l'animer un peu)
-
-* ajouter le nom du jeu sur l'écran d'accueil (fonte graphique plutôt que sous forme d'élement de la map utilisée en démo)
 
 * une fois le transfert des oeufs effectués entre le joueur et la couveuse, afficher l'inventaire de la couveuse ou une animation ou autre chose (genre un nombre d'oeufs sous forme d'infobulle)
 
 * sur inventaire couveuse, masquer la valeur du temps restant ou mettre un pourcentage => adapter la progress bar et gérer plusieurs types d'affichage
 * sur la fenêtre de livraison d'oeufs à la couveuse, afficher le nombre d'oeufs de la couveuse et celui du joueur. Faire une animation de l'une vers l'autre si on effectue le livraison d'oeufs.
-
-* sous Windows, vérifier calcul coordonnées de clic lorsqu'on change le % d'affichage dans les options d'accessibilité
 
 * dans les options pouvoir choisir si le joypad est à gauche, à droite ou des deux côtés (par défaut les deux)
 * dans les options, pouvoir choisir si le joypad est découpé en deux (gauche droite / haut bas)
@@ -112,6 +110,7 @@
 * changer le son associé au ramassage des oeufs
 
 * bogue : zone de clic déconne lorsque BitmapScale <> 1 (exemple sur Mac en 4K, décalage d'une demi-case)
+* sous Windows, vérifier calcul coordonnées de clic lorsqu'on change le % d'affichage dans les options d'accessibilité
 
 * modification progress bar pour modifier l'affichage de la valeur : valeur brute, pourcentage, valeur brute + maxi, ne rien afficher
 * modification fenêtre d'infos de la couveuse pour mettre la durée en pourcentage et changer la couleur (passage du rouge au vert)
@@ -119,14 +118,12 @@
 * Correction : si la valeur de la progress bar est au max, remplir réellement la totalité de la zone, actuellement il y a toujours un peu de marge
 => probablement un trunc() au lieu d'un round()
 
-* extension : gérer la musique d'ambiance en fonction de la zone dans laquelle se trouve le joueur
+* extension : gérer la musique d'ambiance en fonction de la zone ou la map dans laquelle se trouve le joueur
 
 * revoir fonctionnement du onSaveState de l'écran de jeu (selon le type d'action l'entrainant, faire un backup ou rien, surtout si le onClose a déjà été appellé)
 
-* affichage nb oeufs et nb canards : tenter un texte en blanc et ajouter un visuel sur chaque
-* affichage nb oeufs et nb canards : recalculer la largeur de la zone d'affichage
-
 ## TODO autres
+
 * faire quelques captures d'écran pour mettre à jour la fiche sur itch.io
 
 * bogue : sur progress bar, le jaune apparaît en vert
@@ -148,3 +145,24 @@
 * possibilité de semer des plantes (depuis l'ovni), mangées par les canards pour qu'ils vivent et pondent plus longtemps
 
 * Tester la librairie SKIA pour voir s'il y a un impact sur les défauts visuels constatés et la vitesse : https://github.com/skia4delphi/skia4delphi
+
+-----
+
+- coordonnées de clic selon BitmapScale et zoom Windows à corriger
+- gérer l'interface utilisateur (boutons de menus et de boites de dialogue) avec les contrôleurs de jeu (DPad/Joystick, boutons) ou le clavier (flèches, ENTREE/ESPACE)
+- barres de progression à corriger (valeur à 0 ou 100% affiche quand même quelque chose)
+- mode démo sur écran d'accueil (suivre le canard avec une durée de vie infinie)
+- affichage / masquage de l'écran de jeu à corriger sur Mac (ou en tout cas améliorer en terme d'UI)
+- tester sur Windows (32 bits)
+- tester sur Windows (64 bits)
+- tester sur Mac ARM
+- tester sur Mac Intel
+- tester sur Android
+- tester sur iPad
+- mettre à jour infos de version sur le jeu
+- mettre à jour numéro et date de version
+- déployer le programme pour Windows sur itch.io
+- déployer le programme pour Mac sur itch.io
+- déployer le programme pour Android sur itch.io
+- nettoyage de la TODO list
+- faire une release du code sur GitHub
