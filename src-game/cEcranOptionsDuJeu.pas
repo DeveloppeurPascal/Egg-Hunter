@@ -59,7 +59,8 @@ uses
   uConfig,
   uBruitages,
   uMusic,
-  Olf.RTL.Params;
+  Olf.RTL.Params,
+  Gamolf.FMX.MusicLoop;
 
 procedure TcadEcranOptionsDuJeu.cbBruitagesClick(Sender: TObject);
 begin
@@ -81,11 +82,11 @@ begin
   tconfig.MusiqueDAmbianceOnOff := cbMusique.isChecked;
   if cbMusique.isChecked then
   begin
-    if (not TMusiques.Ambiance.IsPlaying) then
-      TMusiques.Ambiance.play;
+    if (not tmusicloop.Current.IsPlaying) then
+      tmusicloop.Current.play;
   end
   else
-    TMusiques.Ambiance.stop;
+    tmusicloop.Current.stop;
 end;
 
 constructor TcadEcranOptionsDuJeu.Create(AOwner: TComponent);
@@ -107,13 +108,14 @@ end;
 procedure TcadEcranOptionsDuJeu.tbVolumeBruitagesClick(Sender: TObject);
 begin
   tconfig.BruitagesVolume := tbVolumeBruitages.Value;
+  TSoundList.Current.Volume := tconfig.BruitagesVolume;
   JouerBruitage(TTypeBruitage.Beep);
 end;
 
 procedure TcadEcranOptionsDuJeu.tbVolumeMusiqueClick(Sender: TObject);
 begin
   tconfig.MusiqueDAmbianceVolume := tbVolumeMusique.Value;
-  TMusiques.Ambiance.Volume := tbVolumeMusique.Value;
+  tmusicloop.Current.Volume := tconfig.MusiqueDAmbianceVolume;
   JouerBruitage(TTypeBruitage.Beep);
 end;
 

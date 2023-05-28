@@ -86,7 +86,8 @@ uses
   uConfig,
   uVersionDuProgramme,
   udmAdobeStock_460990606,
-  Olf.FMX.TextImageFrame;
+  Olf.FMX.TextImageFrame,
+  Gamolf.FMX.MusicLoop;
 
 procedure TfrmMain.btnCreditsDuJeuClick(Sender: TObject);
 var
@@ -184,9 +185,9 @@ begin
   DemoMap := TDMMap.Create(self);
   // TODO : n'afficher "reprendre la partie" que s'il y a des fichiers de parties stockés
 
-  TMusiques.Ambiance.Volume := TConfig.MusiqueDAmbianceVolume;
+  tmusicloop.current.Volume := TConfig.MusiqueDAmbianceVolume;
   if TConfig.MusiqueDAmbianceOnOff then
-    TMusiques.Ambiance.Play;
+    tmusicloop.current.Play;
 end;
 
 procedure TfrmMain.FormKeyDown(Sender: TObject; var Key: Word;

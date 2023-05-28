@@ -93,7 +93,8 @@ uses
   Olf.RTL.Params,
   udmAdobeStock_47191065orange_noir,
   FMX.Platform,
-  Gamolf.RTL.Joystick;
+  Gamolf.RTL.Joystick,
+  Gamolf.FMX.MusicLoop;
 
 procedure TfrmEcranDuJeu.btnEffetsSonoresOnOffClick(Sender: TObject);
 begin
@@ -114,9 +115,9 @@ begin
   tparams.save;
 
   if btnMusiqueOnOff.isActif then
-    TMusiques.Ambiance.play
+    tmusicloop.Current.play
   else
-    TMusiques.Ambiance.Stop;
+    tmusicloop.Current.Stop;
 end;
 
 procedure TfrmEcranDuJeu.btnPauseDuJeuClick(Sender: TObject);
