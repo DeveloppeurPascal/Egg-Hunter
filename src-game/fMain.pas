@@ -39,6 +39,8 @@ type
     txtVersionDuProgramme: TText;
     ZIndexMenu: TLayout;
     GlowEffect1: TGlowEffect;
+    ZoneTitle: TLayout;
+    TitleEffect: TGlowEffect;
     procedure FormKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
     procedure btnFermerClick(Sender: TObject);
@@ -50,6 +52,7 @@ type
     procedure btnReprendreUnePartieClick(Sender: TObject);
     procedure btnReglagesClick(Sender: TObject);
     procedure TimerLancePartieRepriseTimer(Sender: TObject);
+    procedure ZIndexMenuResized(Sender: TObject);
   private
     { Déclarations privées }
     FBoiteDeDialogue: TtplDialogBox;
@@ -81,7 +84,9 @@ uses
   uMusic,
   cEcranOptionsDuJeu,
   uConfig,
-  uVersionDuProgramme;
+  uVersionDuProgramme,
+  udmAdobeStock_460990606,
+  Olf.FMX.TextImageFrame;
 
 procedure TfrmMain.btnCreditsDuJeuClick(Sender: TObject);
 var
@@ -159,12 +164,22 @@ begin
   txtVersionDuProgramme.Text := 'Version : ' + cversion.ToString + '-' +
     cversiondate.ToString;
 
+  with TOlfFMXTextImageFrame.Create(self) do
+  begin
+    parent := ZoneTitle;
+    font := dmAdobeStock_460990606.imagelist;
+    LetterSpacing := 5;
+    align := talignlayout.center;
+    height := ZoneTitle.height;
+    Text := 'EGG HUNTER';
+  end;
+
   NomDeFichierDePartieACharger := '';
   FBoiteDeDialogue := nil;
 {$IF Defined(IOS) or Defined(ANDROID)}
-  btnFermer.Visible := false;
-  Menu.Contenu.Height := Menu.Contenu.Height - btnFermer.margins.top -
-    btnFermer.Height - btnFermer.margins.bottom;
+  btnFermer.visible := false;
+  Menu.Contenu.height := Menu.Contenu.height - btnFermer.margins.top -
+    btnFermer.height - btnFermer.margins.bottom;
 {$ENDIF}
   DemoMap := TDMMap.Create(self);
   // TODO : n'afficher "reprendre la partie" que s'il y a des fichiers de parties stockés
@@ -223,7 +238,7 @@ begin
     close;
   end;
   DemoMap.DisplayType := TMapDisplayType.sphere;
-  DemoMap.InitialiseScene(imgBackground.Width, imgBackground.Height,
+  DemoMap.InitialiseScene(imgBackground.Width, imgBackground.height,
     imgBackground.Bitmap.BitmapScale);
   RefreshBackground;
 end;
@@ -236,7 +251,7 @@ begin
       imgBackground.WrapMode := timagewrapmode.Original
     else
       imgBackground.WrapMode := timagewrapmode.stretch;
-    DemoMap.InitialiseScene(imgBackground.Width, imgBackground.Height,
+    DemoMap.InitialiseScene(imgBackground.Width, imgBackground.height,
       imgBackground.Bitmap.BitmapScale);
     RefreshBackground;
   end;
@@ -254,8 +269,8 @@ begin
     // imgBackground.Bitmap.BitmapScale.ToString + ' ' + buffer.Width.ToString +
     // ',' + buffer.Height.ToString + ',' + buffer.BitmapScale.ToString;
     if (imgBackground.Bitmap.Width <> buffer.Width) or
-      (imgBackground.Bitmap.Height <> buffer.Height) then
-      imgBackground.Bitmap.SetSize(buffer.Width, buffer.Height);
+      (imgBackground.Bitmap.height <> buffer.height) then
+      imgBackground.Bitmap.SetSize(buffer.Width, buffer.height);
     imgBackground.Bitmap.CopyFromBitmap(buffer);
   end;
 end;
@@ -278,6 +293,11 @@ begin
     btnLancerUnePartieClick(btnLancerUnePartie);
     TimerLancePartieReprise.Enabled := false;
   end;
+end;
+
+procedure TfrmMain.ZIndexMenuResized(Sender: TObject);
+begin
+  ZoneTitle.margins.top := (Menu.Position.y - ZoneTitle.height) / 2;
 end;
 
 initialization
