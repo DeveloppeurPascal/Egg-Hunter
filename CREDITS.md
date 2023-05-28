@@ -9,6 +9,7 @@ Les éléments graphiques du jeu proviennent de :
 * vadim (Adobe Stock, https://stock.adobe.com/fr/contributor/209360163/vadim)
 * lembergvector (Adobe Stock, https://stock.adobe.com/fr/contributor/205886516/lembergvector)
 * Taras Livyy (Adobe Stock, https://stock.adobe.com/fr/contributor/200924553/taras-livyy)
+* piai (Adobe Stock, https://stock.adobe.com/fr/contributor/200795028/piai)
 
 Les icones sont issues de la collection Pictogrammers (https://pictogrammers.com) et sont sous copyright de :
 * Google (https://pictogrammers.com/contributor/google/)
