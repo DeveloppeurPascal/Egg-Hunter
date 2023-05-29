@@ -1,9 +1,10 @@
 # TODO List
 
+* faire quelques captures d'écran pour mettre à jour la fiche de l'éditeur de niveaux sur itch.io
+
 ## Editeur de niveaux
 
 * traiter les TODO dans les fichiers sources
-
 
 * traduire les textes de l'éditeur de niveau
 * ajouter les autres sprite sheets provenant de David Gervais
@@ -88,49 +89,36 @@
 
 * pouvoir modifier les touches utilisées pour les déplacements dans les options du jeu (WASD au lieu des flèches)
 
-* publication du jeu pour Android
-* publication du jeu pour iOS
-* publication du jeu pour Linux
-* soumettre le jeu à Microsoft Store pour Windows
-* mettre à jour le jeu sur itch.io pour Windows
-* mettre à jour le jeu sur itch.io pour Android
-* mettre à jour le jeu sur itch.io pour macOS
-
 * ajouter une fenêtre d'explications sur le fonctionnement du jeu au démarrage d'une partie
 
 * une fois le transfert des oeufs effectués entre le joueur et la couveuse, afficher l'inventaire de la couveuse ou une animation ou autre chose (genre un nombre d'oeufs sous forme d'infobulle)
 
-* sur inventaire couveuse, masquer la valeur du temps restant ou mettre un pourcentage => adapter la progress bar et gérer plusieurs types d'affichage
 * sur la fenêtre de livraison d'oeufs à la couveuse, afficher le nombre d'oeufs de la couveuse et celui du joueur. Faire une animation de l'une vers l'autre si on effectue le livraison d'oeufs.
-
-* dans les options pouvoir choisir si le joypad est à gauche, à droite ou des deux côtés (par défaut les deux)
-* dans les options, pouvoir choisir si le joypad est découpé en deux (gauche droite / haut bas)
-* gérer la position du joypad en fonction des clics du joueur sur le terrain pour éviter d'avoir à paramétrer sa position (ou pouvoir le déplacer par drag and drop depuis son centre)
 
 * changer le son associé au ramassage des oeufs
 
-* bogue : zone de clic déconne lorsque BitmapScale <> 1 (exemple sur Mac en 4K, décalage d'une demi-case)
-* sous Windows, vérifier calcul coordonnées de clic lorsqu'on change le % d'affichage dans les options d'accessibilité
-
-* modification progress bar pour modifier l'affichage de la valeur : valeur brute, pourcentage, valeur brute + maxi, ne rien afficher
-* modification fenêtre d'infos de la couveuse pour mettre la durée en pourcentage et changer la couleur (passage du rouge au vert)
-* Correction : si la valeur de la progress bar est à 0, ne rien mettre, actuellement les extrémités apparaissent quand même
-* Correction : si la valeur de la progress bar est au max, remplir réellement la totalité de la zone, actuellement il y a toujours un peu de marge
-=> probablement un trunc() au lieu d'un round()
-
 * extension : gérer la musique d'ambiance en fonction de la zone ou la map dans laquelle se trouve le joueur
 
-* revoir fonctionnement du onSaveState de l'écran de jeu (selon le type d'action l'entrainant, faire un backup ou rien, surtout si le onClose a déjà été appellé)
+* revoir/tester fonctionnement du onSaveState de l'écran de jeu (selon le type d'action l'entrainant, faire un backup ou rien, surtout si le onClose a déjà été appellé)
 
-## TODO autres
+* selon la taille de l'écran et sa résolution : des bordures (gauche / droite) peuvent apparaître, ajouter une colonne sur la zone d'affichage
 
-* faire quelques captures d'écran pour mettre à jour la fiche sur itch.io
+* retirer HitTest sur les frames d'éléments visuels ne nécessitant pas de clic (vérifier sur boites de dialogue, boutons, etc), fait pour progress bar
+* activer Locked sur les éléments internes des frames (vérifier sur boites de dialogus, boutons, etc), fait pour progress bar
 
-* bogue : sur progress bar, le jaune apparaît en vert
-
-* bogue : affichage KO sur smartphone Ulefone U7
+* mode démo sur écran d'accueil (suivre un canard avec une durée de vie infinie ou mettre un joueur bidon avec des mouvements aléatoires ou du path finding vers les oeufs disponibles)
 
 * bogue : fuite mémoire en fermeture de partie les listes d'oeufs, couveuses et canards ne sont pas libérées
+
+* progress bar : revoir fonctionnement de l'affichage sur les petites valeurs (s'affiche en rectangle avant le début de l'arrondi du fond, ça fait moche)
+
+* gérer l'interface utilisateur (boutons de menus et de boites de dialogue) avec les contrôleurs de jeu (DPad/Joystick, boutons) ou le clavier (flèches, ENTREE/ESPACE)
+
+* traiter les WARNING de construction
+
+* parcourir les permissions Android pour tout désactiver
+* parcourir les droits sur macOS pour tout désactiver
+* parcourir les droits sur iOS pour tout désactiver
 
 ## TODO extensions du jeu
 * gérer un niveau d'expérience permettant d'augmenter le niveau de certains éléments du jeu (place dans l'ovni, sur le joueur, les couveuses, ...)
@@ -148,21 +136,9 @@
 
 -----
 
-- coordonnées de clic selon BitmapScale et zoom Windows à corriger
-- gérer l'interface utilisateur (boutons de menus et de boites de dialogue) avec les contrôleurs de jeu (DPad/Joystick, boutons) ou le clavier (flèches, ENTREE/ESPACE)
-- barres de progression à corriger (valeur à 0 ou 100% affiche quand même quelque chose)
-- mode démo sur écran d'accueil (suivre le canard avec une durée de vie infinie)
-- affichage / masquage de l'écran de jeu à corriger sur Mac (ou en tout cas améliorer en terme d'UI)
 - tester sur Windows (32 bits)
 - tester sur Windows (64 bits)
 - tester sur Mac ARM
 - tester sur Mac Intel
 - tester sur Android
 - tester sur iPad
-- mettre à jour infos de version sur le jeu
-- mettre à jour numéro et date de version
-- déployer le programme pour Windows sur itch.io
-- déployer le programme pour Mac sur itch.io
-- déployer le programme pour Android sur itch.io
-- nettoyage de la TODO list
-- faire une release du code sur GitHub
