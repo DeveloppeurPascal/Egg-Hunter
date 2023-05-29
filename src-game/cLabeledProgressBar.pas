@@ -30,10 +30,14 @@ type
     FValue: integer;
     FMaxValue: integer;
     FColor: TcadLabeledProgressBarColor;
+    FShowValueInText: boolean;
+    FValueUnit: string;
     procedure SetMaxValue(const Value: integer);
     procedure SetMinValue(const Value: integer);
     procedure SetValue(const Value: integer);
     procedure SetColor(const Value: TcadLabeledProgressBarColor);
+    procedure SetShowValueInText(const Value: boolean);
+    procedure SetValueUnit(const Value: string);
   protected
     FTextAffiche: string;
     procedure RefreshMiddle;
@@ -54,6 +58,15 @@ type
     /// Couleur de la barre de progression (par défaut vert)
     /// </summary>
     property Color: TcadLabeledProgressBarColor read FColor write SetColor;
+    /// <summary>
+    /// Add the current value after default text
+    /// </summary>
+    property ShowValueInText: boolean read FShowValueInText
+      write SetShowValueInText;
+    /// <summary>
+    /// Add a unit (like '%') after the value if it's shown
+    /// </summary>
+    property ValueUnit: string read FValueUnit write SetValueUnit;
 
     constructor Create(AOwner: TComponent); override;
   end;
@@ -70,8 +83,10 @@ begin
   FMaxValue := 100;
   FValue := 0;
   FTextAffiche := '';
-  RefreshMiddle;
   FColor := TcadLabeledProgressBarColor.vert;
+  FShowValueInText := true;
+  FValueUnit := '';
+  RefreshMiddle;
 end;
 
 procedure TcadLabeledProgressBar.ProgressBarBackgroundResize(Sender: TObject);
@@ -140,14 +155,27 @@ begin
   RefreshMiddle;
 end;
 
+procedure TcadLabeledProgressBar.SetShowValueInText(const Value: boolean);
+begin
+  FShowValueInText := Value;
+end;
+
 procedure TcadLabeledProgressBar.SetValue(const Value: integer);
 begin
   if (FTextAffiche.IsEmpty) then
     FTextAffiche := Text.Text;
 
   FValue := Value;
-  Text.Text := FTextAffiche + ' (' + FValue.ToString + ')';
+  if FShowValueInText then
+    Text.Text := FTextAffiche + ' (' + FValue.ToString + FValueUnit + ')'
+  else
+    Text.Text := FTextAffiche;
   RefreshMiddle;
+end;
+
+procedure TcadLabeledProgressBar.SetValueUnit(const Value: string);
+begin
+  FValueUnit := Value;
 end;
 
 end.
