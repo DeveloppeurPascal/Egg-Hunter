@@ -346,7 +346,7 @@ begin
   PartieEnCours.CentreLaSceneSurLejoueur;
 
   GameScene.Visible := true;
-  GameScene.bringtofront;
+  GameScene.BringToFront;
   TimerRefreshMap.Enabled := true;
 
   GameTimerCyceDeJeu.Enabled := true;
@@ -369,7 +369,7 @@ begin
     imgCurrentMap.Bitmap.BitmapScale);
 
   MainScene.Visible := true;
-  MainScene.bringtofront;
+  MainScene.BringToFront;
   TimerRefreshMap.Enabled := true;
 
   tthread.ForceQueue(nil,
@@ -633,7 +633,7 @@ begin
     if (imgCurrentMap.Bitmap.BitmapScale = 1) then
       imgCurrentMap.WrapMode := timagewrapmode.Original
     else
-      imgCurrentMap.WrapMode := timagewrapmode.stretch;
+      imgCurrentMap.WrapMode := timagewrapmode.Fit;
 
     CurrentMap.InitialiseScene(imgCurrentMap.Width, imgCurrentMap.height,
       imgCurrentMap.Bitmap.BitmapScale);
