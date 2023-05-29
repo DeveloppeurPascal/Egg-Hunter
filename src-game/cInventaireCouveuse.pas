@@ -86,6 +86,8 @@ begin
   if (ATempsRestant < 0) then
     ATempsRestant := 0;
 
+  pbGestation.ShowValueInText := false;
+
   pbGestation.MaxValue := ATempsMax;
   ATempsRestant := ATempsMax - ATempsRestant;
   pbGestation.Value := ATempsRestant;
