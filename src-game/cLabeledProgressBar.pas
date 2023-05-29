@@ -95,8 +95,17 @@ begin
 end;
 
 procedure TcadLabeledProgressBar.RefreshMiddle;
+var
+  TotalWidth: single;
+  DisplayWidth: single;
+  CornerWidth: single;
 begin
-  pbMiddle.Width := pbbMiddle.Width * FValue / (FMaxValue - FMinValue);
+  TotalWidth := ProgressBar.Width;
+  DisplayWidth := TotalWidth * FValue / (FMaxValue - FMinValue);
+
+  pbLeft.Width := pbbLeft.Width * DisplayWidth / TotalWidth;
+  pbMiddle.Width := pbbMiddle.Width * DisplayWidth / TotalWidth;
+  pbRight.Width := pbbRight.Width * DisplayWidth / TotalWidth;
 end;
 
 procedure TcadLabeledProgressBar.SetColor(const Value
@@ -122,14 +131,14 @@ begin
         end;
       TcadLabeledProgressBarColor.jaune:
         begin
-          idxGauche := 6;
-          idxMilieu := 7;
-          idxDroite := 8;
+          idxGauche := 3;
+          idxMilieu := 4;
+          idxDroite := 5;
         end;
     else // Vert par défaut
-      idxGauche := 3;
-      idxMilieu := 4;
-      idxDroite := 5;
+      idxGauche := 6;
+      idxMilieu := 7;
+      idxDroite := 8;
     end;
     pbLeft.fill.Bitmap.Bitmap.CopyFromBitmap
       (imgListeCouleurs.Bitmap(tsizef.Create(pbLeft.fill.Bitmap.Bitmap.Width,
@@ -165,7 +174,10 @@ begin
   if (FTextAffiche.IsEmpty) then
     FTextAffiche := Text.Text;
 
-  FValue := Value;
+  if Value > FMaxValue then
+    FValue := FMaxValue
+  else
+    FValue := Value;
   if FShowValueInText then
     Text.Text := FTextAffiche + ' (' + FValue.ToString + FValueUnit + ')'
   else
