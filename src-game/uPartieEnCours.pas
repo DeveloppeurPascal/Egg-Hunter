@@ -169,6 +169,9 @@ type
     procedure LoadFromStream(AStream: TStream);
   end;
 
+  TCouveuse = class;
+  TCouveuseEvent = procedure(Couveuse: TCouveuse) of object;
+
   /// <summary>
   /// Infos et actions liées à une couveuse
   /// </summary>
@@ -185,6 +188,11 @@ type
     FSpriteID: integer;
     FHeurePrecedente: int64;
     FPartieEnCours: TPartieEncours;
+    FOnCouveuseNbOeufsChange: TCouveuseEvent;
+    FOnCouveuseDureeAvantEclosionChange: TCouveuseEvent;
+    procedure SetOnCouveuseDureeAvantEclosionChange
+      (const Value: TCouveuseEvent);
+    procedure SetOnCouveuseNbOeufsChange(const Value: TCouveuseEvent);
     procedure SetCol(const Value: integer);
     procedure SetDureeAvantEclosion(const Value: integer);
     procedure SetLig(const Value: integer);
@@ -205,6 +213,7 @@ type
     /// </summary>
     property NbOeufsEnGestationMax: integer read FNbOeufsEnGestationMax
       write SetNbOeufsEnGestationMax;
+
     /// <summary>
     /// Nombre d'oeufs actuellement en attende de gestation/éclosion
     /// </summary>
@@ -212,10 +221,23 @@ type
       write SetNbOeufsEnGestation;
 
     /// <summary>
+    /// Called when NbOeufsEnGestation change
+    /// </summary>
+    property OnCouveuseNbOeufsChange: TCouveuseEvent
+      read FOnCouveuseNbOeufsChange write SetOnCouveuseNbOeufsChange;
+
+    /// <summary>
     /// Temps (en millisecondes) avant la prochaine éclosion d'un oeuf
     /// </summary>
     property DureeAvantEclosion: integer read FDureeAvantEclosion
       write SetDureeAvantEclosion;
+
+    /// <summary>
+    /// Called when DureeAvantEclosion change
+    /// </summary>
+    property OnCouveuseDureeAvantEclosionChange: TCouveuseEvent
+      read FOnCouveuseDureeAvantEclosionChange
+      write SetOnCouveuseDureeAvantEclosionChange;
 
     /// <summary>
     /// Positionne la couveuse aux nouvelles coordonnées
@@ -664,7 +686,7 @@ begin
             begin
               // TODO : collision avec "passage" à compléter
             end;
-          TEggHunterElementType.couveuse:
+          TEggHunterElementType.Couveuse:
             begin
               if assigned(FEcranDuJeu) and (FEcranDuJeu is TfrmMain) then
                 (FEcranDuJeu as TfrmMain).BoiteDeDialogue :=
@@ -1096,6 +1118,10 @@ begin
   FNbOeufsEnGestation := 0;
   FNbOeufsEnGestationMax := 100;
   // TODO : à transformer en constante et gérer selon le niveau de la couveuse
+
+  FOnCouveuseNbOeufsChange := nil;
+  FOnCouveuseDureeAvantEclosionChange := nil;
+
   FHeurePrecedente := Compteur.ElapsedMilliseconds;
 end;
 
@@ -1141,7 +1167,7 @@ begin
       if (SpriteIDBloquant > -1) then
         case FPartieEnCours.FCurrentMap.SpriteSheetElements[SpriteIDBloquant]
           .TypeElement of
-          TEggHunterElementType.couveuse:
+          TEggHunterElementType.Couveuse:
             // TODO : écrasement de couveuse par une couveuse, pertinent ?
             SpriteIDBloquant := -1;
         end;
@@ -1285,7 +1311,9 @@ begin
     if (NbOeufsEnGestation > 0) then
       DureeAvantEclosion := CTempsDeGestation;
   end;
-  // TODO : gérer affichage barre de progression si boite de dialogue des infos de la couveuse affichée
+
+  if assigned(FOnCouveuseDureeAvantEclosionChange) then
+    FOnCouveuseDureeAvantEclosionChange(self);
 end;
 
 procedure TCouveuse.SetLig(const Value: integer);
@@ -1305,8 +1333,10 @@ begin
     if (FNbOeufsEnGestation = 0) then
       DureeAvantEclosion := CTempsDeGestation;
     FNbOeufsEnGestation := Value;
-    // TODO : rafraichir l'écran d'inventaire de cette couveuse s'il est affiché
   end;
+
+  if assigned(FOnCouveuseNbOeufsChange) then
+    FOnCouveuseNbOeufsChange(self);
 end;
 
 procedure TCouveuse.SetNbOeufsEnGestationMax(const Value: integer);
@@ -1317,6 +1347,20 @@ begin
     // TODO : vérifier que le nombre d'oeufs actuels est toujours dans l'interval
     // TODO : rafraichir l'écran d'inventaire de cette couveuse s'il est affiché
   end;
+
+  if assigned(FOnCouveuseNbOeufsChange) then
+    FOnCouveuseNbOeufsChange(self);
+end;
+
+procedure TCouveuse.SetOnCouveuseDureeAvantEclosionChange
+  (const Value: TCouveuseEvent);
+begin
+  FOnCouveuseDureeAvantEclosionChange := Value;
+end;
+
+procedure TCouveuse.SetOnCouveuseNbOeufsChange(const Value: TCouveuseEvent);
+begin
+  FOnCouveuseNbOeufsChange := Value;
 end;
 
 { TCanardList }
@@ -1393,7 +1437,7 @@ procedure TCouveuseList.LoadFromStream(AStream: TStream);
 var
   VersionNum: integer;
   NbElem: integer;
-  couveuse: TCouveuse;
+  Couveuse: TCouveuse;
 begin
   Clear;
   if (sizeof(VersionNum) <> AStream.read(VersionNum, sizeof(VersionNum))) then
@@ -1403,10 +1447,10 @@ begin
     NbElem := 0;
   while ((VersionNum >= 0) and (NbElem > 0)) do
     try
-      couveuse := TCouveuse.LoadFromStream(AStream, FPartieEnCours);
+      Couveuse := TCouveuse.LoadFromStream(AStream, FPartieEnCours);
     finally
-      if assigned(couveuse) then
-        Add(couveuse);
+      if assigned(Couveuse) then
+        Add(Couveuse);
       dec(NbElem);
     end;
 end;
