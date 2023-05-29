@@ -3,10 +3,21 @@ unit cEcranChargerPartieExistante;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  templateDialogBox, FMX.Ani, cBoiteDeDialogue_370x370, FMX.Objects;
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Dialogs,
+  FMX.StdCtrls,
+  templateDialogBox,
+  FMX.Ani,
+  cBoiteDeDialogue_370x370,
+  FMX.Objects;
 
 type
   TonPartieChoisieEvent = procedure(NomDuFichier: string) of object;
@@ -31,7 +42,11 @@ implementation
 
 {$R *.fmx}
 
-uses System.IOUtils, uPartieEnCours, cBoutonMenu, fEcranDuJeu, uDMMap;
+uses
+  System.IOUtils,
+  uPartieEnCours,
+  cBoutonMenu,
+  uDMMap;
 
 { TcadEcranChargerPartieExistante }
 

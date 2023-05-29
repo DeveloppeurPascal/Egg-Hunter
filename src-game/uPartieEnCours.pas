@@ -3,7 +3,10 @@ unit uPartieEnCours;
 interface
 
 uses
-  system.Classes, system.Generics.Collections, fmx.forms;
+  system.Classes,
+  system.Generics.Collections,
+  fmx.forms,
+  uDMMap;
 
 const
   /// <summary>
@@ -287,6 +290,7 @@ type
     FCouveuses: TCouveuseList;
     FNbOeufsSurJoueurMaxi: cardinal;
     FEcranDuJeu: Tform;
+    FCurrentMap: TDMMap;
     FOeufs: TOeufList;
     FNomFichierDeLaPartieEnCours: string;
     procedure SetJoueurCol(const Value: integer);
@@ -397,7 +401,7 @@ type
     /// <summary>
     /// Crée une instance de cette classe
     /// </summary>
-    constructor Create(AEcranDuJeu: Tform);
+    constructor Create(AEcranDuJeu: Tform; ACurrentMap: TDMMap);
 
     /// <summary>
     /// Nettoie l'instance de cette classe
@@ -424,21 +428,29 @@ implementation
 
 { TPartieEnCours }
 
-uses uDMMap, system.Diagnostics, system.SysUtils, cActionJoueurCouveuse,
-  FEcranDuJeu, system.IOUtils, system.DateUtils, uBruitages;
+uses
+  system.Diagnostics,
+  system.SysUtils,
+  cActionJoueurCouveuse,
+  system.IOUtils,
+  system.DateUtils,
+  uBruitages,
+  fmain;
 
 Var
   Compteur: TStopwatch;
 
 procedure TPartieEncours.CentreLaSceneSurLejoueur;
 begin
-  dmmap.ChangeViewportColLig(FJoueurCol - (dmmap.ViewportNbCol div 2),
-    FJoueurLig - (dmmap.ViewportNblig div 2));
+  FCurrentMap.ChangeViewportColLig
+    (FJoueurCol - (FCurrentMap.ViewportNbCol div 2),
+    FJoueurLig - (FCurrentMap.ViewportNblig div 2));
 end;
 
-constructor TPartieEncours.Create(AEcranDuJeu: Tform);
+constructor TPartieEncours.Create(AEcranDuJeu: Tform; ACurrentMap: TDMMap);
 begin
   FEcranDuJeu := AEcranDuJeu;
+  FCurrentMap := ACurrentMap;
 
   FNomFichierDeLaPartieEnCours := '';
 
@@ -523,12 +535,12 @@ var
   Coord: TCoord;
 begin
   // Affichage en mode sphère (monde sans rebord) pour le jeu
-  dmmap.DisplayType := TMapDisplayType.sphere;
+  FCurrentMap.DisplayType := TMapDisplayType.sphere;
 
   // Récupère les coordonnées du joueur
-  FJoueurCol := dmmap.JoueurCol;
-  FJoueurLig := dmmap.JoueurLig;
-  FJoueurSpriteID := dmmap.LevelMap[FJoueurCol, FJoueurLig].Zindex
+  FJoueurCol := FCurrentMap.JoueurCol;
+  FJoueurLig := FCurrentMap.JoueurLig;
+  FJoueurSpriteID := FCurrentMap.LevelMap[FJoueurCol, FJoueurLig].Zindex
     [CZIndexJoueur];
 
   // Initialise les informations d'inventaire du joueur
@@ -538,20 +550,20 @@ begin
 
   // Charger la liste des canards de la partie depuis la liste des canards de la map
   FOeufs.Clear;
-  if (dmmap.ListeOeufs.Count > 0) then
-    for Coord in dmmap.ListeOeufs do
+  if (FCurrentMap.ListeOeufs.Count > 0) then
+    for Coord in FCurrentMap.ListeOeufs do
       FOeufs.Add(TOeuf.Create(Coord.Col, Coord.Lig, Coord.SpriteID, self));
 
   // Charger la liste des canards de la partie depuis la liste des canards de la map
   FCanards.Clear;
-  if (dmmap.ListeCanards.Count > 0) then
-    for Coord in dmmap.ListeCanards do
+  if (FCurrentMap.ListeCanards.Count > 0) then
+    for Coord in FCurrentMap.ListeCanards do
       FCanards.Add(TCanard.Create(Coord.Col, Coord.Lig, Coord.SpriteID, self));
 
   // Charger la liste des couveuses de la partie depuis la liste des couveuses de la map
   FCouveuses.Clear;
-  if (dmmap.ListeCouveuses.Count > 0) then
-    for Coord in dmmap.ListeCouveuses do
+  if (FCurrentMap.ListeCouveuses.Count > 0) then
+    for Coord in FCurrentMap.ListeCouveuses do
       FCouveuses.Add(TCouveuse.Create(Coord.Col, Coord.Lig,
         Coord.SpriteID, self));
 end;
@@ -606,36 +618,36 @@ var
   SpriteIDBloquant: integer;
 begin
   // Si le joueur n'est pas encore sur la grille du niveau
-  if (FJoueurCol < 0) or (FJoueurCol >= dmmap.LevelMapcolCount) or
-    (FJoueurLig < 0) or (FJoueurLig >= dmmap.LevelMapRowCount) then
+  if (FJoueurCol < 0) or (FJoueurCol >= FCurrentMap.LevelMapcolCount) or
+    (FJoueurLig < 0) or (FJoueurLig >= FCurrentMap.LevelMapRowCount) then
     exit;
 
   // en affichage du mode sphère, on peut déborder sur les rebords de la map
-  if (dmmap.DisplayType = TMapDisplayType.sphere) then
+  if (FCurrentMap.DisplayType = TMapDisplayType.sphere) then
   begin
     if (ACol < 0) then
-      ACol := dmmap.LevelMapcolCount + ACol
-    else if (ACol >= dmmap.LevelMapcolCount) then
-      ACol := dmmap.LevelMapcolCount - ACol;
+      ACol := FCurrentMap.LevelMapcolCount + ACol
+    else if (ACol >= FCurrentMap.LevelMapcolCount) then
+      ACol := FCurrentMap.LevelMapcolCount - ACol;
     if (ALig < 0) then
-      ALig := dmmap.LevelMapcolCount + ALig
-    else if (ALig >= dmmap.LevelMapRowCount) then
-      ALig := dmmap.LevelMapRowCount - ALig;
+      ALig := FCurrentMap.LevelMapcolCount + ALig
+    else if (ALig >= FCurrentMap.LevelMapRowCount) then
+      ALig := FCurrentMap.LevelMapRowCount - ALig;
   end;
 
   // Si les nouvelles coordonnées sont dans la grille du niveau
-  if (ACol >= 0) and (ACol < dmmap.LevelMapcolCount) and (ALig >= 0) and
-    (ALig < dmmap.LevelMapRowCount) then
+  if (ACol >= 0) and (ACol < FCurrentMap.LevelMapcolCount) and (ALig >= 0) and
+    (ALig < FCurrentMap.LevelMapRowCount) then
   begin
     // Si colonne ou ligne modifiée
     // Si élément disponible en Z-Index 1 (donc élément de décor sur lequel on peut se déplacer)
     if ((FJoueurCol <> ACol) or (FJoueurLig <> ALig)) and
-      (dmmap.LevelMap[ACol, ALig].Zindex[1] > -1) then
+      (FCurrentMap.LevelMap[ACol, ALig].Zindex[1] > -1) then
     begin
       // Traite collision
-      SpriteIDBloquant := dmmap.GetSpriteIDBloquantSurCase(ACol, ALig);
+      SpriteIDBloquant := FCurrentMap.GetSpriteIDBloquantSurCase(ACol, ALig);
       if (SpriteIDBloquant > -1) then
-        case dmmap.SpriteSheetElements[SpriteIDBloquant].TypeElement of
+        case FCurrentMap.SpriteSheetElements[SpriteIDBloquant].TypeElement of
           TEggHunterElementType.oeuf:
             begin
               if (FNbOeufsSurJoueur < FNbOeufsSurJoueurMaxi) then
@@ -654,11 +666,10 @@ begin
             end;
           TEggHunterElementType.couveuse:
             begin
-              if assigned(FEcranDuJeu) and (FEcranDuJeu is TfrmEcranDuJeu) then
-                (FEcranDuJeu as TfrmEcranDuJeu).BoiteDeDialogueActive :=
-                  TcadActionJoueurCouveuse.Execute
-                  ((FEcranDuJeu as TfrmEcranDuJeu), self,
-                  Couveuses.CouveuseAt(ACol, ALig));
+              if assigned(FEcranDuJeu) and (FEcranDuJeu is TfrmMain) then
+                (FEcranDuJeu as TfrmMain).BoiteDeDialogue :=
+                  TcadActionJoueurCouveuse.Execute((FEcranDuJeu as TfrmMain),
+                  self, Couveuses.CouveuseAt(ACol, ALig));
             end;
           TEggHunterElementType.ovni:
             begin
@@ -678,17 +689,18 @@ begin
       // on accepte le déplacement sur la nouvelle case
       if (SpriteIDBloquant = -1) then
       begin
-        dmmap.BeginUpdate;
+        FCurrentMap.BeginUpdate;
         try
-          dmmap.LevelMap[FJoueurCol, FJoueurLig].Zindex[CZIndexJoueur] := -1;
-          dmmap.DessineCaseDeLaMap(FJoueurCol, FJoueurLig, false);
+          FCurrentMap.LevelMap[FJoueurCol, FJoueurLig].Zindex
+            [CZIndexJoueur] := -1;
+          FCurrentMap.DessineCaseDeLaMap(FJoueurCol, FJoueurLig, false);
           FJoueurCol := ACol;
           FJoueurLig := ALig;
-          dmmap.LevelMap[FJoueurCol, FJoueurLig].Zindex[CZIndexJoueur] :=
+          FCurrentMap.LevelMap[FJoueurCol, FJoueurLig].Zindex[CZIndexJoueur] :=
             FJoueurSpriteID;
-          dmmap.DessineCaseDeLaMap(FJoueurCol, FJoueurLig, false);
+          FCurrentMap.DessineCaseDeLaMap(FJoueurCol, FJoueurLig, false);
         finally
-          dmmap.EndUpdate;
+          FCurrentMap.EndUpdate;
         end;
         CentreLaSceneSurLejoueur;
       end;
@@ -872,39 +884,41 @@ var
   CanardSpriteID: integer;
 begin
   // Si le canard n'est pas dans la grille on plante
-  if (FCol < 0) or (FCol >= dmmap.LevelMapcolCount) or (FLig < 0) and
-    (FLig >= dmmap.LevelMapRowCount) then
+  if (FCol < 0) or (FCol >= FPartieEnCours.FCurrentMap.LevelMapcolCount) or
+    (FLig < 0) and (FLig >= FPartieEnCours.FCurrentMap.LevelMapRowCount) then
     raise exception.Create('Duck out of map');
 
   // en affichage du mode sphère, on peut déborder sur les rebords de la map
-  if (dmmap.DisplayType = TMapDisplayType.sphere) then
+  if (FPartieEnCours.FCurrentMap.DisplayType = TMapDisplayType.sphere) then
   begin
     if (ACol < 0) then
-      ACol := dmmap.LevelMapcolCount + ACol
-    else if (ACol >= dmmap.LevelMapcolCount) then
-      ACol := dmmap.LevelMapcolCount - ACol;
+      ACol := FPartieEnCours.FCurrentMap.LevelMapcolCount + ACol
+    else if (ACol >= FPartieEnCours.FCurrentMap.LevelMapcolCount) then
+      ACol := FPartieEnCours.FCurrentMap.LevelMapcolCount - ACol;
     if (ALig < 0) then
-      ALig := dmmap.LevelMapcolCount + ALig
-    else if (ALig >= dmmap.LevelMapRowCount) then
-      ALig := dmmap.LevelMapRowCount - ALig;
+      ALig := FPartieEnCours.FCurrentMap.LevelMapcolCount + ALig
+    else if (ALig >= FPartieEnCours.FCurrentMap.LevelMapRowCount) then
+      ALig := FPartieEnCours.FCurrentMap.LevelMapRowCount - ALig;
   end;
 
   // Si le déplacement est toujours dans la grille
-  if (ACol >= 0) and (ACol < dmmap.LevelMapcolCount) and (ALig >= 0) and
-    (ALig < dmmap.LevelMapRowCount) then
+  if (ACol >= 0) and (ACol < FPartieEnCours.FCurrentMap.LevelMapcolCount) and
+    (ALig >= 0) and (ALig < FPartieEnCours.FCurrentMap.LevelMapRowCount) then
   begin
     // Si colonne ou ligne modifiée
     // Si élément disponible en Z-Index 1 à 4 (Z-Index du canard -1)
     if ((FCol <> ACol) or (FLig <> ALig)) and
-      ((dmmap.LevelMap[ACol, ALig].Zindex[1] > -1) or
-      (dmmap.LevelMap[ACol, ALig].Zindex[2] > -1) or
-      (dmmap.LevelMap[ACol, ALig].Zindex[3] > -1) or
-      (dmmap.LevelMap[ACol, ALig].Zindex[4] > -1)) then
+      ((FPartieEnCours.FCurrentMap.LevelMap[ACol, ALig].Zindex[1] > -1) or
+      (FPartieEnCours.FCurrentMap.LevelMap[ACol, ALig].Zindex[2] > -1) or
+      (FPartieEnCours.FCurrentMap.LevelMap[ACol, ALig].Zindex[3] > -1) or
+      (FPartieEnCours.FCurrentMap.LevelMap[ACol, ALig].Zindex[4] > -1)) then
     begin
       // Traite collision
-      SpriteIDBloquant := dmmap.GetSpriteIDBloquantSurCase(ACol, ALig);
+      SpriteIDBloquant := FPartieEnCours.FCurrentMap.GetSpriteIDBloquantSurCase
+        (ACol, ALig);
       if (SpriteIDBloquant > -1) then
-        case dmmap.SpriteSheetElements[SpriteIDBloquant].TypeElement of
+        case FPartieEnCours.FCurrentMap.SpriteSheetElements[SpriteIDBloquant]
+          .TypeElement of
           TEggHunterElementType.eau, TEggHunterElementType.oeuf:
             SpriteIDBloquant := -1;
         end;
@@ -913,16 +927,18 @@ begin
       // on accepte le déplacement sur la nouvelle case
       if (SpriteIDBloquant = -1) then
       begin
-        dmmap.BeginUpdate;
+        FPartieEnCours.FCurrentMap.BeginUpdate;
         try
-          dmmap.LevelMap[FCol, FLig].Zindex[CZIndexCanards] := -1;
-          dmmap.DessineCaseDeLaMap(FCol, FLig, false);
+          FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex
+            [CZIndexCanards] := -1;
+          FPartieEnCours.FCurrentMap.DessineCaseDeLaMap(FCol, FLig, false);
           FCol := ACol;
           FLig := ALig;
-          dmmap.LevelMap[FCol, FLig].Zindex[CZIndexCanards] := FSpriteID;
-          dmmap.DessineCaseDeLaMap(FCol, FLig, false);
+          FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex[CZIndexCanards]
+            := FSpriteID;
+          FPartieEnCours.FCurrentMap.DessineCaseDeLaMap(FCol, FLig, false);
         finally
-          dmmap.EndUpdate;
+          FPartieEnCours.FCurrentMap.EndUpdate;
         end;
       end
       else
@@ -937,13 +953,14 @@ end;
 
 destructor TCanard.Destroy;
 begin
-  if assigned(dmmap) and (FCol >= 0) and (FCol < dmmap.LevelMapcolCount) and
-    (FLig >= 0) and (FLig < dmmap.LevelMapRowCount) and (FSpriteID >= 0) and
-    (FSpriteID < dmmap.SpriteSheetElements.Count) then
+  if assigned(FPartieEnCours.FCurrentMap) and (FCol >= 0) and
+    (FCol < FPartieEnCours.FCurrentMap.LevelMapcolCount) and (FLig >= 0) and
+    (FLig < FPartieEnCours.FCurrentMap.LevelMapRowCount) and (FSpriteID >= 0)
+    and (FSpriteID < FPartieEnCours.FCurrentMap.SpriteSheetElements.Count) then
   begin
-    dmmap.LevelMap[FCol, FLig].Zindex[dmmap.SpriteSheetElements[FSpriteID]
-      .Zindex] := -1;
-    dmmap.DessineCaseDeLaMap(FCol, FLig);
+    FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex
+      [FPartieEnCours.FCurrentMap.SpriteSheetElements[FSpriteID].Zindex] := -1;
+    FPartieEnCours.FCurrentMap.DessineCaseDeLaMap(FCol, FLig);
   end;
   inherited;
 end;
@@ -969,7 +986,8 @@ begin
     read(FDureeDeVieRestante, sizeof(FDureeDeVieRestante)))) then
     FDureeDeVieRestante := 1;
   if (FCol <> -1) and (FLig <> -1) and (FSpriteID <> -1) then
-    dmmap.LevelMap[FCol, FLig].Zindex[CZIndexCanards] := FSpriteID;
+    FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex[CZIndexCanards] :=
+      FSpriteID;
 end;
 
 procedure TCanard.Meurt;
@@ -993,9 +1011,9 @@ procedure TCanard.PondUnOeuf;
     i: integer;
   begin
     result := -1;
-    for i := 0 to dmmap.SpriteSheetElements.Count - 1 do
-      if (dmmap.SpriteSheetElements[i].TypeElement = TEggHunterElementType.oeuf)
-      then
+    for i := 0 to FPartieEnCours.FCurrentMap.SpriteSheetElements.Count - 1 do
+      if (FPartieEnCours.FCurrentMap.SpriteSheetElements[i]
+        .TypeElement = TEggHunterElementType.oeuf) then
       begin
         result := i;
         if (random(100) > 50) then
@@ -1013,15 +1031,18 @@ begin
     exit;
 
   // Si la case n'est pas bloquante (hors canard)
-  IDSpriteBloquant := dmmap.GetSpriteIDBloquantSurCase(FCol, FLig);
+  IDSpriteBloquant := FPartieEnCours.FCurrentMap.GetSpriteIDBloquantSurCase
+    (FCol, FLig);
   if (IDSpriteBloquant = -1) or
-    (dmmap.SpriteSheetElements[IDSpriteBloquant]
+    (FPartieEnCours.FCurrentMap.SpriteSheetElements[IDSpriteBloquant]
     .TypeElement = TEggHunterElementType.Canard) then
   begin
-    dmmap.LevelMap[FCol, FLig].Zindex[CZIndexOeufs] := GetOeufID;
-    dmmap.DessineCaseDeLaMap(FCol, FLig);
-    FPartieEnCours.Oeufs.Add(TOeuf.Create(FCol, FLig, dmmap.LevelMap[FCol,
-      FLig].Zindex[CZIndexOeufs], FPartieEnCours));
+    FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex[CZIndexOeufs] :=
+      GetOeufID;
+    FPartieEnCours.FCurrentMap.DessineCaseDeLaMap(FCol, FLig);
+    FPartieEnCours.Oeufs.Add(TOeuf.Create(FCol, FLig,
+      FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex[CZIndexOeufs],
+      FPartieEnCours));
 
     JouerBruitage(TTypeBruitage.OeufPonte);
   end;
@@ -1084,40 +1105,42 @@ var
   CouveuseSpriteID: integer;
 begin
   // Si la couveuse n'est pas dans la grille, on plante
-  if (FCol < 0) or (FCol >= dmmap.LevelMapcolCount) or (FLig < 0) and
-    (FLig >= dmmap.LevelMapRowCount) then
+  if (FCol < 0) or (FCol >= FPartieEnCours.FCurrentMap.LevelMapcolCount) or
+    (FLig < 0) and (FLig >= FPartieEnCours.FCurrentMap.LevelMapRowCount) then
     raise exception.Create('Matrix out of map');
   // TODO : "matrix" => "couveuse"         (traduction)
 
   // en affichage du mode sphère, on peut déborder sur les rebords de la map
-  if (dmmap.DisplayType = TMapDisplayType.sphere) then
+  if (FPartieEnCours.FCurrentMap.DisplayType = TMapDisplayType.sphere) then
   begin
     if (ACol < 0) then
-      ACol := dmmap.LevelMapcolCount + ACol
-    else if (ACol >= dmmap.LevelMapcolCount) then
-      ACol := dmmap.LevelMapcolCount - ACol;
+      ACol := FPartieEnCours.FCurrentMap.LevelMapcolCount + ACol
+    else if (ACol >= FPartieEnCours.FCurrentMap.LevelMapcolCount) then
+      ACol := FPartieEnCours.FCurrentMap.LevelMapcolCount - ACol;
     if (ALig < 0) then
-      ALig := dmmap.LevelMapcolCount + ALig
-    else if (ALig >= dmmap.LevelMapRowCount) then
-      ALig := dmmap.LevelMapRowCount - ALig;
+      ALig := FPartieEnCours.FCurrentMap.LevelMapcolCount + ALig
+    else if (ALig >= FPartieEnCours.FCurrentMap.LevelMapRowCount) then
+      ALig := FPartieEnCours.FCurrentMap.LevelMapRowCount - ALig;
   end;
 
   // Si le déplacement est toujours dans la grille
-  if (ACol >= 0) and (ACol < dmmap.LevelMapcolCount) and (ALig >= 0) and
-    (ALig < dmmap.LevelMapRowCount) then
+  if (ACol >= 0) and (ACol < FPartieEnCours.FCurrentMap.LevelMapcolCount) and
+    (ALig >= 0) and (ALig < FPartieEnCours.FCurrentMap.LevelMapRowCount) then
   begin
     // Si colonne ou ligne modifiée
     // Si élément disponible en Z-Index 1 à 4 (Z-Index de la couveuse -1)
     if ((FCol <> ACol) or (FLig <> ALig)) and
-      ((dmmap.LevelMap[ACol, ALig].Zindex[1] > -1) or
-      (dmmap.LevelMap[ACol, ALig].Zindex[2] > -1) or
-      (dmmap.LevelMap[ACol, ALig].Zindex[3] > -1) or
-      (dmmap.LevelMap[ACol, ALig].Zindex[4] > -1)) then
+      ((FPartieEnCours.FCurrentMap.LevelMap[ACol, ALig].Zindex[1] > -1) or
+      (FPartieEnCours.FCurrentMap.LevelMap[ACol, ALig].Zindex[2] > -1) or
+      (FPartieEnCours.FCurrentMap.LevelMap[ACol, ALig].Zindex[3] > -1) or
+      (FPartieEnCours.FCurrentMap.LevelMap[ACol, ALig].Zindex[4] > -1)) then
     begin
       // Traite collision
-      SpriteIDBloquant := dmmap.GetSpriteIDBloquantSurCase(ACol, ALig);
+      SpriteIDBloquant := FPartieEnCours.FCurrentMap.GetSpriteIDBloquantSurCase
+        (ACol, ALig);
       if (SpriteIDBloquant > -1) then
-        case dmmap.SpriteSheetElements[SpriteIDBloquant].TypeElement of
+        case FPartieEnCours.FCurrentMap.SpriteSheetElements[SpriteIDBloquant]
+          .TypeElement of
           TEggHunterElementType.couveuse:
             // TODO : écrasement de couveuse par une couveuse, pertinent ?
             SpriteIDBloquant := -1;
@@ -1127,18 +1150,20 @@ begin
       // on accepte le déplacement sur la nouvelle case
       if (SpriteIDBloquant = -1) then
       begin
-        CouveuseSpriteID := dmmap.LevelMap[FCol, FLig].Zindex[CZIndexCouveuses];
-        dmmap.BeginUpdate;
+        CouveuseSpriteID := FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig]
+          .Zindex[CZIndexCouveuses];
+        FPartieEnCours.FCurrentMap.BeginUpdate;
         try
-          dmmap.LevelMap[FCol, FLig].Zindex[CZIndexCouveuses] := -1;
-          dmmap.DessineCaseDeLaMap(FCol, FLig, false);
+          FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex
+            [CZIndexCouveuses] := -1;
+          FPartieEnCours.FCurrentMap.DessineCaseDeLaMap(FCol, FLig, false);
           FCol := ACol;
           FLig := ALig;
-          dmmap.LevelMap[FCol, FLig].Zindex[CZIndexCouveuses] :=
-            CouveuseSpriteID;
-          dmmap.DessineCaseDeLaMap(FCol, FLig, false);
+          FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex
+            [CZIndexCouveuses] := CouveuseSpriteID;
+          FPartieEnCours.FCurrentMap.DessineCaseDeLaMap(FCol, FLig, false);
         finally
-          dmmap.EndUpdate;
+          FPartieEnCours.FCurrentMap.EndUpdate;
         end;
       end;
     end;
@@ -1147,13 +1172,14 @@ end;
 
 destructor TCouveuse.Destroy;
 begin
-  if assigned(dmmap) and (FCol >= 0) and (FCol < dmmap.LevelMapcolCount) and
-    (FLig >= 0) and (FLig < dmmap.LevelMapRowCount) and (FSpriteID >= 0) and
-    (FSpriteID < dmmap.SpriteSheetElements.Count) then
+  if assigned(FPartieEnCours.FCurrentMap) and (FCol >= 0) and
+    (FCol < FPartieEnCours.FCurrentMap.LevelMapcolCount) and (FLig >= 0) and
+    (FLig < FPartieEnCours.FCurrentMap.LevelMapRowCount) and (FSpriteID >= 0)
+    and (FSpriteID < FPartieEnCours.FCurrentMap.SpriteSheetElements.Count) then
   begin
-    dmmap.LevelMap[FCol, FLig].Zindex[dmmap.SpriteSheetElements[FSpriteID]
-      .Zindex] := -1;
-    dmmap.DessineCaseDeLaMap(FCol, FLig);
+    FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex
+      [FPartieEnCours.FCurrentMap.SpriteSheetElements[FSpriteID].Zindex] := -1;
+    FPartieEnCours.FCurrentMap.DessineCaseDeLaMap(FCol, FLig);
   end;
   inherited;
 end;
@@ -1195,7 +1221,8 @@ begin
     read(FDureeAvantEclosion, sizeof(FDureeAvantEclosion)))) then
     FDureeAvantEclosion := 0;
   if (FCol <> -1) and (FLig <> -1) and (FSpriteID <> -1) then
-    dmmap.LevelMap[FCol, FLig].Zindex[CZIndexCouveuses] := FSpriteID;
+    FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex[CZIndexCouveuses] :=
+      FSpriteID;
 end;
 
 procedure TCouveuse.SaveToStream(AStream: TStream);
@@ -1227,9 +1254,9 @@ procedure TCouveuse.SetDureeAvantEclosion(const Value: integer);
     i: integer;
   begin
     result := -1;
-    for i := 0 to dmmap.SpriteSheetElements.Count - 1 do
-      if (dmmap.SpriteSheetElements[i].TypeElement = TEggHunterElementType.
-        Canard) then
+    for i := 0 to FPartieEnCours.FCurrentMap.SpriteSheetElements.Count - 1 do
+      if (FPartieEnCours.FCurrentMap.SpriteSheetElements[i]
+        .TypeElement = TEggHunterElementType.Canard) then
       begin
         result := i;
         if (random(100) < 10) then // 10% de chance pour chaque canard
@@ -1243,14 +1270,16 @@ begin
   // Si on a des oeufs en attente de gestation
   // Si la ligne en dessous de la couveuse est bien dans la grille
   if (FDureeAvantEclosion < 1) and (NbOeufsEnGestation > 0) and
-    (FLig + 1 < dmmap.LevelMapRowCount) then
+    (FLig + 1 < FPartieEnCours.FCurrentMap.LevelMapRowCount) then
   begin
     // On transforme un oeuf en canard et on le libère
     NbOeufsEnGestation := NbOeufsEnGestation - 1;
-    dmmap.LevelMap[FCol, FLig + 1].Zindex[CZIndexCanards] := GetCanardID;
-    dmmap.DessineCaseDeLaMap(FCol, FLig + 1);
+    FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig + 1].Zindex[CZIndexCanards]
+      := GetCanardID;
+    FPartieEnCours.FCurrentMap.DessineCaseDeLaMap(FCol, FLig + 1);
     FPartieEnCours.Canards.Add(TCanard.Create(FCol, FLig + 1,
-      dmmap.LevelMap[FCol, FLig + 1].Zindex[CZIndexCanards], FPartieEnCours));
+      FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig + 1].Zindex
+      [CZIndexCanards], FPartieEnCours));
     JouerBruitage(TTypeBruitage.OeufEclosion);
 
     if (NbOeufsEnGestation > 0) then
@@ -1409,13 +1438,14 @@ end;
 
 destructor TOeuf.Destroy;
 begin
-  if assigned(dmmap) and (FCol >= 0) and (FCol < dmmap.LevelMapcolCount) and
-    (FLig >= 0) and (FLig < dmmap.LevelMapRowCount) and (FSpriteID >= 0) and
-    (FSpriteID < dmmap.SpriteSheetElements.Count) then
+  if assigned(FPartieEnCours.FCurrentMap) and (FCol >= 0) and
+    (FCol < FPartieEnCours.FCurrentMap.LevelMapcolCount) and (FLig >= 0) and
+    (FLig < FPartieEnCours.FCurrentMap.LevelMapRowCount) and (FSpriteID >= 0)
+    and (FSpriteID < FPartieEnCours.FCurrentMap.SpriteSheetElements.Count) then
   begin
-    dmmap.LevelMap[FCol, FLig].Zindex[dmmap.SpriteSheetElements[FSpriteID]
-      .Zindex] := -1;
-    dmmap.DessineCaseDeLaMap(FCol, FLig);
+    FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex
+      [FPartieEnCours.FCurrentMap.SpriteSheetElements[FSpriteID].Zindex] := -1;
+    FPartieEnCours.FCurrentMap.DessineCaseDeLaMap(FCol, FLig);
   end;
   inherited;
 end;
@@ -1438,7 +1468,8 @@ begin
     sizeof(FSpriteID)))) then
     FSpriteID := -1;
   if (FCol <> -1) and (FLig <> -1) and (FSpriteID <> -1) then
-    dmmap.LevelMap[FCol, FLig].Zindex[CZIndexOeufs] := FSpriteID;
+    FPartieEnCours.FCurrentMap.LevelMap[FCol, FLig].Zindex[CZIndexOeufs] :=
+      FSpriteID;
 end;
 
 procedure TOeuf.SaveToStream(AStream: TStream);

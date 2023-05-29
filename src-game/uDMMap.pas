@@ -3,7 +3,10 @@ unit uDMMap;
 interface
 
 uses
-  System.SysUtils, System.Classes, FMX.Graphics, System.generics.collections,
+  System.SysUtils,
+  System.Classes,
+  FMX.Graphics,
+  System.generics.collections,
   System.SyncObjs;
 
 const
@@ -478,17 +481,19 @@ type
     function GetSpriteIDBloquantSurCase(ACol: integer; ALig: integer): integer;
   end;
 
-var
-  DMMap: TDMMap;
-
 implementation
 
 {%CLASSGROUP 'FMX.Controls.TControl'}
 {$R *.dfm}
 
 uses
-  System.Types, System.Zip, System.IOUtils, System.Math, System.Threading,
-  System.UITypes, FMX.Types;
+  System.Types,
+  System.Zip,
+  System.IOUtils,
+  System.Math,
+  System.Threading,
+  System.UITypes,
+  FMX.Types;
 
 procedure TDMMap.AddSpriteSheetElement(ABitmap: TBitmap;
   AElement: TSpriteSheetElement);

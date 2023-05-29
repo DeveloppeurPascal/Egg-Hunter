@@ -3,10 +3,21 @@ unit templateDialogBox;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Objects, cBoiteDeDialogue_370x370, cBoutonMenu, FMX.Ani;
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Dialogs,
+  FMX.StdCtrls,
+  FMX.Objects,
+  cBoiteDeDialogue_370x370,
+  cBoutonMenu,
+  FMX.Ani;
 
 type
   TtplDialogBox = class(TFrame)
@@ -42,7 +53,9 @@ implementation
 
 {$R *.fmx}
 
-uses FEcranDuJeu, fMain, uBruitages;
+uses
+  fMain,
+  uBruitages;
 
 { TtplDialogBox }
 
@@ -82,9 +95,7 @@ begin
   JouerBruitage(TTypeBruitage.DialogBoxClose);
 
   if (owner is TfrmMain) then
-    (owner as TfrmMain).BoiteDeDialogue := nil
-  else if (owner is TfrmEcranDuJeu) then
-    (owner as TfrmEcranDuJeu).BoiteDeDialogueActive := nil;
+    (owner as TfrmMain).BoiteDeDialogue := nil;
 
   animMasquage.Start;
 end;

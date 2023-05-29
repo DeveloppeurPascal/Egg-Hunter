@@ -3,11 +3,25 @@ unit cActionJoueurCouveuse;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  templateDialogBox, cBoiteDeDialogue_370x370, FMX.Objects, fEcranDuJeu,
-  uPartieEnCours, FMX.Layouts, cBoutonMenu, FMX.Ani;
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Dialogs,
+  FMX.StdCtrls,
+  templateDialogBox,
+  cBoiteDeDialogue_370x370,
+  FMX.Objects,
+  uPartieEnCours,
+  FMX.Layouts,
+  cBoutonMenu,
+  FMX.Ani,
+  fMain;
 
 type
   TcadActionJoueurCouveuse = class(TtplDialogBox)
@@ -33,9 +47,8 @@ type
     procedure ClicSurBoutonParDefautOuRETURN; override;
     procedure ClicSurBoutonCancelOuESCAPE; override;
 
-    class function Execute(AParent: TfrmEcranDuJeu;
-      APartieEnCours: TPartieEnCours; ACouveuse: TCouveuse)
-      : TcadActionJoueurCouveuse;
+    class function Execute(AParent: TfrmMain; APartieEnCours: TPartieEnCours;
+      ACouveuse: TCouveuse): TcadActionJoueurCouveuse;
 
     constructor Create(AOwner: TComponent); override;
   end;
@@ -47,7 +60,9 @@ implementation
 
 {$R *.fmx}
 
-uses cInventaireCouveuse;
+uses
+  cInventaireCouveuse;
+
 { TcadActionJoueurCouveuse }
 
 procedure TcadActionJoueurCouveuse.btnNonClick(Sender: TObject);
@@ -96,7 +111,7 @@ begin
   FAfficheBoutonFermer := false;
 end;
 
-class function TcadActionJoueurCouveuse.Execute(AParent: TfrmEcranDuJeu;
+class function TcadActionJoueurCouveuse.Execute(AParent: TfrmMain;
   APartieEnCours: TPartieEnCours; ACouveuse: TCouveuse)
   : TcadActionJoueurCouveuse;
 begin

@@ -3,11 +3,24 @@ unit cInventaireCouveuse;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  templateDialogBox, cBoiteDeDialogue_370x370, FMX.Objects, uPartieEnCours,
-  fEcranDuJeu, cLabeledProgressBar, FMX.Ani;
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Dialogs,
+  FMX.StdCtrls,
+  templateDialogBox,
+  cBoiteDeDialogue_370x370,
+  FMX.Objects,
+  uPartieEnCours,
+  cLabeledProgressBar,
+  FMX.Ani,
+  fMain;
 
 type
   TcadInventaireCouveuse = class(TtplDialogBox)
@@ -34,7 +47,7 @@ type
     /// <summary>
     /// gère l'affichage de la fenêtre et de son contenu
     /// </summary>
-    class function Execute(AParent: TfrmEcranDuJeu; ACouveuse: TCouveuse)
+    class function Execute(AParent: TfrmMain; ACouveuse: TCouveuse)
       : TcadInventaireCouveuse;
   end;
 
@@ -46,7 +59,7 @@ implementation
 {$R *.fmx}
 { TcadInventaireCouveuse }
 
-class function TcadInventaireCouveuse.Execute(AParent: TfrmEcranDuJeu;
+class function TcadInventaireCouveuse.Execute(AParent: TfrmMain;
   ACouveuse: TCouveuse): TcadInventaireCouveuse;
 begin
   result := nil;

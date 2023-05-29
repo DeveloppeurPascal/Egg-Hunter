@@ -3,11 +3,25 @@ unit cInventaireJoueur;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  templateDialogBox, cBoiteDeDialogue_370x370, FMX.Objects, uPartieEnCours,
-  fEcranDuJeu, cLabeledProgressBar, cBoutonMenu, FMX.Ani;
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Dialogs,
+  FMX.StdCtrls,
+  templateDialogBox,
+  cBoiteDeDialogue_370x370,
+  FMX.Objects,
+  uPartieEnCours,
+  cLabeledProgressBar,
+  cBoutonMenu,
+  FMX.Ani,
+  fMain;
 
 type
   TcadInventaireJoueur = class(TtplDialogBox)
@@ -30,8 +44,8 @@ type
     /// <summary>
     /// gère l'affichage de la fenêtre et de son contenu
     /// </summary>
-    class function Execute(AParent: TfrmEcranDuJeu;
-      APartieEnCours: TPartieEnCours): TcadInventaireJoueur;
+    class function Execute(AParent: TfrmMain; APartieEnCours: TPartieEnCours)
+      : TcadInventaireJoueur;
   end;
 
 var
@@ -42,7 +56,7 @@ implementation
 {$R *.fmx}
 { TcadInventaireJoueur }
 
-class function TcadInventaireJoueur.Execute(AParent: TfrmEcranDuJeu;
+class function TcadInventaireJoueur.Execute(AParent: TfrmMain;
   APartieEnCours: TPartieEnCours): TcadInventaireJoueur;
 begin
   result := nil;
