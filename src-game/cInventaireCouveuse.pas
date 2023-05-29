@@ -49,6 +49,10 @@ type
     /// </summary>
     class function Execute(AParent: TfrmMain; ACouveuse: TCouveuse)
       : TcadInventaireCouveuse;
+
+    procedure OnCouveuseNbOeufsChange(Couveuse: TCouveuse);
+    procedure OnCouveuseDureeAvantEclosionChange(Couveuse: TCouveuse);
+    destructor Destroy; override;
   end;
 
 var
@@ -58,6 +62,17 @@ implementation
 
 {$R *.fmx}
 { TcadInventaireCouveuse }
+
+destructor TcadInventaireCouveuse.Destroy;
+begin
+  if assigned(Couveuse) then
+  begin
+    Couveuse.OnCouveuseNbOeufsChange := nil;
+    Couveuse.OnCouveuseDureeAvantEclosionChange := nil;
+  end;
+
+  inherited;
+end;
 
 class function TcadInventaireCouveuse.Execute(AParent: TfrmMain;
   ACouveuse: TCouveuse): TcadInventaireCouveuse;
@@ -69,11 +84,25 @@ begin
     try
       result.Parent := AParent;
       result.Couveuse := ACouveuse;
+      result.Couveuse.OnCouveuseNbOeufsChange := result.OnCouveuseNbOeufsChange;
+      result.Couveuse.OnCouveuseDureeAvantEclosionChange :=
+        result.OnCouveuseDureeAvantEclosionChange;
     except
       result.free;
       result := nil;
     end;
   end;
+end;
+
+procedure TcadInventaireCouveuse.OnCouveuseDureeAvantEclosionChange
+  (Couveuse: TCouveuse);
+begin
+  RefreshDureeGestation(Couveuse.DureeAvantEclosion, CTempsDeGestation);
+end;
+
+procedure TcadInventaireCouveuse.OnCouveuseNbOeufsChange(Couveuse: TCouveuse);
+begin
+  RefreshNbOeufs(Couveuse.NbOeufsEnGestation, Couveuse.NbOeufsEnGestationMax);
 end;
 
 procedure TcadInventaireCouveuse.RefreshDureeGestation(ATempsRestant,
