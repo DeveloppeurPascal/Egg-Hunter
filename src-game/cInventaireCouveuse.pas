@@ -94,12 +94,12 @@ begin
 
   pourcent := (ATempsRestant * 100) div ATempsMax;
   case pourcent of
-    0 .. 59:
-      pbGestation.Color := TcadLabeledProgressBarColor.vert;
-    60 .. 80:
+    0 .. 49:
+      pbGestation.Color := TcadLabeledProgressBarColor.rouge;
+    50 .. 74:
       pbGestation.Color := TcadLabeledProgressBarColor.jaune;
   else
-    pbGestation.Color := TcadLabeledProgressBarColor.rouge;
+    pbGestation.Color := TcadLabeledProgressBarColor.vert;
   end;
 end;
 
