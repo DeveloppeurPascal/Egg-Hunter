@@ -305,13 +305,13 @@ begin
 
   // Left pad
   JoypadDeGauche.Position.X := 10;
-  JoypadDeGauche.Position.Y := ClientHeight - JoypadDeGauche.height - 10;
+  JoypadDeGauche.Position.Y := gamescene.Height - JoypadDeGauche.height - 10;
   JoypadDeGauche.Anchors := [TAnchorKind.akBottom, TAnchorKind.akleft];
   JoypadDeGauche.Visible := TConfig.InterfaceTactileOnOff;
 
   // Right pad
-  JoypadDeDroite.Position.X := ClientWidth - JoypadDeDroite.Width - 10;
-  JoypadDeDroite.Position.Y := ClientHeight - JoypadDeDroite.height - 10;
+  JoypadDeDroite.Position.X := gamescene.Width - JoypadDeDroite.Width - 10;
+  JoypadDeDroite.Position.Y := gamescene.Height - JoypadDeDroite.height - 10;
   JoypadDeDroite.Anchors := [TAnchorKind.akBottom, TAnchorKind.akRight];
   JoypadDeDroite.Visible := TConfig.InterfaceTactileOnOff;
 
