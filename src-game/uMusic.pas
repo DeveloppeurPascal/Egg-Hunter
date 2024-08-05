@@ -21,7 +21,7 @@ begin
 {$ELSEIF defined(MSWINDOWS)}
   // deploy in ;\
 {$IFDEF DEBUG}
-  Chemin := '..\..\..\assets\PLRAudios_com';
+  Chemin := '..\..\..\_PRIVATE\assets\PLRAudios_com';
 {$ELSE}
   Chemin := extractfilepath(paramstr(0));
 {$ENDIF}

@@ -31,15 +31,15 @@ uses
   cTrackbar in 'cTrackbar.pas' {cadTrackBar: TFrame} ,
   cJoypad in 'cJoypad.pas' {cadJoypad: TFrame} ,
   cadBoutonOption in 'cadBoutonOption.pas' {cBoutonOption: TFrame} ,
-  Olf.RTL.Params in '..\lib-externes\librairies\Olf.RTL.Params.pas',
+  Olf.RTL.Params in '..\lib-externes\librairies\src\Olf.RTL.Params.pas',
   Gamolf.FMX.MusicLoop
     in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas',
   Olf.FMX.TextImageFrame
-    in '..\lib-externes\librairies\Olf.FMX.TextImageFrame.pas' {OlfFMXTextImageFrame: TFrame} ,
+    in '..\lib-externes\librairies\src\Olf.FMX.TextImageFrame.pas' {OlfFMXTextImageFrame: TFrame} ,
   udmAdobeStock_47191065orange_noir
-    in '..\assets\AdobeStock\udmAdobeStock_47191065orange_noir.pas' {dmAdobeStock_47191065orange_noir: TDataModule} ,
+    in '..\_PRIVATE\assets\AdobeStock\udmAdobeStock_47191065orange_noir.pas' {dmAdobeStock_47191065orange_noir: TDataModule} ,
   udmAdobeStock_460990606
-    in '..\assets\AdobeStock\udmAdobeStock_460990606.pas' {dmAdobeStock_460990606: TDataModule} ,
+    in '..\_PRIVATE\assets\AdobeStock\udmAdobeStock_460990606.pas' {dmAdobeStock_460990606: TDataModule} ,
   Gamolf.FMX.Joystick
     in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.Joystick.pas',
   Gamolf.RTL.Joystick.DirectInput.Win

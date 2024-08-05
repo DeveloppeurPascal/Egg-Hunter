@@ -197,21 +197,21 @@
         <VerInfo_Keys>package=fr.gamolf.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <Android_LauncherIcon36>..\design\icones\EggHunter-36x36.png</Android_LauncherIcon36>
-        <Android_LauncherIcon48>..\design\icones\EggHunter-48x48.png</Android_LauncherIcon48>
-        <Android_LauncherIcon72>..\design\icones\EggHunter-72x72.png</Android_LauncherIcon72>
-        <Android_LauncherIcon96>..\design\icones\EggHunter-96x96.png</Android_LauncherIcon96>
-        <Android_LauncherIcon144>..\design\icones\EggHunter-144x144.png</Android_LauncherIcon144>
-        <Android_LauncherIcon192>..\design\icones\EggHunter-192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage426>..\design\icones\EggHunter-426x320.png</Android_SplashImage426>
-        <Android_SplashImage470>..\design\icones\EggHunter-470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>..\design\icones\EggHunter-640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>..\design\icones\EggHunter-960x720.png</Android_SplashImage960>
-        <Android_NotificationIcon24>..\design\icones\EggHunter-24x24.png</Android_NotificationIcon24>
-        <Android_NotificationIcon36>..\design\icones\EggHunter-36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>..\design\icones\EggHunter-48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>..\design\icones\EggHunter-72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>..\design\icones\EggHunter-96x96.png</Android_NotificationIcon96>
+        <Android_LauncherIcon36>..\assets\icons\EggHunter-36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>..\assets\icons\EggHunter-48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>..\assets\icons\EggHunter-72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>..\assets\icons\EggHunter-96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>..\assets\icons\EggHunter-144x144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon192>..\assets\icons\EggHunter-192x192.png</Android_LauncherIcon192>
+        <Android_SplashImage426>..\assets\icons\EggHunter-426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>..\assets\icons\EggHunter-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\assets\icons\EggHunter-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\assets\icons\EggHunter-960x720.png</Android_SplashImage960>
+        <Android_NotificationIcon24>..\assets\icons\EggHunter-24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>..\assets\icons\EggHunter-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\assets\icons\EggHunter-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\assets\icons\EggHunter-72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>..\assets\icons\EggHunter-96x96.png</Android_NotificationIcon96>
         <EnabledSysJars>activity-1.1.0.dex.jar;annotation-1.2.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;asynclayoutinflater-1.0.0.dex.jar;billing-4.0.0.dex.jar;biometric-1.1.0.dex.jar;browser-1.0.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;coordinatorlayout-1.0.0.dex.jar;core-1.5.0-rc02.dex.jar;core-common-2.1.0.dex.jar;core-runtime-2.1.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;firebase-annotations-16.0.0.dex.jar;firebase-common-20.0.0.dex.jar;firebase-components-17.0.0.dex.jar;firebase-datatransport-18.0.0.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.0.0.dex.jar;firebase-installations-interop-17.0.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-22.0.0.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;legacy-support-core-ui-1.0.0.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.2.0.dex.jar;lifecycle-livedata-2.0.0.dex.jar;lifecycle-livedata-core-2.2.0.dex.jar;lifecycle-runtime-2.2.0.dex.jar;lifecycle-service-2.0.0.dex.jar;lifecycle-viewmodel-2.2.0.dex.jar;lifecycle-viewmodel-savedstate-2.2.0.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;play-services-ads-20.1.0.dex.jar;play-services-ads-base-20.1.0.dex.jar;play-services-ads-identifier-17.0.0.dex.jar;play-services-ads-lite-20.1.0.dex.jar;play-services-base-17.5.0.dex.jar;play-services-basement-17.6.0.dex.jar;play-services-cloud-messaging-16.0.0.dex.jar;play-services-drive-17.0.0.dex.jar;play-services-games-21.0.0.dex.jar;play-services-location-18.0.0.dex.jar;play-services-maps-17.0.1.dex.jar;play-services-measurement-base-18.0.0.dex.jar;play-services-measurement-sdk-api-18.0.0.dex.jar;play-services-places-placereport-17.0.0.dex.jar;play-services-stats-17.0.0.dex.jar;play-services-tasks-17.2.0.dex.jar;print-1.0.0.dex.jar;room-common-2.1.0.dex.jar;room-runtime-2.1.0.dex.jar;savedstate-1.0.0.dex.jar;slidingpanelayout-1.0.0.dex.jar;sqlite-2.0.1.dex.jar;sqlite-framework-2.0.1.dex.jar;swiperefreshlayout-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.0.0.dex.jar;transport-runtime-3.0.0.dex.jar;user-messaging-platform-1.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.1.0.dex.jar</EnabledSysJars>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Build>1</VerInfo_Build>
@@ -231,21 +231,21 @@
         <VerInfo_Keys>package=fr.gamolf.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <Android_LauncherIcon36>..\design\icones\EggHunter-36x36.png</Android_LauncherIcon36>
-        <Android_LauncherIcon48>..\design\icones\EggHunter-48x48.png</Android_LauncherIcon48>
-        <Android_LauncherIcon72>..\design\icones\EggHunter-72x72.png</Android_LauncherIcon72>
-        <Android_LauncherIcon96>..\design\icones\EggHunter-96x96.png</Android_LauncherIcon96>
-        <Android_LauncherIcon144>..\design\icones\EggHunter-144x144.png</Android_LauncherIcon144>
-        <Android_LauncherIcon192>..\design\icones\EggHunter-192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage426>..\design\icones\EggHunter-426x320.png</Android_SplashImage426>
-        <Android_SplashImage470>..\design\icones\EggHunter-470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>..\design\icones\EggHunter-640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>..\design\icones\EggHunter-960x720.png</Android_SplashImage960>
-        <Android_NotificationIcon24>..\design\icones\EggHunter-24x24.png</Android_NotificationIcon24>
-        <Android_NotificationIcon36>..\design\icones\EggHunter-36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>..\design\icones\EggHunter-48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>..\design\icones\EggHunter-72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>..\design\icones\EggHunter-96x96.png</Android_NotificationIcon96>
+        <Android_LauncherIcon36>..\assets\icons\EggHunter-36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>..\assets\icons\EggHunter-48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>..\assets\icons\EggHunter-72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>..\assets\icons\EggHunter-96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>..\assets\icons\EggHunter-144x144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon192>..\assets\icons\EggHunter-192x192.png</Android_LauncherIcon192>
+        <Android_SplashImage426>..\assets\icons\EggHunter-426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>..\assets\icons\EggHunter-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\assets\icons\EggHunter-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\assets\icons\EggHunter-960x720.png</Android_SplashImage960>
+        <Android_NotificationIcon24>..\assets\icons\EggHunter-24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>..\assets\icons\EggHunter-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\assets\icons\EggHunter-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\assets\icons\EggHunter-72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>..\assets\icons\EggHunter-96x96.png</Android_NotificationIcon96>
         <EnabledSysJars>activity-1.1.0.dex.jar;annotation-1.2.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;asynclayoutinflater-1.0.0.dex.jar;billing-4.0.0.dex.jar;biometric-1.1.0.dex.jar;browser-1.0.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;coordinatorlayout-1.0.0.dex.jar;core-1.5.0-rc02.dex.jar;core-common-2.1.0.dex.jar;core-runtime-2.1.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;firebase-annotations-16.0.0.dex.jar;firebase-common-20.0.0.dex.jar;firebase-components-17.0.0.dex.jar;firebase-datatransport-18.0.0.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.0.0.dex.jar;firebase-installations-interop-17.0.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-22.0.0.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;legacy-support-core-ui-1.0.0.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.2.0.dex.jar;lifecycle-livedata-2.0.0.dex.jar;lifecycle-livedata-core-2.2.0.dex.jar;lifecycle-runtime-2.2.0.dex.jar;lifecycle-service-2.0.0.dex.jar;lifecycle-viewmodel-2.2.0.dex.jar;lifecycle-viewmodel-savedstate-2.2.0.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;play-services-ads-20.1.0.dex.jar;play-services-ads-base-20.1.0.dex.jar;play-services-ads-identifier-17.0.0.dex.jar;play-services-ads-lite-20.1.0.dex.jar;play-services-base-17.5.0.dex.jar;play-services-basement-17.6.0.dex.jar;play-services-cloud-messaging-16.0.0.dex.jar;play-services-drive-17.0.0.dex.jar;play-services-games-21.0.0.dex.jar;play-services-location-18.0.0.dex.jar;play-services-maps-17.0.1.dex.jar;play-services-measurement-base-18.0.0.dex.jar;play-services-measurement-sdk-api-18.0.0.dex.jar;play-services-places-placereport-17.0.0.dex.jar;play-services-stats-17.0.0.dex.jar;play-services-tasks-17.2.0.dex.jar;print-1.0.0.dex.jar;room-common-2.1.0.dex.jar;room-runtime-2.1.0.dex.jar;savedstate-1.0.0.dex.jar;slidingpanelayout-1.0.0.dex.jar;sqlite-2.0.1.dex.jar;sqlite-framework-2.0.1.dex.jar;swiperefreshlayout-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.0.0.dex.jar;transport-runtime-3.0.0.dex.jar;user-messaging-platform-1.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.1.0.dex.jar</EnabledSysJars>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Build>1</VerInfo_Build>
@@ -267,26 +267,26 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_BundleId>fr.gamolf.$(ModuleName)</VerInfo_BundleId>
-        <iOS_AppStore1024>..\design\icones\EggHunter-1024x1024.png</iOS_AppStore1024>
-        <iPhone_AppIcon120>..\design\icones\EggHunter-120x120.png</iPhone_AppIcon120>
-        <iPhone_AppIcon180>..\design\icones\EggHunter-180x180.png</iPhone_AppIcon180>
+        <iOS_AppStore1024>..\assets\icons\EggHunter-1024x1024.png</iOS_AppStore1024>
+        <iPhone_AppIcon120>..\assets\icons\EggHunter-120x120.png</iPhone_AppIcon120>
+        <iPhone_AppIcon180>..\assets\icons\EggHunter-180x180.png</iPhone_AppIcon180>
         <iPhone_Launch2x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_2x.png</iPhone_Launch2x>
         <iPhone_LaunchDark2x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImageDark_2x.png</iPhone_LaunchDark2x>
         <iPhone_Launch3x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_3x.png</iPhone_Launch3x>
         <iPhone_LaunchDark3x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImageDark_3x.png</iPhone_LaunchDark3x>
-        <iPhone_Spotlight80>..\design\icones\EggHunter-80x80.png</iPhone_Spotlight80>
-        <iPhone_Spotlight120>..\design\icones\EggHunter-120x120.png</iPhone_Spotlight120>
-        <iPhone_Setting58>..\design\icones\EggHunter-58x58.png</iPhone_Setting58>
-        <iPhone_Setting87>..\design\icones\EggHunter-87x87.png</iPhone_Setting87>
-        <iPhone_Notification40>..\design\icones\EggHunter-40x40.png</iPhone_Notification40>
-        <iPhone_Notification60>..\design\icones\EggHunter-60x60.png</iPhone_Notification60>
-        <iPad_AppIcon152>..\design\icones\EggHunter-152x152.png</iPad_AppIcon152>
-        <iPad_AppIcon167>..\design\icones\EggHunter-167x167.png</iPad_AppIcon167>
+        <iPhone_Spotlight80>..\assets\icons\EggHunter-80x80.png</iPhone_Spotlight80>
+        <iPhone_Spotlight120>..\assets\icons\EggHunter-120x120.png</iPhone_Spotlight120>
+        <iPhone_Setting58>..\assets\icons\EggHunter-58x58.png</iPhone_Setting58>
+        <iPhone_Setting87>..\assets\icons\EggHunter-87x87.png</iPhone_Setting87>
+        <iPhone_Notification40>..\assets\icons\EggHunter-40x40.png</iPhone_Notification40>
+        <iPhone_Notification60>..\assets\icons\EggHunter-60x60.png</iPhone_Notification60>
+        <iPad_AppIcon152>..\assets\icons\EggHunter-152x152.png</iPad_AppIcon152>
+        <iPad_AppIcon167>..\assets\icons\EggHunter-167x167.png</iPad_AppIcon167>
         <iPad_Launch2x>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImage_2x.png</iPad_Launch2x>
         <iPad_LaunchDark2x>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageDark_2x.png</iPad_LaunchDark2x>
-        <iPad_SpotLight80>..\design\icones\EggHunter-80x80.png</iPad_SpotLight80>
-        <iPad_Setting58>..\design\icones\EggHunter-58x58.png</iPad_Setting58>
-        <iPad_Notification40>..\design\icones\EggHunter-40x40.png</iPad_Notification40>
+        <iPad_SpotLight80>..\assets\icons\EggHunter-80x80.png</iPad_SpotLight80>
+        <iPad_Setting58>..\assets\icons\EggHunter-58x58.png</iPad_Setting58>
+        <iPad_Notification40>..\assets\icons\EggHunter-40x40.png</iPad_Notification40>
         <IOSTransportSecFeat>false</IOSTransportSecFeat>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
     </PropertyGroup>
@@ -323,8 +323,8 @@
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=fr;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=fr.gamolf.$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSLocationAlwaysAndWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSPhotoLibraryAddUsageDescription=The reason for adding to the photo library;NSCameraUsageDescription=The reason for accessing the camera;NSFaceIDUsageDescription=The reason for accessing the face id;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSSiriUsageDescription=The reason for accessing Siri;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
         <Manifest_File>(vide)</Manifest_File>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
-        <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\EggHunter.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\EggHunter.icns</Icns_MainIcns>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSX64)'!=''">
         <DCC_UsePackage>DataSnapServer;fmx;DbxCommonDriver;bindengine;IndyIPCommon;FireDACCommonODBC;emsclient;FireDACCommonDriver;IndyProtocols;IndyIPClient;dbxcds;FmxTeeUI;bindcompfmx;DBXFirebirdDriver;inetdb;ibmonitor;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;soapmidas;fmxFireDAC;dbexpress;DBXMySQLDriver;inet;DataSnapCommon;fmxase;dbrtl;FireDACDBXDriver;FireDACOracleDriver;fmxdae;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DBXInterBaseDriver;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;ibxbindings;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;RESTComponents;DBXSqliteDriver;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;ibxpress;dsnap;CloudService;DBXSybaseASADriver;DBXOracleDriver;DBXInformixDriver;fmxobj;FMXTee;DataSnapNativeClient;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -334,8 +334,8 @@
         <Debugger_Launcher>/usr/X11/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
         <Manifest_File>(vide)</Manifest_File>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\EggHunter.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\EggHunter.icns</Icns_MainIcns>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSXARM64)'!=''">
@@ -346,8 +346,8 @@
         <Debugger_Launcher>/usr/X11/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
         <Manifest_File>(vide)</Manifest_File>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\EggHunter.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\EggHunter.icns</Icns_MainIcns>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
@@ -358,11 +358,11 @@
         <VerInfo_Keys>CompanyName=Gamolf / Olf Software;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=2021 Patrick Prémartin / Gamolf / Olf Software;LegalTrademarks=;OriginalFilename=;ProgramID=fr.gamolf.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <UWP_DelphiLogo44>..\design\icones\EggHunter-44x44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>..\design\icones\EggHunter-150x150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\assets\icons\EggHunter-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\assets\icons\EggHunter-150x150.png</UWP_DelphiLogo150>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\EggHunter.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\EggHunter.icns</Icns_MainIcns>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
@@ -373,11 +373,11 @@
         <VerInfo_Keys>CompanyName=Gamolf / Olf Software;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=2021 Patrick Prémartin / Gamolf / Olf Software;LegalTrademarks=;OriginalFilename=;ProgramID=fr.gamolf.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <UWP_DelphiLogo44>..\design\icones\EggHunter-44x44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>..\design\icones\EggHunter-150x150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\assets\icons\EggHunter-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\assets\icons\EggHunter-150x150.png</UWP_DelphiLogo150>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\EggHunter.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\EggHunter.icns</Icns_MainIcns>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
@@ -432,8 +432,8 @@
         <VerInfo_Build>11</VerInfo_Build>
         <VerInfo_Keys>CompanyName=Gamolf / Olf Software;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.11;InternalName=;LegalCopyright=2021 Patrick Prémartin / Gamolf / Olf Software;LegalTrademarks=;OriginalFilename=;ProgramID=fr.gamolf.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\EggHunter.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\EggHunter.icns</Icns_MainIcns>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
@@ -448,7 +448,7 @@
     <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Build>5</VerInfo_Build>
-        <PF_KeyStore>..\_PRIVE\cles-appli-android.keystore</PF_KeyStore>
+        <PF_KeyStore>..\_PRIVATE\android.key\cles-appli-android.keystore</PF_KeyStore>
         <PF_KeyStorePass>852347C25F950784CF7DE533A4567BADE44108497EE7ECFC9F5F7736D856A8B6A5BE5D1C7F73E22C8724C8FE0A55679D1425B8478DD97E2D8CA1A09C783F8607DCE4AD970B5E1A81A680DF253A333A8B92033E1B1DE00917E3B616EB4475788F65DB9AD622A37D014678E86F9257F3F89645E9E9DE23C063B306C2AAA73656A0E878530353225FBC34F9FF34AFE39124</PF_KeyStorePass>
         <PF_AliasKey>egghunter</PF_AliasKey>
         <PF_AliasKeyPass>8539479A5F84078ECF60E561A4567BF0E45508457EB3ECFD9F037769D853A8EDA5E15D4C7F6EE2298724C8FD0A0D67C61427B85E8DD87E628CF3A0C37839861DDCBAADCD0B091A84A692DF243A3D3A8A450F3E461DA60920E3C216B9443178C3659D9AC222A37D004623E82B921BF3F9961DE9EADE57C063B37AC2F9A77456A0E879535053015F9234F9FF7FAFB49124C78A</PF_AliasKeyPass>
@@ -459,7 +459,7 @@
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Build>3</VerInfo_Build>
         <BT_BuildType>AppStore</BT_BuildType>
-        <PF_KeyStore>..\_PRIVE\cles-appli-android.keystore</PF_KeyStore>
+        <PF_KeyStore>..\_PRIVATE\android.key\cles-appli-android.keystore</PF_KeyStore>
         <PF_KeyStorePass>852347C25F950784CF7DE533A4567BADE44108497EE7ECFC9F5F7736D856A8B6A5BE5D1C7F73E22C8724C8FE0A55679D1425B8478DD97E2D8CA1A09C783F8607DCE4AD970B5E1A81A680DF253A333A8B92033E1B1DE00917E3B616EB4475788F65DB9AD622A37D014678E86F9257F3F89645E9E9DE23C063B306C2AAA73656A0E878530353225FBC34F9FF34AFE39124</PF_KeyStorePass>
         <PF_AliasKey>egghunter</PF_AliasKey>
         <PF_AliasKeyPass>8539479A5F84078ECF60E561A4567BF0E45508457EB3ECFD9F037769D853A8EDA5E15D4C7F6EE2298724C8FD0A0D67C61427B85E8DD87E628CF3A0C37839861DDCBAADCD0B091A84A692DF243A3D3A8A450F3E461DA60920E3C216B9443178C3659D9AC222A37D004623E82B921BF3F9961DE9EADE57C063B37AC2F9A77456A0E879535053015F9234F9FF7FAFB49124C78A</PF_AliasKeyPass>
@@ -475,15 +475,15 @@
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=fr;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=fr.gamolf.$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.7.0;CFBundleShortVersionString=1.7;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSLocationAlwaysAndWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSPhotoLibraryAddUsageDescription=The reason for adding to the photo library;NSCameraUsageDescription=The reason for accessing the camera;NSFaceIDUsageDescription=The reason for accessing the face id;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSSiriUsageDescription=The reason for accessing Siri;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Linux64)'!=''">
-        <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\EggHunter.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\EggHunter.icns</Icns_MainIcns>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
         <BT_BuildType>DeveloperID</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\EggHunter.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\EggHunter.icns</Icns_MainIcns>
         <VerInfo_MinorVer>7</VerInfo_MinorVer>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=fr.gamolf.$(MSBuildProjectName);CFBundleVersion=1.7.1;CFBundleShortVersionString=1.7;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false</VerInfo_Keys>
         <VerInfo_Build>1</VerInfo_Build>
@@ -491,8 +491,8 @@
     <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\EggHunter.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\EggHunter.icns</Icns_MainIcns>
         <VerInfo_MinorVer>7</VerInfo_MinorVer>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=fr.gamolf.$(MSBuildProjectName);CFBundleVersion=1.7.1;CFBundleShortVersionString=1.7;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false</VerInfo_Keys>
         <DCC_GenerateOSXUniversalBinaryFile>true</DCC_GenerateOSXUniversalBinaryFile>
@@ -507,8 +507,8 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\EggHunter.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\EggHunter.icns</Icns_MainIcns>
         <VerInfo_MinorVer>7</VerInfo_MinorVer>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
@@ -519,8 +519,8 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Icon_MainIcon>..\design\icones\EggHunter.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\design\icones\EggHunter.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\EggHunter.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\EggHunter.icns</Icns_MainIcns>
         <VerInfo_MinorVer>7</VerInfo_MinorVer>
     </PropertyGroup>
     <ItemGroup>
@@ -611,19 +611,19 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\lib-externes\librairies\Olf.RTL.Params.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.Params.pas"/>
         <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas"/>
-        <DCCReference Include="..\lib-externes\librairies\Olf.FMX.TextImageFrame.pas">
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.FMX.TextImageFrame.pas">
             <Form>OlfFMXTextImageFrame</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\assets\AdobeStock\udmAdobeStock_47191065orange_noir.pas">
+        <DCCReference Include="..\_PRIVATE\assets\AdobeStock\udmAdobeStock_47191065orange_noir.pas">
             <Form>dmAdobeStock_47191065orange_noir</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\assets\AdobeStock\udmAdobeStock_460990606.pas">
+        <DCCReference Include="..\_PRIVATE\assets\AdobeStock\udmAdobeStock_460990606.pas">
             <Form>dmAdobeStock_460990606</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
@@ -1116,13 +1116,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\PLRAudios_com\DreamCatcher.mp3" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\PLRAudios_com\DreamCatcher.mp3" Configuration="Debug" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>DreamCatcher.mp3</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\PLRAudios_com\DreamCatcher.mp3" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\PLRAudios_com\DreamCatcher.mp3" Configuration="Debug" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>DreamCatcher.mp3</RemoteName>
@@ -1156,13 +1156,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\PLRAudios_com\DreamCatcher.mp3" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\PLRAudios_com\DreamCatcher.mp3" Configuration="Release" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>DreamCatcher.mp3</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\PLRAudios_com\DreamCatcher.mp3" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\PLRAudios_com\DreamCatcher.mp3" Configuration="Release" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>DreamCatcher.mp3</RemoteName>
@@ -1196,13 +1196,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\BleepTelephone.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\BleepTelephone.wav" Configuration="Debug" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>BleepTelephone.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\BleepTelephone.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\BleepTelephone.wav" Configuration="Debug" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>BleepTelephone.wav</RemoteName>
@@ -1236,13 +1236,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\BleepTelephone.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\BleepTelephone.wav" Configuration="Release" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>BleepTelephone.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\BleepTelephone.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\BleepTelephone.wav" Configuration="Release" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>BleepTelephone.wav</RemoteName>
@@ -1276,13 +1276,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\CaveDrip.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\CaveDrip.wav" Configuration="Debug" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>CaveDrip.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\CaveDrip.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\CaveDrip.wav" Configuration="Debug" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>CaveDrip.wav</RemoteName>
@@ -1316,13 +1316,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\CaveDrip.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\CaveDrip.wav" Configuration="Release" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>CaveDrip.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\CaveDrip.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\CaveDrip.wav" Configuration="Release" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>CaveDrip.wav</RemoteName>
@@ -1356,13 +1356,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\DuckyOuch.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\DuckyOuch.wav" Configuration="Debug" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>DuckyOuch.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\DuckyOuch.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\DuckyOuch.wav" Configuration="Debug" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>DuckyOuch.wav</RemoteName>
@@ -1396,13 +1396,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\DuckyOuch.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\DuckyOuch.wav" Configuration="Release" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>DuckyOuch.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\DuckyOuch.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\DuckyOuch.wav" Configuration="Release" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>DuckyOuch.wav</RemoteName>
@@ -1436,13 +1436,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\HarpChordUp.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\HarpChordUp.wav" Configuration="Debug" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>HarpChordUp.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\HarpChordUp.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\HarpChordUp.wav" Configuration="Debug" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>HarpChordUp.wav</RemoteName>
@@ -1476,13 +1476,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\HarpChordUp.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\HarpChordUp.wav" Configuration="Release" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>HarpChordUp.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\HarpChordUp.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\HarpChordUp.wav" Configuration="Release" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>HarpChordUp.wav</RemoteName>
@@ -1516,13 +1516,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\PutDown.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\PutDown.wav" Configuration="Debug" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>PutDown.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\PutDown.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\PutDown.wav" Configuration="Debug" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>PutDown.wav</RemoteName>
@@ -1556,13 +1556,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\PutDown.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\PutDown.wav" Configuration="Release" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>PutDown.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\PutDown.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\PutDown.wav" Configuration="Release" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>PutDown.wav</RemoteName>
@@ -1596,13 +1596,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\SwapTiles.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\SwapTiles.wav" Configuration="Debug" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>SwapTiles.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\SwapTiles.wav" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\SwapTiles.wav" Configuration="Debug" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>SwapTiles.wav</RemoteName>
@@ -1636,13 +1636,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\SwapTiles.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\SwapTiles.wav" Configuration="Release" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>SwapTiles.wav</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\TheGameCreators\SoundMatter\SwapTiles.wav" Configuration="Release" Class="File">
+                <DeployFile LocalName="..\_PRIVATE\assets\TheGameCreators\SoundMatter\SwapTiles.wav" Configuration="Release" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>.\assets\internal\</RemoteDir>
                         <RemoteName>SwapTiles.wav</RemoteName>
@@ -1676,313 +1676,313 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-1024x1024.png" Configuration="Debug" Class="iOS_AppStore1024">
+                <DeployFile LocalName="..\assets\icons\EggHunter-1024x1024.png" Configuration="Debug" Class="iOS_AppStore1024">
                     <Platform Name="iOSDevice64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-120x120.png" Configuration="Debug" Class="iPhone_Spotlight120">
+                <DeployFile LocalName="..\assets\icons\EggHunter-120x120.png" Configuration="Debug" Class="iPhone_Spotlight120">
                     <Platform Name="iOSDevice64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-144x144.png" Configuration="Debug" Class="Android_LauncherIcon144">
+                <DeployFile LocalName="..\assets\icons\EggHunter-144x144.png" Configuration="Debug" Class="Android_LauncherIcon144">
                     <Platform Name="Android64">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-144x144.png" Configuration="Release" Class="Android_LauncherIcon144">
+                <DeployFile LocalName="..\assets\icons\EggHunter-144x144.png" Configuration="Release" Class="Android_LauncherIcon144">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-144x144.png" Configuration="Release" Class="Android_LauncherIcon144">
+                <DeployFile LocalName="..\assets\icons\EggHunter-144x144.png" Configuration="Release" Class="Android_LauncherIcon144">
                     <Platform Name="Android64">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                <DeployFile LocalName="..\assets\icons\EggHunter-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
                     <Platform Name="Win32">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo150x150.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                <DeployFile LocalName="..\assets\icons\EggHunter-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
                     <Platform Name="Win64">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo150x150.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-150x150.png" Configuration="Release" Class="UWP_DelphiLogo150">
+                <DeployFile LocalName="..\assets\icons\EggHunter-150x150.png" Configuration="Release" Class="UWP_DelphiLogo150">
                     <Platform Name="Win32">
                         <RemoteName>Logo150x150.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-150x150.png" Configuration="Release" Class="UWP_DelphiLogo150">
+                <DeployFile LocalName="..\assets\icons\EggHunter-150x150.png" Configuration="Release" Class="UWP_DelphiLogo150">
                     <Platform Name="Win64">
                         <RemoteName>Logo150x150.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-152x152.png" Configuration="Debug" Class="iPad_AppIcon152">
+                <DeployFile LocalName="..\assets\icons\EggHunter-152x152.png" Configuration="Debug" Class="iPad_AppIcon152">
                     <Platform Name="iOSDevice64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-167x167.png" Configuration="Debug" Class="iPad_AppIcon167">
+                <DeployFile LocalName="..\assets\icons\EggHunter-167x167.png" Configuration="Debug" Class="iPad_AppIcon167">
                     <Platform Name="iOSDevice64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-180x180.png" Configuration="Debug" Class="iPhone_AppIcon180">
+                <DeployFile LocalName="..\assets\icons\EggHunter-180x180.png" Configuration="Debug" Class="iPhone_AppIcon180">
                     <Platform Name="iOSDevice64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-192x192.png" Configuration="Debug" Class="Android_LauncherIcon192">
+                <DeployFile LocalName="..\assets\icons\EggHunter-192x192.png" Configuration="Debug" Class="Android_LauncherIcon192">
                     <Platform Name="Android64">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-192x192.png" Configuration="Release" Class="Android_LauncherIcon192">
+                <DeployFile LocalName="..\assets\icons\EggHunter-192x192.png" Configuration="Release" Class="Android_LauncherIcon192">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-192x192.png" Configuration="Release" Class="Android_LauncherIcon192">
+                <DeployFile LocalName="..\assets\icons\EggHunter-192x192.png" Configuration="Release" Class="Android_LauncherIcon192">
                     <Platform Name="Android64">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-24x24.png" Configuration="Debug" Class="Android_NotificationIcon24">
+                <DeployFile LocalName="..\assets\icons\EggHunter-24x24.png" Configuration="Debug" Class="Android_NotificationIcon24">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-24x24.png" Configuration="Release" Class="Android_NotificationIcon24">
+                <DeployFile LocalName="..\assets\icons\EggHunter-24x24.png" Configuration="Release" Class="Android_NotificationIcon24">
                     <Platform Name="Android">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-24x24.png" Configuration="Release" Class="Android_NotificationIcon24">
+                <DeployFile LocalName="..\assets\icons\EggHunter-24x24.png" Configuration="Release" Class="Android_NotificationIcon24">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-36x36.png" Configuration="Debug" Class="Android_NotificationIcon36">
+                <DeployFile LocalName="..\assets\icons\EggHunter-36x36.png" Configuration="Debug" Class="Android_NotificationIcon36">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-36x36.png" Configuration="Release" Class="Android_NotificationIcon36">
+                <DeployFile LocalName="..\assets\icons\EggHunter-36x36.png" Configuration="Release" Class="Android_NotificationIcon36">
                     <Platform Name="Android">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-36x36.png" Configuration="Release" Class="Android_NotificationIcon36">
+                <DeployFile LocalName="..\assets\icons\EggHunter-36x36.png" Configuration="Release" Class="Android_NotificationIcon36">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-40x40.png" Configuration="Debug" Class="iPad_Notification40">
+                <DeployFile LocalName="..\assets\icons\EggHunter-40x40.png" Configuration="Debug" Class="iPad_Notification40">
                     <Platform Name="iOSDevice64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-426x320.png" Configuration="Debug" Class="Android_SplashImage426">
+                <DeployFile LocalName="..\assets\icons\EggHunter-426x320.png" Configuration="Debug" Class="Android_SplashImage426">
                     <Platform Name="Android64">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-426x320.png" Configuration="Release" Class="Android_SplashImage426">
+                <DeployFile LocalName="..\assets\icons\EggHunter-426x320.png" Configuration="Release" Class="Android_SplashImage426">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-426x320.png" Configuration="Release" Class="Android_SplashImage426">
+                <DeployFile LocalName="..\assets\icons\EggHunter-426x320.png" Configuration="Release" Class="Android_SplashImage426">
                     <Platform Name="Android64">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="..\assets\icons\EggHunter-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
                     <Platform Name="Win32">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="..\assets\icons\EggHunter-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
                     <Platform Name="Win64">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-44x44.png" Configuration="Release" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="..\assets\icons\EggHunter-44x44.png" Configuration="Release" Class="UWP_DelphiLogo44">
                     <Platform Name="Win32">
                         <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-44x44.png" Configuration="Release" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="..\assets\icons\EggHunter-44x44.png" Configuration="Release" Class="UWP_DelphiLogo44">
                     <Platform Name="Win64">
                         <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-470x320.png" Configuration="Debug" Class="Android_SplashImage470">
+                <DeployFile LocalName="..\assets\icons\EggHunter-470x320.png" Configuration="Debug" Class="Android_SplashImage470">
                     <Platform Name="Android64">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-470x320.png" Configuration="Release" Class="Android_SplashImage470">
+                <DeployFile LocalName="..\assets\icons\EggHunter-470x320.png" Configuration="Release" Class="Android_SplashImage470">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-470x320.png" Configuration="Release" Class="Android_SplashImage470">
+                <DeployFile LocalName="..\assets\icons\EggHunter-470x320.png" Configuration="Release" Class="Android_SplashImage470">
                     <Platform Name="Android64">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-48x48.png" Configuration="Debug" Class="Android_NotificationIcon48">
+                <DeployFile LocalName="..\assets\icons\EggHunter-48x48.png" Configuration="Debug" Class="Android_NotificationIcon48">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-48x48.png" Configuration="Release" Class="Android_NotificationIcon48">
+                <DeployFile LocalName="..\assets\icons\EggHunter-48x48.png" Configuration="Release" Class="Android_NotificationIcon48">
                     <Platform Name="Android">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-48x48.png" Configuration="Release" Class="Android_NotificationIcon48">
+                <DeployFile LocalName="..\assets\icons\EggHunter-48x48.png" Configuration="Release" Class="Android_NotificationIcon48">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-58x58.png" Configuration="Debug" Class="iPad_Setting58">
+                <DeployFile LocalName="..\assets\icons\EggHunter-58x58.png" Configuration="Debug" Class="iPad_Setting58">
                     <Platform Name="iOSDevice64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-60x60.png" Configuration="Debug" Class="iPhone_Notification60">
+                <DeployFile LocalName="..\assets\icons\EggHunter-60x60.png" Configuration="Debug" Class="iPhone_Notification60">
                     <Platform Name="iOSDevice64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-640x480.png" Configuration="Debug" Class="Android_SplashImage640">
+                <DeployFile LocalName="..\assets\icons\EggHunter-640x480.png" Configuration="Debug" Class="Android_SplashImage640">
                     <Platform Name="Android64">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-640x480.png" Configuration="Release" Class="Android_SplashImage640">
+                <DeployFile LocalName="..\assets\icons\EggHunter-640x480.png" Configuration="Release" Class="Android_SplashImage640">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-640x480.png" Configuration="Release" Class="Android_SplashImage640">
+                <DeployFile LocalName="..\assets\icons\EggHunter-640x480.png" Configuration="Release" Class="Android_SplashImage640">
                     <Platform Name="Android64">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-72x72.png" Configuration="Debug" Class="Android_NotificationIcon72">
+                <DeployFile LocalName="..\assets\icons\EggHunter-72x72.png" Configuration="Debug" Class="Android_NotificationIcon72">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-72x72.png" Configuration="Release" Class="Android_NotificationIcon72">
+                <DeployFile LocalName="..\assets\icons\EggHunter-72x72.png" Configuration="Release" Class="Android_NotificationIcon72">
                     <Platform Name="Android">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-72x72.png" Configuration="Release" Class="Android_NotificationIcon72">
+                <DeployFile LocalName="..\assets\icons\EggHunter-72x72.png" Configuration="Release" Class="Android_NotificationIcon72">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-80x80.png" Configuration="Debug" Class="iPad_SpotLight80">
+                <DeployFile LocalName="..\assets\icons\EggHunter-80x80.png" Configuration="Debug" Class="iPad_SpotLight80">
                     <Platform Name="iOSDevice64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-87x87.png" Configuration="Debug" Class="iPhone_Setting87">
+                <DeployFile LocalName="..\assets\icons\EggHunter-87x87.png" Configuration="Debug" Class="iPhone_Setting87">
                     <Platform Name="iOSDevice64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-960x720.png" Configuration="Debug" Class="Android_SplashImage960">
+                <DeployFile LocalName="..\assets\icons\EggHunter-960x720.png" Configuration="Debug" Class="Android_SplashImage960">
                     <Platform Name="Android64">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-960x720.png" Configuration="Release" Class="Android_SplashImage960">
+                <DeployFile LocalName="..\assets\icons\EggHunter-960x720.png" Configuration="Release" Class="Android_SplashImage960">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-960x720.png" Configuration="Release" Class="Android_SplashImage960">
+                <DeployFile LocalName="..\assets\icons\EggHunter-960x720.png" Configuration="Release" Class="Android_SplashImage960">
                     <Platform Name="Android64">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-96x96.png" Configuration="Debug" Class="Android_NotificationIcon96">
+                <DeployFile LocalName="..\assets\icons\EggHunter-96x96.png" Configuration="Debug" Class="Android_NotificationIcon96">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-96x96.png" Configuration="Release" Class="Android_NotificationIcon96">
+                <DeployFile LocalName="..\assets\icons\EggHunter-96x96.png" Configuration="Release" Class="Android_NotificationIcon96">
                     <Platform Name="Android">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter-96x96.png" Configuration="Release" Class="Android_NotificationIcon96">
+                <DeployFile LocalName="..\assets\icons\EggHunter-96x96.png" Configuration="Release" Class="Android_NotificationIcon96">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter.icns" Configuration="Debug" Class="ProjectOSXResource">
+                <DeployFile LocalName="..\assets\icons\EggHunter.icns" Configuration="Debug" Class="ProjectOSXResource">
                     <Platform Name="OSXARM64">
                         <RemoteName>EggHunter.icns</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\design\icones\EggHunter.icns" Configuration="Release" Class="ProjectOSXResource">
+                <DeployFile LocalName="..\assets\icons\EggHunter.icns" Configuration="Release" Class="ProjectOSXResource">
                     <Platform Name="OSXARM64">
                         <RemoteName>EggHunter.icns</RemoteName>
                         <Overwrite>true</Overwrite>

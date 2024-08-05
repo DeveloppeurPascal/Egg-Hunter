@@ -32,7 +32,7 @@ begin
 {$ELSEIF defined(MSWINDOWS)}
   // deploy in ;\
 {$IFDEF DEBUG}
-  Chemin := '..\..\..\assets\TheGameCreators\SoundMatter';
+  Chemin := '..\..\..\_PRIVATE\assets\TheGameCreators\SoundMatter';
 {$ELSE}
   Chemin := extractfilepath(paramstr(0));
 {$ENDIF}
