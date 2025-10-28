@@ -10,7 +10,7 @@ Pour télécharger le jeu et en savoir plus rendez-vous sur [le site de Egg Hunt
 
 Ce jeu a été développé en Delphi [en direct sur Twitch](https://www.twitch.tv/patrickpremartin). Les séances de codage sont en majorité disponibles en rediffusion (en français) sur [la page dédiée à Egg Hunter](https://serialstreameur.fr/jv-egg-hunter.php) du [site de VOD Serial Streameur](https://serialstreameur.fr/).
 
-Ce dépôt de code contient un projet développé en langage Pascal Objet sous Delphi. Vous ne savez pas ce qu'est Dephi ni où le télécharger ? Vous en saurez plus [sur ce site web](https://delphi-resources.developpeur-pascal.fr/).
+Ce dépôt de code contient un projet développé en langage Pascal Objet sous Delphi. Vous ne savez pas ce qu'est Delphi ni où le télécharger ? Vous en saurez plus [sur ce site web](https://delphi-resources.developpeur-pascal.fr/).
 
 ## Utiliser ce jeu vidéo
 
