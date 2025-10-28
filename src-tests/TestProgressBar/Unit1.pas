@@ -1,43 +1,43 @@
-/// <summary>
-/// ***************************************************************************
-///
-/// Egg Hunter
-///
-/// Copyright 2021-2024 Patrick Prémartin under AGPL 3.0 license.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-/// THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-/// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-/// DEALINGS IN THE SOFTWARE.
-///
-/// ***************************************************************************
-///
-/// Egg Hunter is an RPG sprinkled with duck breeding.
-///
-/// You have to harvest their eggs, incubate them until they hatch, and
-/// explode production quotas (just for fun).
-///
-/// This repository contains the game source and its level editor.
-///
-/// ***************************************************************************
-///
-/// Author(s) :
-/// Patrick PREMARTIN
-///
-/// Site :
-/// https://egghunter.gamolf.fr/
-///
-/// Project site :
-/// https://github.com/DeveloppeurPascal/Egg-Hunter
-///
-/// ***************************************************************************
-/// File last update : 2024-08-05T19:36:12.450+02:00
-/// Signature : 8898333c12e6e86f18ffecc1fb1d3bb1f45e67cf
-/// ***************************************************************************
-/// </summary>
+(* C2PP
+  ***************************************************************************
+
+  Egg Hunter
+
+  Copyright 2021-2025 Patrick Prémartin under AGPL 3.0 license.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+  DEALINGS IN THE SOFTWARE.
+
+  ***************************************************************************
+
+  Egg Hunter is an RPG sprinkled with duck breeding.
+
+  You have to harvest their eggs, incubate them until they hatch, and
+  explode production quotas (just for fun).
+
+  This repository contains the game source and its level editor.
+
+  ***************************************************************************
+
+  Author(s) :
+  Patrick PREMARTIN
+
+  Site :
+  https://egghunter.gamolf.fr/
+
+  Project site :
+  https://github.com/DeveloppeurPascal/Egg-Hunter
+
+  ***************************************************************************
+  File last update : 2025-02-09T12:07:49.743+01:00
+  Signature : b4fc2f858d53260777c035168b98766c14c39553
+  ***************************************************************************
+*)
 
 unit Unit1;
 
