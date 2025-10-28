@@ -3,7 +3,7 @@
         <ProjectGuid>{9D638D06-C97A-4A55-9575-25B5D3C7C261}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="src-game\EggHunter.dproj">
+        <Projects Include="src\EggHunter.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="src-level-editor\EggHunterLevelEditor.dproj">
@@ -18,13 +18,13 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="EggHunter">
-        <MSBuild Projects="src-game\EggHunter.dproj"/>
+        <MSBuild Projects="src\EggHunter.dproj"/>
     </Target>
     <Target Name="EggHunter:Clean">
-        <MSBuild Projects="src-game\EggHunter.dproj" Targets="Clean"/>
+        <MSBuild Projects="src\EggHunter.dproj" Targets="Clean"/>
     </Target>
     <Target Name="EggHunter:Make">
-        <MSBuild Projects="src-game\EggHunter.dproj" Targets="Make"/>
+        <MSBuild Projects="src\EggHunter.dproj" Targets="Make"/>
     </Target>
     <Target Name="EggHunterLevelEditor">
         <MSBuild Projects="src-level-editor\EggHunterLevelEditor.dproj"/>

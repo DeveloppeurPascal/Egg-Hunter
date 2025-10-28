@@ -34,8 +34,8 @@
   https://github.com/DeveloppeurPascal/Egg-Hunter
 
   ***************************************************************************
-  File last update : 2025-02-09T12:07:49.676+01:00
-  Signature : 4caa065a697316fb31ebb6ec23daec851e71c7bd
+  File last update : 2025-10-28T17:49:46.000+01:00
+  Signature : 4b9d2cfde49b40cfc38e440ae88acfa01dec14c3
   ***************************************************************************
 *)
 
@@ -46,7 +46,7 @@ uses
   FMX.Forms,
   fMain in 'fMain.pas' {frmMain},
   uDMSpriteSheets in 'uDMSpriteSheets.pas' {DMSpriteSheets: TDataModule},
-  uDMMap in '..\src-game\uDMMap.pas' {DMMap: TDataModule},
+  uDMMap in '..\src\uDMMap.pas' {DMMap: TDataModule},
   fMapLoad in 'fMapLoad.pas' {frmMapLoad},
   fMapEdit in 'fMapEdit.pas' {frmMapEdit},
   fMapAdd in 'fMapAdd.pas' {frmMapAdd},
@@ -54,7 +54,7 @@ uses
   cToolButtons in 'cToolButtons.pas' {cadToolButtons: TFrame},
   cSpriteButton in 'cSpriteButton.pas' {cadSpriteButton: TFrame},
   fMapSpriteAdd in 'fMapSpriteAdd.pas' {frmMapSpriteAdd},
-  cBoiteDeDialogue_370x370 in '..\src-game\cBoiteDeDialogue_370x370.pas' {cadBoiteDeDialogue_370x370: TFrame};
+  cBoiteDeDialogue_370x370 in '..\src\cBoiteDeDialogue_370x370.pas' {cadBoiteDeDialogue_370x370: TFrame};
 
 {$R *.res}
 

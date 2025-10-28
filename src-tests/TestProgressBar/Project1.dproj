@@ -285,7 +285,7 @@
             <Form>Form1</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\src-game\cLabeledProgressBar.pas">
+        <DCCReference Include="..\..\src\cLabeledProgressBar.pas">
             <Form>cadLabeledProgressBar</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>

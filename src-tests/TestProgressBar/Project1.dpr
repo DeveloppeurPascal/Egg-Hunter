@@ -34,8 +34,8 @@
   https://github.com/DeveloppeurPascal/Egg-Hunter
 
   ***************************************************************************
-  File last update : 2025-02-09T12:07:49.741+01:00
-  Signature : 57b45817331187ebde35728a914411ce9f9bee45
+  File last update : 2025-10-28T17:49:45.855+01:00
+  Signature : f52978d2386f99585314fb7944751a248293af78
   ***************************************************************************
 *)
 
@@ -45,7 +45,7 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   Unit1 in 'Unit1.pas' {Form1},
-  cLabeledProgressBar in '..\..\src-game\cLabeledProgressBar.pas' {cadLabeledProgressBar: TFrame};
+  cLabeledProgressBar in '..\..\src\cLabeledProgressBar.pas' {cadLabeledProgressBar: TFrame};
 
 {$R *.res}
 
